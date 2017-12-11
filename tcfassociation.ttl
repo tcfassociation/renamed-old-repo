@@ -10,7 +10,7 @@
 
 <LogisticsObject> a owl:Class ;
 	rdfs:label "Logistics Object" ;
-	rdfs:comment "Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
+	rdfs:comment "Hasse changed, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
 	
 <ShippersInstruction> a owl:Class ;
 	rdfs:label "Shippers Instruction" ;
