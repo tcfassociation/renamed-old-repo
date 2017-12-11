@@ -5,7 +5,7 @@
 @prefix schema: <http://schema.org/> .
 
 <> a owl:Ontology ;
-	dc:title "The TCF Logistics Open Ontology" ;
+	dc:title "The TCF Logistics open ontology" ;
 	dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
 
 <LogisticsObject> a owl:Class ;
