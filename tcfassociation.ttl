@@ -1,0 +1,81 @@
+@base <http://tcftest.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+<> a owl:Ontology ;
+	dc:title "The TCF Logistics open Ontology" ;
+	dc:description "The TCF logistics open ontology is a OWL ontology designed to support the logistics industry." .
+
+<LogisticsObject> a owl:Class ;
+	rdfs:label "Logistics Object" ;
+	rdfs:comment "Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
+	
+<ShippersInstruction> a owl:Class ;
+	rdfs:label "Shippers Instruction" ;
+	rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." ;
+	rdfs:subClassOf <LogisticsObject> .
+	
+<Consignment> a owl:Class ;
+	rdfs:label "Consignment" ;
+	rdfs:comment "Need a good defintion of a consignment. Here is the one from wikipedia.org - Consignment is the act of consigning, the act of giving over to another person or agent's charge, custody or care any material or goods but retaining legal ownership until the material or goods are sold. That may be done for the purpose of shipping the goods, transferring the goods to auction or intending the goods to be placed on sale in a store (a consignment store)." ;
+	rdfs:subClassOf <LogisticsObject> .	
+
+<Package> a owl:Class ;
+	rdfs:label "Package" ;
+	rdfs:comment "Need a good defintion of a package. Here is one from dictionary.com - a bundle of something, usually of small or medium size, that is packed and wrapped or boxed; parcel." ;
+	rdfs:subClassOf <LogisticsObject> .
+
+<CommercialInvoice> a owl:Class ;
+	rdfs:label "Commercial Invoice" ;
+	rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders." ;
+	rdfs:subClassOf <LogisticsObject> .
+
+<DangerousGoodsDeclaration> a owl:Class ;
+	rdfs:label "Dangerous Goods Declaration" ;
+	rdfs:comment "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
+	rdfs:subClassOf <LogisticsObject> .
+
+<LogisticsVehicle> a owl:Class ;
+	rdfs:label "Logistics Vehicle" ;
+	rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
+	rdfs:subClassOf <LogisticsObject> .
+
+<IOLIdentifier> a owl:Class ;
+	rdfs:label "IOL Identifier" ;
+	rdfs:comment "The Internet of Logistics Identifier for a connected company." .
+	
+<forwarder> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+	
+<pickupFrom> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+
+<consignee> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+
+<consignor> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+	
+<buyer> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+	
+<seller> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+	
+<deliverTo> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+
+<handoverTo> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+	
+<attentionTo> a owl:ObjectProperty ;
+	rdfs:range schema:Organization .
+
+<iolIdentifier> a owl:ObjectProperty ;
+	rdfs:range <IOLIdentifier> .
+
+
+
+	
