@@ -42,7 +42,7 @@
 	rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
 	rdfs:subClassOf <LogisticsObject> .
 
-<LogisticsVehicle> a owl:Class ;
+<LogisticsTest> a owl:Class ;
 	rdfs:label "Logistics Test" ;
 	rdfs:comment "Test test" ;
 	rdfs:subClassOf <LogisticsObject> .
