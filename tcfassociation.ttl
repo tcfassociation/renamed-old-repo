@@ -43,8 +43,8 @@
 	rdfs:subClassOf <LogisticsObject> .
 
 <LogisticsTest> a owl:Class ;
-	rdfs:label "Logistics Test" ;
-	rdfs:comment "Test test" ;
+	rdfs:label "Logistics Test2" ;
+	rdfs:comment "Test test2" ;
 	rdfs:subClassOf <LogisticsObject> .
 
 <IOLIdentifier> a owl:Class ;
