@@ -3,6 +3,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix tcf-pouch: <http://tcftest.org/pouch/> .
 
 <> a owl:Ontology ;
 	dc:title "The TCF Logistics open ontology" ;
@@ -81,6 +82,29 @@
 <iolIdentifier> a owl:ObjectProperty ;
 	rdfs:range <IOLIdentifier> .
 
+## Data instances from here onward
+## TODO Needs to be moved to a separate file
 
+<http://tcftest.org/pouches> a schema:ItemList ;
+	schema:itemListOrder schema:ItemListOrderAscending ;
+  schema:itemListElement [
+    a schema:ListItem ;
+    schema:item tcf-pouch:ForwarderPouch
+  ] ,
+  [
+    a schema:ListItem ;
+    schema:item tcf-pouch:ShippersPouch
+  ] ,
+  [
+    a schema:ListItem ;
+    schema:item tcf-pouch:CarriersPouch
+  ] .
 
-	
+tcf-pouch:ForwarderPouch a <Pouch> ;
+	rdfs:label "Forwarder Pouch" .
+
+tcf-pouch:ShippersPouch a <Pouch> ;
+	rdfs:label "Shippers Pouch" .	
+
+tcf-pouch:CarriersPouch a <Pouch> ;
+	rdfs:label "Carriers Pouch" .	
