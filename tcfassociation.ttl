@@ -16,41 +16,49 @@
 <ShippersInstruction> a owl:Class ;
 	rdfs:label "Shippers Instruction" ;
 	rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." ;
-	rdfs:subClassOf <LogisticsObject> .
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 	
 <Consignment> a owl:Class ;
 	rdfs:label "Consignment" ;
 	rdfs:comment "Need a good defintion of a consignment. Here is the one from wikipedia.org - Consignment is the act of consigning, the act of giving over to another person or agent's charge, custody or care any material or goods but retaining legal ownership until the material or goods are sold. That may be done for the purpose of shipping the goods, transferring the goods to auction or intending the goods to be placed on sale in a store (a consignment store)." ;
-	rdfs:subClassOf <LogisticsObject> .	
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Package> a owl:Class ;
 	rdfs:label "Package" ;
 	rdfs:comment "Need a good defintion of a package. Here is one from dictionary.com - a bundle of something, usually of small or medium size, that is packed and wrapped or boxed; parcel." ;
-	rdfs:subClassOf <LogisticsObject> .
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <CommercialInvoice> a owl:Class ;
 	rdfs:label "Commercial Invoice" ;
 	rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders." ;
-	rdfs:subClassOf <LogisticsObject> .
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <DangerousGoodsDeclaration> a owl:Class ;
 	rdfs:label "Dangerous Goods Declaration" ;
 	rdfs:comment "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
-	rdfs:subClassOf <LogisticsObject> .
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <LogisticsVehicle> a owl:Class ;
 	rdfs:label "Logistics Vehicle" ;
 	rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
-	rdfs:subClassOf <LogisticsObject> .
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <LogisticsTest> a owl:Class ;
 	rdfs:label "Logistics Test2" ;
 	rdfs:comment "Test test2" ;
-	rdfs:subClassOf <LogisticsObject> .
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <IOLIdentifier> a owl:Class ;
 	rdfs:label "IOL Identifier" ;
-	rdfs:comment "The Internet of Logistics Identifier for a connected company." .
+	rdfs:comment "The Internet of Logistics Identifier for a connected company." ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 	
 <forwarder> a owl:ObjectProperty ;
 	rdfs:range schema:Organization .
@@ -87,24 +95,25 @@
 
 <http://tcftest.org/pouches> a schema:ItemList ;
 	schema:itemListOrder schema:ItemListOrderAscending ;
-  schema:itemListElement [
-    a schema:ListItem ;
-    schema:item tcf-pouch:ForwarderPouch
-  ] ,
-  [
-    a schema:ListItem ;
-    schema:item tcf-pouch:ShippersPouch
-  ] ,
-  [
-    a schema:ListItem ;
-    schema:item tcf-pouch:CarriersPouch
-  ] .
+	schema:itemListElement [
+		a schema:ListItem ;
+		schema:item tcf-pouch:ForwarderPouch
+	], [
+		a schema:ListItem ;
+		schema:item tcf-pouch:ShippersPouch
+	], [
+		a schema:ListItem ;
+		schema:item tcf-pouch:CarriersPouch
+	] .
 
 tcf-pouch:ForwarderPouch a <Pouch> ;
-	rdfs:label "Forwarder Pouch" .
+	rdfs:label "Forwarder Pouch" ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 tcf-pouch:ShippersPouch a <Pouch> ;
-	rdfs:label "Shippers Pouch" .	
+	rdfs:label "Shippers Pouch" ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 tcf-pouch:CarriersPouch a <Pouch> ;
-	rdfs:label "Carriers Pouch" .	
+	rdfs:label "Carriers Pouch" ;
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
