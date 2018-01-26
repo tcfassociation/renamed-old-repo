@@ -89,31 +89,3 @@
 
 <iolIdentifier> a owl:ObjectProperty ;
 	rdfs:range <IOLIdentifier> .
-
-## Data instances from here onward
-## TODO Needs to be moved to a separate file
-
-<http://tcftest.org/pouches> a schema:ItemList ;
-	schema:itemListOrder schema:ItemListOrderAscending ;
-	schema:itemListElement [
-		a schema:ListItem ;
-		schema:item tcf-pouch:ForwarderPouch
-	], [
-		a schema:ListItem ;
-		schema:item tcf-pouch:ShippersPouch
-	], [
-		a schema:ListItem ;
-		schema:item tcf-pouch:CarriersPouch
-	] .
-
-tcf-pouch:ForwarderPouch a <Pouch> ;
-	rdfs:label "Forwarder Pouch" ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-tcf-pouch:ShippersPouch a <Pouch> ;
-	rdfs:label "Shippers Pouch" ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-tcf-pouch:CarriersPouch a <Pouch> ;
-	rdfs:label "Carriers Pouch" ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
