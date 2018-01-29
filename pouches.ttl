@@ -3,6 +3,8 @@
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix tcf: <http://tcftest.org/schema/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/>.
 
 <> a hydra:Collection ;
   hydra:member
@@ -24,6 +26,9 @@
 
 <ShippersPouch> a <Pouch> ;
   rdfs:label "Shippers Pouch" ;
+  hydra:member
+    tcf:ShippersInstruction ,
+    tcf:DangerousGoodsDeclaration ;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <CarriersPouch> a <Pouch> ;
@@ -49,3 +54,32 @@
 <RailPouch> a <Pouch> ;
   rdfs:label "Rail Pouch" ;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<org/EricssonAB> a schema:Corporation;
+    rdfs:label "Ericsson AB";
+    schema:url <http://www.ericsson.com/> .
+
+<org/PanalpinaAB> a schema:Corporation;
+    rdfs:label "Panalpina AB";
+    schema:url <http://www.panalpina.com/> .
+
+<org/FinnairAbp> a schema:Corporation;
+    rdfs:label "Finnair Abp";
+    schema:url <http://www.finnair.com/> .
+
+<wg/ShippersInstruction> a <WorkingGroup> ;
+    schema:about tcf:ShippersInstruction ;
+    dcterms:creator <org/EricssonAB> ;
+    dcterms:creator <org/PanalpinaAB> .
+
+<wg/DangerousGoodsDeclaration> a <WorkingGroup> ;
+    schema:about tcf:DangerousGoodsDeclaration ;
+    dcterms:creator <org/PanalpinaAB> .
+
+<wg/Invoice> a <WorkingGroup> ;
+    schema:about tcf:Invoice ;
+    dcterms:creator <org/FinnairAbp> .
+
+<wg/CountryOfOriginCertificate> a <WorkingGroup> ;
+    schema:about tcf:CountryOfOriginCertificate ;
+    dcterms:creator <org/PanalpinaAB> .
