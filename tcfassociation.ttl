@@ -3,6 +3,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix tcf-pouch: <http://tcftest.org/pouch/> .
 
 <> a owl:Ontology ;
@@ -61,8 +62,41 @@
 	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 	
 <forwarder> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range schema:Organization ;
+	rdfs:label "forwarder" ;
+	rdfs:description "The logistics service provider responsible for arranging the transport on behalf of the shipper" .
+
+<consignment> a owl:ObjectProperty ;
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range <Consignment> ;
+	rdfs:label "Consignment" ;
+	rdfs:description "The consignment is a delivery from a conseignor to a consignee. There is pickup address and one delivery address" .
+
+<shippersInstructionShippersReference> a owl:ObjectProperty ;
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "Reference" ;
+	rdfs:description "The reference for the shippers instruction in the shippers system" .
+
+<quantityOfPackages> a owl:ObjectProperty ;
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range xsd:int ;
+	rdfs:label "Quantity of packages" ;
+	rdfs:description "The number of packages in the complete shippers instruction" .
+
+<volume> a owl:ObjectProperty ;
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Volume" ;
+	rdfs:description "The volume related to the shippers instruction" .
+
+<volumeUOM> a owl:ObjectProperty ;
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "Volume Unit of Measure" ;
+	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
+
 <pickupFrom> a owl:ObjectProperty ;
 	rdfs:range schema:Organization .
 
