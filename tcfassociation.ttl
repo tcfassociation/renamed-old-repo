@@ -130,7 +130,7 @@
 <iolIdentifier> a owl:ObjectProperty ;
 	rdfs:range <IOLIdentifier> .
 
-<Package> a owl:ObjectProperty ;
+<PackageID> a owl:ObjectProperty ;
 	rdfs:domain <Package> ;
 	rdfs:range rdfs:Literal ;
 	rdfs:label "Package" ;
