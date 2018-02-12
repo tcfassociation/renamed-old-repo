@@ -22,7 +22,7 @@
 	
 <Consignment> a owl:Class ;
 	rdfs:label "Consignment" ;
-	rdfs:comment "Need a good defintion of a consignment. Here is the one from wikipedia.org - Consignment is the act of consigning, the act of giving over to another person or agent's charge, custody or care any material or goods but retaining legal ownership until the material or goods are sold. That may be done for the purpose of shipping the goods, transferring the goods to auction or intending the goods to be placed on sale in a store (a consignment store)." ;
+	rdfs:comment "My change. Need a good defintion of a consignment. Here is the one from wikipedia.org - Consignment is the act of consigning, the act of giving over to another person or agent's charge, custody or care any material or goods but retaining legal ownership until the material or goods are sold. That may be done for the purpose of shipping the goods, transferring the goods to auction or intending the goods to be placed on sale in a store (a consignment store)." ;
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
