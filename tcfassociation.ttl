@@ -132,6 +132,6 @@
 
 <Package> a owl:ObjectProperty ;
 	rdfs:domain <Package> ;
-	rdfs:range Literal ;
+	rdfs:range rdfs:Literal ;
 	rdfs:label "Package" ;
 	rdfs:description "A physical package for this trade line item." .
