@@ -94,20 +94,50 @@
 <PackageID> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
 	rdfs:range rdfs:Literal ;
-	rdfs:label "Test" ;
-	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
+	rdfs:label "PackageID" ;
+	rdfs:description "A physical package for this trade line item." .
 
-<PackageID2> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
+<PackageType> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
 	rdfs:range rdfs:Literal ;
-	rdfs:label "Test" ;
-	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
+	rdfs:label "PackageType" ;
+	rdfs:description "A packaging type, expressed as text, for this trade line item" .
 
-<newPropety> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Test" ;
-	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
+<volume> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Volume" ;
+	rdfs:description "A measure of the gross volume of this trade line item." .
+
+<Length> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Length" ;
+	rdfs:description "A measure of the length of this trade line item." .
+
+<Width> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Width" ;
+	rdfs:description "A measure of the width of this trade line item." .
+
+<Height> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Height" ;
+	rdfs:description "A measure of the height of this trade line item." .
+
+<grossWeigth> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range xsd:double ;
+	rdfs:label "grossWeigth" ;
+	rdfs:description "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment." .
+
+<netWeigth> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range xsd:double ;
+	rdfs:label "netWeigth" ;
+	rdfs:description "A measure of the net weight (mass) of this trade line item which excludes all packaging.." .
 
 <pickupFrom> a owl:ObjectProperty ;
 	rdfs:range schema:Organization .
