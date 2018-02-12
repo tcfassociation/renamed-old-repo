@@ -97,6 +97,12 @@
 	rdfs:label "Test" ;
 	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
 
+<PackageID2> a owl:ObjectProperty ;
+	rdfs:domain <ShippersInstruction> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "Test" ;
+	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
+
 <newPropety> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
 	rdfs:range rdfs:Literal ;
