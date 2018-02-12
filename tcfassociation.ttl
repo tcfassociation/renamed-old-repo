@@ -71,7 +71,7 @@
 	rdfs:domain <ShippersInstruction> ;
 	rdfs:range <Consignment> ;
 	rdfs:label "Consignment" ;
-	rdfs:description "The consignment is a delivery from a conseignor to a consignee. There is pickup address and one delivery address" .
+	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
 
 <shippersInstructionShippersReference> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
