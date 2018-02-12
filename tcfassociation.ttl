@@ -65,7 +65,7 @@
 	rdfs:domain <ShippersInstruction> ;
 	rdfs:range schema:Organization ;
 	rdfs:label "forwarder" ;
-	rdfs:description "The logistics service provider responsible for arranging the transport on behalf of the shipper" .
+	rdfs:description "The party undertaking the freight forwarding of these consignments." .
 
 <consignment> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
