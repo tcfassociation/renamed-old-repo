@@ -91,16 +91,10 @@
 	rdfs:label "Volume" ;
 	rdfs:description "The volume related to the shippers instruction" .
 
-<Package> a owl:ObjectProperty ;
+<PackageID> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
 	rdfs:range rdfs:Literal ;
 	rdfs:label "Test" ;
-	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
-
-<volumeUOM> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Volume Unit of Measure" ;
 	rdfs:description "The unit of measure related to the volume. Follows ISO standards" .
 
 <newPropety> a owl:ObjectProperty ;
