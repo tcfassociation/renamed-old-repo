@@ -28,7 +28,7 @@
 
 <Package> a owl:Class ;
 	rdfs:label "Package" ;
-	rdfs:comment "Need a good defintion of a package. Here is one from dictionary.com - a bundle of something, usually of small or medium size, that is packed and wrapped or boxed; parcel." ;
+	rdfs:comment "A physical package for this trade line item." ;
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
@@ -129,3 +129,9 @@
 
 <iolIdentifier> a owl:ObjectProperty ;
 	rdfs:range <IOLIdentifier> .
+
+<Package> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range Literal ;
+	rdfs:label "Package" ;
+	rdfs:description "A physical package for this trade line item." .
