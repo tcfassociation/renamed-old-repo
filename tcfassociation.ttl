@@ -109,6 +109,12 @@
 	rdfs:label "Consignor";
 	rdfs:description "The consignor party for this consignment.".
 
+<Consignee> a owl:objectproperty;
+	rdfs:domain <Consignment>;
+	rdfs:range rdfs: Organization
+	rdfs:label "Consignee";
+	rdfs:description "The consignee party for this consignment.".
+
 <Package> a owl:ObjectProperty ;
 	rdfs:domain <Consignment> ;
 	rdfs:range rdfs:Literal ;
