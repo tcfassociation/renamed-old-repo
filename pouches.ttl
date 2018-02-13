@@ -15,7 +15,9 @@
     <CargoHandlersPouch> ,
     <TruckersPouch> ,
     <MaritimePouch> ,
-    <RailPouch> .
+    <RailPouch> ,
+    <TrackUpdatePouch>,
+    <StatusUpdatePouch>.
 
 <ShippersPouch> a <Pouch> ;
   rdfs:label "Shippers Pouch" ;
@@ -29,13 +31,14 @@
 <ForwarderPouch> a <Pouch> ;
   rdfs:label "Forwarder Pouch" ;
   hydra:member
-    tcf:ShippersInstruction ,
-    tcf:Consignment ,
-    tcf:LogisticsVehicle ;
+    tcf:HAWB ,
+    tcf:MAWB ;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <CarriersPouch> a <Pouch> ;
   rdfs:label "Carriers Pouch" ;
+  hydra:member
+    tcf:FlightManifest;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <CustomsPouch> a <Pouch> ;
@@ -57,6 +60,14 @@
 <RailPouch> a <Pouch> ;
   rdfs:label "Rail Pouch" ;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<TrackUpdatePouch> a <Pouch> ;
+  rdfs:label "Track Update Pouch" ;
+  dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<StatusUpdatePouch> a <Pouch> ;
+  rdfs:label "Status Update Pouch" ;
+  dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <org/EricssonAB> a schema:Corporation;
     rdfs:label "Ericsson AB";
