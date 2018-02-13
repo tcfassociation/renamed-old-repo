@@ -62,6 +62,12 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
 
+<FlightManifest> a owl:Class ;
+	rdfs:label "Flight Manifest" ;
+	rdfs:comment "TBD" ;
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+
 <LogisticsTest> a owl:Class ;
 	rdfs:label "Logistics Test2" ;
 	rdfs:comment "Test test2" ;
