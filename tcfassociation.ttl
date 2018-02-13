@@ -150,7 +150,20 @@
 	rdfs:domain <Consignment> ;
 	rdfs:range xsd:date ;
 	rdfs:label "RequestedDeliveryDate" ;
-	rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
+	rdfs:description "Ultimate Ship To Delivery Date Time." .
+
+<TransportAgreementLaneID> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "TransportAgreementLaneID" ;
+	rdfs:description "TBD." .
+
+<RequestedPickupDate> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
+	rdfs:range xsd:date ;
+	rdfs:label "RequestedPickupDate" ;
+	rdfs:description "A date, time, date time, or other date time value when this trade delivery is available for pick-up." .
+
 
 # Start of Package
 <PackageReference> a owl:ObjectProperty ;
