@@ -50,6 +50,18 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
+<HAWB> a owl:Class ;
+	rdfs:label "House AirWayBill" ;
+	rdfs:comment "TBD" ;
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<MAWB> a owl:Class ;
+	rdfs:label "Master AirWayBill" ;
+	rdfs:comment "TBD" ;
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+
 <LogisticsTest> a owl:Class ;
 	rdfs:label "Logistics Test2" ;
 	rdfs:comment "Test test2" ;
