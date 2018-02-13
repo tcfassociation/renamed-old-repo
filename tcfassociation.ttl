@@ -105,25 +105,25 @@
 
 <Consignor> a owl:objectproperty;
 	rdfs:domain <Consignment>;
-	rdfs:range rdfs: Organization
+	rdfs:range rdfs: Organization;
 	rdfs:label "Consignor";
 	rdfs:description "The consignor party for this consignment.".
 
 <Consignee> a owl:objectproperty;
 	rdfs:domain <Consignment>;
-	rdfs:range rdfs: Organization
+	rdfs:range rdfs: Organization;
 	rdfs:label "Consignee";
 	rdfs:description "The consignee party for this consignment.".
 
 <Buyer> a owl:objectproperty;
 	rdfs:domain <Consignment>;
-	rdfs:range rdfs: Organization
+	rdfs:range rdfs: Organization;
 	rdfs:label "Buyer";
 	rdfs:description "The buyer party for this consignment.".
 
 <Seller> a owl:objectproperty;
 	rdfs:domain <Consignment>;
-	rdfs:range rdfs: Organization
+	rdfs:range rdfs: Organization;
 	rdfs:label "Buyer";
 	rdfs:description "The Seller party for this consignment.".
 
