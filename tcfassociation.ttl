@@ -97,6 +97,12 @@
 	rdfs:label "GrossWeigth" ;
 	rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
 
+<Consignment> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
+	rdfs:range rdfs:literal ;
+	rdfs:label "Consignment" ;
+	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
+
 <Package> a owl:ObjectProperty ;
 	rdfs:domain <Consignment> ;
 	rdfs:range rdfs:Literal ;
