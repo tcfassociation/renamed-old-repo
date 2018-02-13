@@ -91,8 +91,14 @@
 	rdfs:label "Volume" ;
 	rdfs:description "The volume related to the shippers instruction" .
 
-<Package> a owl:ObjectProperty ;
+<GrossWeigth> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
+	rdfs:range xsd:double ;
+	rdfs:label "GrossWeigth" ;
+	rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
+
+<Package> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
 	rdfs:range rdfs:Literal ;
 	rdfs:label "Package" ;
 	rdfs:description "A physical package for this trade line item." .
