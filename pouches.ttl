@@ -78,6 +78,10 @@
     schema:about tcf:DangerousGoodsDeclaration ;
     dcterms:creator <org/PanalpinaAB> .
 
+<wg/Package> a <WorkingGroup> ;
+    schema:about tcf:Package ;
+    dcterms:creator <org/EricssonAB> .
+
 <wg/Invoice> a <WorkingGroup> ;
     schema:about tcf:Invoice ;
     dcterms:creator <org/FinnairAbp> .
