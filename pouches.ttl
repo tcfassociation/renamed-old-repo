@@ -29,6 +29,7 @@
   rdfs:label "Shippers Pouch" ;
   hydra:member
     tcf:ShippersInstruction ,
+    tcf:Consignment,
     tcf:DangerousGoodsDeclaration ,
     tcf:Package;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
