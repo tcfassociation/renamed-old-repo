@@ -103,6 +103,12 @@
 	rdfs:label "Consignment" ;
 	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
 
+<Consignor> a owl:objectproperty;
+	rdfs:domain <Consignment>;
+	rdfs:range rdfs: Organization
+	rdfs:label "Consignor";
+	rdfs:description "The consignor party for this consignment.".
+
 <Package> a owl:ObjectProperty ;
 	rdfs:domain <Consignment> ;
 	rdfs:range rdfs:Literal ;
