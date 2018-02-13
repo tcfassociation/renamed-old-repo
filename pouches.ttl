@@ -8,22 +8,14 @@
 
 <> a hydra:Collection ;
   hydra:member
-    <ForwarderPouch> ,
     <ShippersPouch> ,
+    <ForwarderPouch> ,
     <CarriersPouch> ,
     <CustomsPouch> ,
     <CargoHandlersPouch> ,
     <TruckersPouch> ,
     <MaritimePouch> ,
     <RailPouch> .
-
-<ForwarderPouch> a <Pouch> ;
-  rdfs:label "Forwarder Pouch" ;
-  hydra:member
-    tcf:ShippersInstruction ,
-    tcf:Consignment ,
-    tcf:LogisticsVehicle ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <ShippersPouch> a <Pouch> ;
   rdfs:label "Shippers Pouch" ;
@@ -32,6 +24,14 @@
     tcf:Consignment,
     tcf:DangerousGoodsDeclaration ,
     tcf:Package;
+  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<ForwarderPouch> a <Pouch> ;
+  rdfs:label "Forwarder Pouch" ;
+  hydra:member
+    tcf:ShippersInstruction ,
+    tcf:Consignment ,
+    tcf:LogisticsVehicle ;
   dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <CarriersPouch> a <Pouch> ;
