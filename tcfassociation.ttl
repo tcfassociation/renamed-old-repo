@@ -91,10 +91,10 @@
 	rdfs:label "Volume" ;
 	rdfs:description "The volume related to the shippers instruction" .
 
-<PackageID> a owl:ObjectProperty ;
+<Package> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
 	rdfs:range rdfs:Literal ;
-	rdfs:label "PackageID" ;
+	rdfs:label "Package" ;
 	rdfs:description "A physical package for this trade line item." .
 
 <PackageType> a owl:ObjectProperty ;
