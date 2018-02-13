@@ -115,11 +115,41 @@
 	rdfs:label "Consignee";
 	rdfs:description "The consignee party for this consignment.".
 
+<Buyer> a owl:objectproperty;
+	rdfs:domain <Consignment>;
+	rdfs:range rdfs: Organization
+	rdfs:label "Buyer";
+	rdfs:description "The buyer party for this consignment.".
+
+<Seller> a owl:objectproperty;
+	rdfs:domain <Consignment>;
+	rdfs:range rdfs: Organization
+	rdfs:label "Buyer";
+	rdfs:description "The Seller party for this consignment.".
+
 <Package> a owl:ObjectProperty ;
 	rdfs:domain <Consignment> ;
 	rdfs:range rdfs:Literal ;
 	rdfs:label "Package" ;
 	rdfs:description "A physical package for this trade line item." .
+
+<Incoterm> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "Incoterm" ;
+	rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
+
+<IncotermsLocation> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "IncotermsLocation" ;
+	rdfs:description "A location relevant for these delivery terms." .
+
+<PackageReference> a owl:ObjectProperty ;
+	rdfs:domain <Package> ;
+	rdfs:range rdfs:Literal ;
+	rdfs:label "PackageReference" ;
+	rdfs:description "A packaging identifier, expressed as text, for this trade line item" .
 
 <PackageType> a owl:ObjectProperty ;
 	rdfs:domain <Package> ;
