@@ -146,6 +146,13 @@
 	rdfs:label "IncotermsLocation" ;
 	rdfs:description "A location relevant for these delivery terms." .
 
+<RequestedDeliveryDate> a owl:ObjectProperty ;
+	rdfs:domain <Consignment> ;
+	rdfs:range xsd:date ;
+	rdfs:label "RequestedDeliveryDate" ;
+	rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
+
+# Start of Package
 <PackageReference> a owl:ObjectProperty ;
 	rdfs:domain <Package> ;
 	rdfs:range rdfs:Literal ;
