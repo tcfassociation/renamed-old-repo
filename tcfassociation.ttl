@@ -1,261 +1,202 @@
-@base <http://tcftest.org/schema/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix tcf-pouch: <http://tcftest.org/pouch/> .
-
-<> a owl:Ontology ;
-	dc:title "The TCF Logistics open ontology" ;
-	dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
-
-<LogisticsObject> a owl:Class ;
-	rdfs:label "Logistics Object" ;
-	rdfs:comment "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
-	
-<ShippersInstruction> a owl:Class ;
-	rdfs:label "Shippers Instruction" ;
-	rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<Consignment> a owl:Class ;
-	rdfs:label "Consignment" ;
-	rdfs:comment "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Package> a owl:Class ;
-	rdfs:label "Package" ;
-	rdfs:comment "A physical package for this trade line item." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<CommercialInvoice> a owl:Class ;
-	rdfs:label "Commercial Invoice" ;
-	rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<DangerousGoodsDeclaration> a owl:Class ;
-	rdfs:label "Dangerous Goods Declaration" ;
-	rdfs:comment "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<LogisticsVehicle> a owl:Class ;
-	rdfs:label "Logistics Vehicle" ;
-	rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<HAWB> a owl:Class ;
-	rdfs:label "House AirWayBill" ;
-	rdfs:comment "TBD" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<MAWB> a owl:Class ;
-	rdfs:label "Master AirWayBill" ;
-	rdfs:comment "TBD" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<FlightManifest> a owl:Class ;
-	rdfs:label "Flight Manifest" ;
-	rdfs:comment "TBD" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<LogisticsTest> a owl:Class ;
-	rdfs:label "Logistics Test2" ;
-	rdfs:comment "Test test2" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<IOLIdentifier> a owl:Class ;
-	rdfs:label "IOL Identifier" ;
-	rdfs:comment "The Internet of Logistics Identifier for a connected company." ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<forwarder> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range schema:Organization ;
-	rdfs:label "forwarder" ;
-	rdfs:description "The party undertaking the freight forwarding of these consignments." .
-
-<consignment> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range <Consignment> ;
-	rdfs:label "Consignment" ;
-	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-
-<shippersInstructionShippersReference> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Reference" ;
-	rdfs:description "The reference for the shippers instruction in the shippers system" .
-
-<quantityOfPackages> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range xsd:int ;
-	rdfs:label "Quantity of packages" ;
-	rdfs:description "The number of packages in the complete shippers instruction" .
-
-<volume> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Volume" ;
-	rdfs:description "The volume related to the shippers instruction" .
-
-<GrossWeigth> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range xsd:double ;
-	rdfs:label "GrossWeigth" ;
-	rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
-
-# Start of consignment
-<Consignment> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "Consignment" ;
-	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-
-<Consignor> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Consignor";
-	rdfs:description "The consignor party for this consignment.".
-
-<Consignee> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Consignee";
-	rdfs:description "The consignee party for this consignment.".
-
-<Buyer> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Buyer";
-	rdfs:description "The buyer party for this consignment.".
-
-<Seller> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Buyer";
-	rdfs:description "The Seller party for this consignment.".
-
-<Package> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Package" ;
-	rdfs:description "A physical package for this trade line item." .
-
-<Incoterm> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Incoterm" ;
-	rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
-
-<IncotermsLocation> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "IncotermsLocation" ;
-	rdfs:description "A location relevant for these delivery terms." .
-
-<RequestedDeliveryDate> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range xsd:date ;
-	rdfs:label "RequestedDeliveryDate" ;
-	rdfs:description "Ultimate Ship To Delivery Date Time." .
-
-<TransportAgreementLaneID> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "TransportAgreementLaneID" ;
-	rdfs:description "TBD." .
-
-<RequestedPickupDate> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range xsd:date ;
-	rdfs:label "RequestedPickupDate" ;
-	rdfs:description "A date, time, date time, or other date time value when this trade delivery is available for pick-up." .
-
-
-# Start of Package
-<PackageReference> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "PackageReference" ;
-	rdfs:description "A packaging identifier, expressed as text, for this trade line item" .
-
-<PackageType> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "PackageType" ;
-	rdfs:description "A packaging type, expressed as text, for this trade line item" .
-
-<volume> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Volume" ;
-	rdfs:description "A measure of the gross volume of this trade line item." .
-
-<Length> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Length" ;
-	rdfs:description "A measure of the length of this trade line item." .
-
-<Width> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Width" ;
-	rdfs:description "A measure of the width of this trade line item." .
-
-<Height> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Height" ;
-	rdfs:description "A measure of the height of this trade line item." .
-
-<grossWeigth> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "grossWeigth" ;
-	rdfs:description "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment." .
-
-<netWeigth> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "netWeigth" ;
-	rdfs:description "A measure of the net weight (mass) of this trade line item which excludes all packaging.." .
-
-<pickupFrom> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<consignee> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<consignor> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<buyer> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<seller> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<deliverTo> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<handoverTo> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<attentionTo> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<iolIdentifier> a owl:ObjectProperty ;
-	rdfs:range <IOLIdentifier> .
-
+<http://localhost:8080/schema/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://localhost:8080/schema/> <http://purl.org/dc/terms/description> "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
+<http://localhost:8080/schema/> <http://purl.org/dc/terms/title> "The TCF Logistics open ontology" .
+<http://localhost:8080/schema/Buyer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
+<http://localhost:8080/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#description> "The buyer party for this consignment." .
+<http://localhost:8080/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#label> "Buyer" .
+<http://localhost:8080/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/CommercialInvoice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/CommercialInvoice> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/CommercialInvoice> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders." .
+<http://localhost:8080/schema/CommercialInvoice> <http://www.w3.org/2000/01/rdf-schema#label> "Commercial Invoice" .
+<http://localhost:8080/schema/CommercialInvoice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/Consignee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
+<http://localhost:8080/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#description> "The consignee party for this consignment." .
+<http://localhost:8080/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#label> "Consignee" .
+<http://localhost:8080/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/Consignment> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#comment> "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#description> "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#label> "Consignment" .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#literal> .
+<http://localhost:8080/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/Consignor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
+<http://localhost:8080/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#description> "The consignor party for this consignment." .
+<http://localhost:8080/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#label> "Consignor" .
+<http://localhost:8080/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/DangerousGoodsDeclaration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/DangerousGoodsDeclaration> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/DangerousGoodsDeclaration> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." .
+<http://localhost:8080/schema/DangerousGoodsDeclaration> <http://www.w3.org/2000/01/rdf-schema#label> "Dangerous Goods Declaration" .
+<http://localhost:8080/schema/DangerousGoodsDeclaration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/FlightManifest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/FlightManifest> <http://purl.org/dc/terms/modified> "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/FlightManifest> <http://www.w3.org/2000/01/rdf-schema#comment> "TBD" .
+<http://localhost:8080/schema/FlightManifest> <http://www.w3.org/2000/01/rdf-schema#label> "Flight Manifest" .
+<http://localhost:8080/schema/FlightManifest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/GrossWeigth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
+<http://localhost:8080/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/ShippersInstruction> .
+<http://localhost:8080/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#label> "GrossWeigth" .
+<http://localhost:8080/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/HAWB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/HAWB> <http://purl.org/dc/terms/modified> "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/HAWB> <http://www.w3.org/2000/01/rdf-schema#comment> "TBD" .
+<http://localhost:8080/schema/HAWB> <http://www.w3.org/2000/01/rdf-schema#label> "House AirWayBill" .
+<http://localhost:8080/schema/HAWB> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/Height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/Height> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the height of this trade line item." .
+<http://localhost:8080/schema/Height> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/Height> <http://www.w3.org/2000/01/rdf-schema#label> "Height" .
+<http://localhost:8080/schema/Height> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/IOLIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/IOLIdentifier> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/IOLIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The Internet of Logistics Identifier for a connected company." .
+<http://localhost:8080/schema/IOLIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "IOL Identifier" .
+<http://localhost:8080/schema/Incoterm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#description> "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
+<http://localhost:8080/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#label> "Incoterm" .
+<http://localhost:8080/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/IncotermsLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#description> "A location relevant for these delivery terms." .
+<http://localhost:8080/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#label> "IncotermsLocation" .
+<http://localhost:8080/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/Length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/Length> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the length of this trade line item." .
+<http://localhost:8080/schema/Length> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/Length> <http://www.w3.org/2000/01/rdf-schema#label> "Length" .
+<http://localhost:8080/schema/Length> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/LogisticsObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/LogisticsObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
+<http://localhost:8080/schema/LogisticsObject> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Object" .
+<http://localhost:8080/schema/LogisticsTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/LogisticsTest> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/LogisticsTest> <http://www.w3.org/2000/01/rdf-schema#comment> "Test test2" .
+<http://localhost:8080/schema/LogisticsTest> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Test2" .
+<http://localhost:8080/schema/LogisticsTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/LogisticsVehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/LogisticsVehicle> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/LogisticsVehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." .
+<http://localhost:8080/schema/LogisticsVehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Vehicle" .
+<http://localhost:8080/schema/LogisticsVehicle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/MAWB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/MAWB> <http://purl.org/dc/terms/modified> "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/MAWB> <http://www.w3.org/2000/01/rdf-schema#comment> "TBD" .
+<http://localhost:8080/schema/MAWB> <http://www.w3.org/2000/01/rdf-schema#label> "Master AirWayBill" .
+<http://localhost:8080/schema/MAWB> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/Package> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/Package> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/Package> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/Package> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical package for this trade line item." .
+<http://localhost:8080/schema/Package> <http://www.w3.org/2000/01/rdf-schema#description> "A physical package for this trade line item." .
+<http://localhost:8080/schema/Package> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Package> <http://www.w3.org/2000/01/rdf-schema#label> "Package" .
+<http://localhost:8080/schema/Package> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/Package> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/PackageReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#description> "A packaging identifier, expressed as text, for this trade line item" .
+<http://localhost:8080/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#label> "PackageReference" .
+<http://localhost:8080/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/PackageType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#description> "A packaging type, expressed as text, for this trade line item" .
+<http://localhost:8080/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#label> "PackageType" .
+<http://localhost:8080/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/RequestedDeliveryDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#description> "Ultimate Ship To Delivery Date Time." .
+<http://localhost:8080/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#label> "RequestedDeliveryDate" .
+<http://localhost:8080/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/RequestedPickupDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#description> "A date, time, date time, or other date time value when this trade delivery is available for pick-up." .
+<http://localhost:8080/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#label> "RequestedPickupDate" .
+<http://localhost:8080/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/Seller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
+<http://localhost:8080/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#description> "The Seller party for this consignment." .
+<http://localhost:8080/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#label> "Buyer" .
+<http://localhost:8080/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/ShippersInstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:8080/schema/ShippersInstruction> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/ShippersInstruction> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." .
+<http://localhost:8080/schema/ShippersInstruction> <http://www.w3.org/2000/01/rdf-schema#label> "Shippers Instruction" .
+<http://localhost:8080/schema/ShippersInstruction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
+<http://localhost:8080/schema/TransportAgreementLaneID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#description> "TBD." .
+<http://localhost:8080/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#label> "TransportAgreementLaneID" .
+<http://localhost:8080/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/Width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/Width> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the width of this trade line item." .
+<http://localhost:8080/schema/Width> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/Width> <http://www.w3.org/2000/01/rdf-schema#label> "Width" .
+<http://localhost:8080/schema/Width> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/attentionTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/attentionTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/buyer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/buyer> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/consignee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/consignee> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/consignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#description> "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
+<http://localhost:8080/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/ShippersInstruction> .
+<http://localhost:8080/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#label> "Consignment" .
+<http://localhost:8080/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#range> <http://localhost:8080/schema/Consignment> .
+<http://localhost:8080/schema/consignor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/consignor> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/deliverTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/deliverTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/forwarder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#description> "The party undertaking the freight forwarding of these consignments." .
+<http://localhost:8080/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/ShippersInstruction> .
+<http://localhost:8080/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#label> "forwarder" .
+<http://localhost:8080/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/grossWeigth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment." .
+<http://localhost:8080/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#label> "grossWeigth" .
+<http://localhost:8080/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/handoverTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/handoverTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/iolIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/iolIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://localhost:8080/schema/IOLIdentifier> .
+<http://localhost:8080/schema/netWeigth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the net weight (mass) of this trade line item which excludes all packaging.." .
+<http://localhost:8080/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#label> "netWeigth" .
+<http://localhost:8080/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/pickupFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/pickupFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/quantityOfPackages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#description> "The number of packages in the complete shippers instruction" .
+<http://localhost:8080/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/ShippersInstruction> .
+<http://localhost:8080/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#label> "Quantity of packages" .
+<http://localhost:8080/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://localhost:8080/schema/seller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/seller> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<http://localhost:8080/schema/shippersInstructionShippersReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#description> "The reference for the shippers instruction in the shippers system" .
+<http://localhost:8080/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/ShippersInstruction> .
+<http://localhost:8080/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#label> "Reference" .
+<http://localhost:8080/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://localhost:8080/schema/volume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://localhost:8080/schema/volume> <http://www.w3.org/2000/01/rdf-schema#description> "The volume related to the shippers instruction" .
+<http://localhost:8080/schema/volume> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the gross volume of this trade line item." .
+<http://localhost:8080/schema/volume> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/ShippersInstruction> .
+<http://localhost:8080/schema/volume> <http://www.w3.org/2000/01/rdf-schema#domain> <http://localhost:8080/schema/Package> .
+<http://localhost:8080/schema/volume> <http://www.w3.org/2000/01/rdf-schema#label> "Volume" .
+<http://localhost:8080/schema/volume> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:8080/schema/TestObjectForPR> <http://purl.org/dc/terms/modified> "2018-02-18T20:54:52.124Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://localhost:8080/schema/TestObjectForPR> <http://www.w3.org/2000/01/rdf-schema#comment> "test" .
+<http://localhost:8080/schema/TestObjectForPR> <http://www.w3.org/2000/01/rdf-schema#label> "TestObjectForPR" .
+<http://localhost:8080/schema/TestObjectForPR> <http://www.w3.org/2000/01/rdf-schema#subClassOf> "http://localhost:8080/schema/LogisticsObject" .
