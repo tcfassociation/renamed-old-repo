@@ -296,3 +296,9 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
+<LogisticObjectReference> a owl:ObjectProperty ;
+	rdfs:domain <LogisticObject> ;
+	rdfs:range xsd:double ;
+	rdfs:label "LogisticsObjectReference" ;
+	rdfs:description "A URI reference to the Logistics Object." .
+
