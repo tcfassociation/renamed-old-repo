@@ -63,7 +63,9 @@
 
 <TrackUpdatePouch> a <Pouch> ;
   rdfs:label "Track Update Pouch" ;
-  dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+  hydra:member
+    tcf:TrackUpdate;
+  dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <StatusUpdatePouch> a <Pouch> ;
   rdfs:label "Status Update Pouch" ;
