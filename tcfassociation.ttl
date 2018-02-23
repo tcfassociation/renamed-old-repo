@@ -260,12 +260,6 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
-<Location> a owl:Class ;
-	rdfs:label "Location" ;
-	rdfs:comment "An update on a logistics object of location." ;
-	rdfs:subClassOf <TrackUpdate> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
 <Temperature> a owl:Class ;
 	rdfs:label "Temperature" ;
 	rdfs:comment "An update on a logistics object of temperature." ;
@@ -385,15 +379,3 @@
 	rdfs:range xsd:double ;
 	rdfs:label "Humidity in Percentage" ;
 	rdfs:description "A device humidity reading in percentage submitted as a track update." .
-
-<latitude> a owl:ObjectProperty ;
-	rdfs:domain <Location> ;
-	rdfs:range schema:latitude ;
-	rdfs:label "Location in Latitude" ;
-	rdfs:description "A device Latitude reading submitted as a track update." .
-	
-<longitude> a owl:ObjectProperty ;
-	rdfs:domain <Location> ;
-	rdfs:range schema:longitude ;
-	rdfs:label "Location in Longitude" ;
-	rdfs:description "A device Longitude reading submitted as a track update." .
