@@ -260,5 +260,9 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
-
+<Location> a owl:Class ;
+	rdfs:label "Location" ;
+	rdfs:comment "An update on a logistics object of location." ;
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
