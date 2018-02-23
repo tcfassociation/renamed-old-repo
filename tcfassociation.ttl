@@ -68,12 +68,6 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
 
-<LogisticsTest> a owl:Class ;
-	rdfs:label "Logistics Test2" ;
-	rdfs:comment "Test test2" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
 <IOLIdentifier> a owl:Class ;
 	rdfs:label "IOL Identifier" ;
 	rdfs:comment "The Internet of Logistics Identifier for a connected company." ;
@@ -319,4 +313,42 @@
 	rdfs:range xsd:double ;
 	rdfs:label "DeviceName" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<Location> a owl:ObjectProperty ;
+	rdfs:domain <Location> ;
+	rdfs:range xsd:double ;
+	rdfs:label "DeviceName" ;
+	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<Temperature> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "DeviceName" ;
+	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<Humidity> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Humidity" ;
+	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<Accelerometer> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Accelerometer" ;
+	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<Preassure> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Preassure" ;
+	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<TrackUpdateTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "TrackUpdateTimestamp" ;
+	rdfs:description "A time stamp for the track update ." .
+
+
 
