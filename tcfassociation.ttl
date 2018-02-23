@@ -297,7 +297,7 @@
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <LogisticObjectReference> a owl:ObjectProperty ;
-	rdfs:domain <LogisticObject> ;
+	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
 	rdfs:label "LogisticsObjectReference" ;
 	rdfs:description "A URI reference to the Logistics Object." .
@@ -313,6 +313,12 @@
 	rdfs:range xsd:double ;
 	rdfs:label "DeviceName" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
+
+<TrackUpdateTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "TrackUpdateTimestamp" ;
+	rdfs:description "A time stamp for the track update ." .
 
 <Location> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
