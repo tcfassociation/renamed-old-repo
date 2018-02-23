@@ -331,3 +331,15 @@
 	rdfs:range xsd:double ;
 	rdfs:label "Temperature in Fahrenheit" ;
 	rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device." .
+
+<batteryvoltage> a owl:ObjectProperty ;
+	rdfs:domain <Battery> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Battery Voltage" ;
+	rdfs:description "A device battery reading in Voltage submitted as a track update." .
+
+<batterypercentage> a owl:ObjectProperty ;
+	rdfs:domain <Battery> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Battery Percentage" ;
+	rdfs:description "A device battery reading in Percentage submitted as a track update." .
