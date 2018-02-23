@@ -309,7 +309,7 @@
 	rdfs:description "An identifier for the Device submitting the TrackUpdate." .
 
 <Location> a owl:ObjectProperty ;
-	rdfs:domain <Location> ;
+	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Location" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
