@@ -378,3 +378,9 @@
 	rdfs:range xsd:double ;
 	rdfs:label "Altitude in Meter" ;
 	rdfs:description "A device altitude reading in meters submitted as a track update." .
+
+<humiditypercent> a owl:ObjectProperty ;
+	rdfs:domain <Humidity> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Humidity in Percentage" ;
+	rdfs:description "A device humidity reading in percentage submitted as a track update." .
