@@ -321,7 +321,7 @@
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
 <Temperature> a owl:ObjectProperty ;
-	rdfs:domain <Temperature
+	rdfs:domain <Temperature> ;
 	rdfs:range xsd:double ;
 	rdfs:label "DeviceName" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
@@ -344,11 +344,17 @@
 	rdfs:label "Preassure" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
-<Battery> a owl:ObjectProperty ;
+<BatteryVolt> a owl:ObjectProperty ;
 	rdfs:domain <Battery> ;
 	rdfs:range xsd:double ;
-	rdfs:label "Battery" ;
-	rdfs:description "Battery chargin status in percent." .
+	rdfs:label "Battery level in Volt" ;
+	rdfs:description "Battery chargin status in Volt." .
+
+<BatteryPercent> a owl:ObjectProperty ;
+	rdfs:domain <Battery> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Battery level in Percent" ;
+	rdfs:description "Battery chargin status in Volt." .
 
 <TrackUpdateTimestamp> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
