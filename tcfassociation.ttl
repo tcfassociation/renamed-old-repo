@@ -344,6 +344,12 @@
 	rdfs:label "Preassure" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
+<Battery> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Battery" ;
+	rdfs:description "A name for the device submitting the TrackUpdate." .
+
 <TrackUpdateTimestamp> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:datetime ;
