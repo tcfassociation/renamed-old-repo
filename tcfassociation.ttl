@@ -284,9 +284,9 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
-<Preassure> a owl:Class ;
-	rdfs:label "Preassure" ;
-	rdfs:comment "An update on a logistics object of preassure." ;
+<Pressure> a owl:Class ;
+	rdfs:label "Pressure" ;
+	rdfs:comment "An update on a logistics object of pressure." ;
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
@@ -343,3 +343,38 @@
 	rdfs:range xsd:double ;
 	rdfs:label "Battery Percentage" ;
 	rdfs:description "A device battery reading in Percentage submitted as a track update." .
+<pressurepsi> a owl:ObjectProperty ;
+	rdfs:domain <Pressure> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Pressure in PSI" ;
+	rdfs:description "A device pressure reading in PSI submitted as a track update." .
+	
+<pressurepmb> a owl:ObjectProperty ;
+	rdfs:domain <Pressure> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Pressure in pmb" ;
+	rdfs:description "A device pressure reading in pmb submitted as a track update." .
+	
+<pressurehpascal> a owl:ObjectProperty ;
+	rdfs:domain <Pressure> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Pressure in Hecto Pascal" ;
+	rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update." .
+	
+<pressurekpascal> a owl:ObjectProperty ;
+	rdfs:domain <Pressure> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Pressure in Kilo Pascal" ;
+	rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update." .	
+	
+<pressurealtfeet> a owl:ObjectProperty ;
+	rdfs:domain <Pressure> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Altitude in Feet" ;
+	rdfs:description "A device altitude reading in feets submitted as a track update." .
+
+<pressurealtfeet> a owl:ObjectProperty ;
+	rdfs:domain <Pressure> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Altitude in Meter" ;
+	rdfs:description "A device altitude reading in meters submitted as a track update." .
