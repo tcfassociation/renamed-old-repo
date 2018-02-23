@@ -296,32 +296,38 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
-<LogisticObjectReference> a owl:ObjectProperty ;
+<logisticobjectreference> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
-	rdfs:label "LogisticsObjectReference" ;
+	rdfs:label "Logistics Object Reference" ;
 	rdfs:description "A URI reference to the Logistics Object." .
 
-<DeviceIdentifier> a owl:ObjectProperty ;
+<deviceidentifier> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
-	rdfs:label "DeviceIdentifier" ;
+	rdfs:label "Device Identifier" ;
 	rdfs:description "An identifier for the Device submitting the TrackUpdate." .
 
-<DeviceName> a owl:ObjectProperty ;
+<deviceName> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
-	rdfs:label "DeviceName" ;
+	rdfs:label "Device Name" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
-
-<TrackUpdateTimestamp> a owl:ObjectProperty ;
+	
+<trackupdatetimestamp> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:datetime ;
-	rdfs:label "TrackUpdateTimestamp" ;
+	rdfs:label "Track Update Timestamp" ;
 	rdfs:description "A time stamp for the track update ." .
 
-<Location> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
+<temperaturecelsius> a owl:ObjectProperty ;
+	rdfs:domain <Temperature> ;
 	rdfs:range xsd:double ;
-	rdfs:label "Location" ;
-	rdfs:description "A name for the device submitting the TrackUpdate." .
+	rdfs:label "Temperature in Celsius" ;
+	rdfs:description "A temperature reading in Celsius submitted as a track update from a device." .
+
+<temperaturefahrenheit> a owl:ObjectProperty ;
+	rdfs:domain <Temperature> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Temperature in Fahrenheit" ;
+	rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device." .
