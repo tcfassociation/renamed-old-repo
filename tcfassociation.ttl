@@ -302,3 +302,8 @@
 	rdfs:label "LogisticsObjectReference" ;
 	rdfs:description "A URI reference to the Logistics Object." .
 
+<DeviceIdentifier> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "DeviceIdentifier" ;
+	rdfs:description "An identifier for the Device submitting the TrackUpdate." .
