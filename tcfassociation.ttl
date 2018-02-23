@@ -263,37 +263,37 @@
 <Location> a owl:Class ;
 	rdfs:label "Location" ;
 	rdfs:comment "An update on a logistics object of location." ;
-	rdfs:subClassOf <LogisticsObject> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Temperature> a owl:Class ;
 	rdfs:label "Temperature" ;
 	rdfs:comment "An update on a logistics object of temperature." ;
-	rdfs:subClassOf <LogisticsObject> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Humidity> a owl:Class ;
 	rdfs:label "Humidity" ;
 	rdfs:comment "An update on a logistics object of humidity." ;
-	rdfs:subClassOf <LogisticsObject> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Accelerometer> a owl:Class ;
 	rdfs:label "Accelerometer" ;
 	rdfs:comment "An update on a logistics object of accelerometer." ;
-	rdfs:subClassOf <LogisticsObject> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Pressure> a owl:Class ;
 	rdfs:label "Pressure" ;
 	rdfs:comment "An update on a logistics object of pressure." ;
-	rdfs:subClassOf <LogisticsObject> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Battery> a owl:Class ;
 	rdfs:label "Battery" ;
 	rdfs:comment "An update on a logistics object of battery status." ;
-	rdfs:subClassOf <LogisticsObject> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <logisticobjectreference> a owl:ObjectProperty ;
