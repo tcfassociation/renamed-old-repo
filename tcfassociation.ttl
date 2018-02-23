@@ -317,38 +317,38 @@
 <Location> a owl:ObjectProperty ;
 	rdfs:domain <Location> ;
 	rdfs:range xsd:double ;
-	rdfs:label "DeviceName" ;
+	rdfs:label "Location" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
 <Temperature> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:domain <Temperature
 	rdfs:range xsd:double ;
 	rdfs:label "DeviceName" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
 <Humidity> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:domain <Humidity> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Humidity" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
 <Accelerometer> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:domain <Accelerometer> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Accelerometer" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
 <Preassure> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:domain <Preassure> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Preassure" ;
 	rdfs:description "A name for the device submitting the TrackUpdate." .
 
 <Battery> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:domain <Battery> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Battery" ;
-	rdfs:description "A name for the device submitting the TrackUpdate." .
+	rdfs:description "Battery chargin status in percent." .
 
 <TrackUpdateTimestamp> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
