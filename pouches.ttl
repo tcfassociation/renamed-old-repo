@@ -69,6 +69,8 @@
 
 <StatusUpdatePouch> a <Pouch> ;
   rdfs:label "Status Update Pouch" ;
+  hydra:member
+    tcf:StatusUpdate;
   dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <org/EricssonAB> a schema:Corporation;
@@ -103,3 +105,11 @@
 <wg/CountryOfOriginCertificate> a <WorkingGroup> ;
     schema:about tcf:CountryOfOriginCertificate ;
     dcterms:creator <org/PanalpinaAB> .
+
+<wg/TrackUpdate> a <WorkingGroup> ;
+    schema:about tcf:CountryOfOriginCertificate ;
+    dcterms:creator <org/EricssonAB> .
+
+<wg/StatusUpdate> a <WorkingGroup> ;
+    schema:about tcf:CountryOfOriginCertificate ;
+    dcterms:creator <org/EricssonAB> .
