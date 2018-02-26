@@ -257,7 +257,6 @@
 <TrackUpdate> a owl:Class ;
 	rdfs:label "TrackUpdate" ;
 	rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure." ;
-	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Temperature> a owl:Class ;
