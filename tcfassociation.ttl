@@ -340,7 +340,7 @@
 	
 <batteryvoltage> a owl:ObjectProperty ;
 	rdfs:domain <Battery> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Battery Voltage" ;
 	rdfs:description "A device battery reading in Voltage submitted as a track update." .
 
@@ -358,37 +358,37 @@
 	
 <pressurepsi> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in PSI" ;
 	rdfs:description "A device pressure reading in PSI submitted as a track update." .
 	
 <pressurepmb> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in in millibar" ;
 	rdfs:description "A device pressure reading in  millibar submitted as a track update." .
 	
 <pressurehpascal> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in Hecto Pascal" ;
 	rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update." .
 	
 <pressurekpascal> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in Kilo Pascal" ;
 	rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update." .	
 	
 <pressurealtfeet> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Altitude in Feet" ;
 	rdfs:description "A device altitude reading in feets submitted as a track update." .
 
 <pressurealtfeet> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Altitude in Meter" ;
 	rdfs:description "A device altitude reading in meters submitted as a track update." .
 
