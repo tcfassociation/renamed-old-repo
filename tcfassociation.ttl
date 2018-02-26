@@ -254,6 +254,15 @@
 	rdfs:range <IOLIdentifier> .
 
 # Start of TrackUpdate pouch
+@base <http://tcftest.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix tcf-pouch: <http://tcftest.org/pouch/> .
+
+# Start of TrackUpdate pouch
 <TrackUpdate> a owl:Class ;
 	rdfs:label "TrackUpdate" ;
 	rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure." ;
@@ -263,31 +272,31 @@
 <Temperature> a owl:Class ;
 	rdfs:label "Temperature" ;
 	rdfs:comment "An update on a logistics object of temperature." ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Humidity> a owl:Class ;
 	rdfs:label "Humidity" ;
 	rdfs:comment "An update on a logistics object of humidity." ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Accelerometer> a owl:Class ;
 	rdfs:label "Accelerometer" ;
 	rdfs:comment "An update on a logistics object of accelerometer." ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Pressure> a owl:Class ;
 	rdfs:label "Pressure" ;
 	rdfs:comment "An update on a logistics object of pressure." ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <Battery> a owl:Class ;
 	rdfs:label "Battery" ;
 	rdfs:comment "An update on a logistics object of battery status." ;
-	rdfs:domain <TrackUpdate> ;
+	rdfs:subClassOf <TrackUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <logisticobjectreference> a owl:ObjectProperty ;
