@@ -335,7 +335,7 @@
 <battery> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:decimal ;
-	rdfs:label "Battery" ;
+	rdfs:label "Batterys" ;
 	rdfs:description "A device battery reading submitted as a track update." .
 	
 <batteryvoltage> a owl:ObjectProperty ;
