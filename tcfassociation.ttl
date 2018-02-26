@@ -254,15 +254,6 @@
 	rdfs:range <IOLIdentifier> .
 
 # Start of TrackUpdate pouch
-@base <http://tcftest.org/schema/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix tcf-pouch: <http://tcftest.org/pouch/> .
-
-# Start of TrackUpdate pouch
 <TrackUpdate> a owl:Class ;
 	rdfs:label "TrackUpdate" ;
 	rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure." ;
@@ -327,17 +318,17 @@
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Temperature" ;
-	rdfs:description "A temperature reading in Celsius submitted as a track update from a device." .
+	rdfs:description "A temperature reading submitted as a track update from a device." .
 
 <temperaturecelsius> a owl:ObjectProperty ;
 	rdfs:domain <Temperature> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Temperature in Celsius" ;
 	rdfs:description "A temperature reading in Celsius submitted as a track update from a device." .
 
 <temperaturefahrenheit> a owl:ObjectProperty ;
 	rdfs:domain <Temperature> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Temperature in Fahrenheit" ;
 	rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device." .
 
@@ -355,7 +346,7 @@
 
 <batterypercentage> a owl:ObjectProperty ;
 	rdfs:domain <Battery> ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	rdfs:label "Battery Percentage" ;
 	rdfs:description "A device battery reading in Percentage submitted as a track update." .
 
