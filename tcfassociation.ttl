@@ -403,3 +403,46 @@
 	rdfs:range xsd:decimal ;
 	rdfs:label "Humidity in Percentage" ;
 	rdfs:description "A device humidity reading in percentage submitted as a track update." .
+
+# Start of StatusUpdate pouch
+<StatusUpdate> a owl:Class ;
+	rdfs:label "StatusUpdate" ;
+	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
+	rdfs:subClassOf <LogisticsObject> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<StatusBy> a owl:Class ;
+	rdfs:label "StatusUpdate" ;
+	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<Status> a owl:Class ;
+	rdfs:label "StatusUpdate" ;
+	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+	
+<logisticobjectreference> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Logistics Object Reference" ;
+	rdfs:description "A URI reference to the Logistics Object." .
+
+<statusupdatetimestamp> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Status Update Timestamp" ;
+	rdfs:description "A time stamp for the status update ." .
+	
+<statusby> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Who has submitted the status update, person or organization" ;
+	rdfs:description "A time stamp for the status update ." .
+	
+<status> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "An abbreviation for the specific status update" ;
+	rdfs:description "A time stamp for the status update ." .
