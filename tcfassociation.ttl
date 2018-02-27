@@ -319,23 +319,23 @@
 	rdfs:label "Track Update Timestamp" ;
 	rdfs:description "A time stamp for the track update ." .
 
-<location> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	#rdfs:range schema:GeoCoordinates ;
-	rdfs:label "Location" ;
-	rdfs:description "The location of submitted by a track update." .
+#<location> a owl:ObjectProperty ;
+#	rdfs:domain <TrackUpdate> ;
+#	rdfs:range schema:GeoCoordinates ;
+#	rdfs:label "Location" ;
+#	rdfs:description "The location of submitted by a track update." .
 
-<latitude> a owl:ObjectProperty ;
-	rdfs:domain <location> ;
-	#rdfs:range schema:GeoCoordinates ;
-	rdfs:label "Latitude" ;
-	rdfs:description "The latitude of a location. For example 37.42242 (WGS 84)." .
+#<latitude> a owl:ObjectProperty ;
+#	rdfs:domain <location> ;
+#	rdfs:range schema:GeoCoordinates ;
+#	rdfs:label "Latitude" ;
+#	rdfs:description "The latitude of a location. For example 37.42242 (WGS 84)." .
 
-<longitude> a owl:ObjectProperty ;
-	rdfs:domain <location> ;
-	#rdfs:range schema:GeoCoordinates ;
-	rdfs:label "Longitude" ;
-	rdfs:description "The longitude of a location. For example 37.42242 (WGS 84)." .
+#<longitude> a owl:ObjectProperty ;
+#	rdfs:domain <location> ;
+#	rdfs:range schema:GeoCoordinates ;
+#	rdfs:label "Longitude" ;
+#	rdfs:description "The longitude of a location. For example 37.42242 (WGS 84)." .
 	
 <temperature> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
