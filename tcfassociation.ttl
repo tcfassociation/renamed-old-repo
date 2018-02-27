@@ -444,5 +444,5 @@
 <status> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range xsd:string ;
-	rdfs:label "An abbreviation for the specific status update" ;
-	rdfs:description "A time stamp for the status update ." .
+	rdfs:label "Status" ;
+	rdfs:description "An abbreviation for the status submitted ." .
