@@ -491,7 +491,7 @@
 	
 <awbtotalweightuom> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
-	rdfs:range xsd:string
+	rdfs:range xsd:string;
 	rdfs:label "AWB Total Weight UoM" ;
 	rdfs:description "The unit of measure for the total weight of pieces on the AWB ." .	
 
