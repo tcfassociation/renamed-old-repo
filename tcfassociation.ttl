@@ -432,8 +432,14 @@
 <statusupdatetimestamp> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range xsd:datetime ;
-	rdfs:label "Status Update Timestamp" ;
+	rdfs:label "Status update timestamp" ;
 	rdfs:description "A time stamp for the status update ." .
+
+<notifiedtimestamp> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "When status update was notified timestamp" ;
+	rdfs:description "A time stamp for the notification of the status update ." .
 	
 <statusby> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
@@ -446,3 +452,51 @@
 	rdfs:range xsd:string ;
 	rdfs:label "Status" ;
 	rdfs:description "An abbreviation for the status submitted ." .
+	
+<origin> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "Origin" ;
+	rdfs:description "An abbreviation for the origin of the airwaybill ." .
+	
+<destination> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "Destination" ;
+	rdfs:description "An abbreviation for the destination of the airwaybill ." .
+	
+<awbmanifestedpieces> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:integer ;
+	rdfs:label "AWB Manifested Pieces" ;
+	rdfs:description "The number of pieces manifested on the AWB ." .
+	
+<awbtotalpieces> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:integer ;
+	rdfs:label "AWB Total Pieces" ;
+	rdfs:description "The total number of pieces on the AWB ." .	
+
+<awbmanifestedweight> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:decimal ;
+	rdfs:label "AWB Manifested Weight" ;
+	rdfs:description "The weight of pieces manifested on the AWB ." .	
+	
+<awbtotalweight> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:decimal ;
+	rdfs:label "AWB Total Weight" ;
+	rdfs:description "The total weight of pieces on the AWB ." .		
+	
+<awbtotalweightuom> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string
+	rdfs:label "AWB Total Weight UoM" ;
+	rdfs:description "The unit of measure for the total weight of pieces on the AWB ." .	
+
+<airport> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string
+	rdfs:label "Airport" ;
+	rdfs:description "Airport  IATA 3-letter Code ." .	
