@@ -351,7 +351,7 @@
 	rdfs:description "A device battery reading in Percentage submitted as a track update." .
 
 <Accelerometer> a owl:ObjectProperty ;
-	rdfs:domain <Accelerometer> ;
+	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:float ;
 	rdfs:label "Accelerometer" ;
 	rdfs:description "A device accelerometer reading submitted as a track update." .
@@ -370,7 +370,7 @@
 	
 <z_gvt> a owl:ObjectProperty ;
 	rdfs:domain <Accelerometer> ;
-	rdfs:range xsd:decimal ;
+	rdfs:range xsd:float ;
 	rdfs:label "Z-axis acceleration" ;
 	rdfs:description "A device accelerometer z-axis reading submitted as a track update." .
 	
