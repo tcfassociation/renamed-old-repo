@@ -430,7 +430,7 @@
 	
 <light> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:float ;
+	rdfs:range <Light> ;
 	rdfs:label "Light" ;
 	rdfs:description "A device light reading submitted as a track update." .
 	
