@@ -445,13 +445,19 @@
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range xsd:datetime ;
 	rdfs:label "Departure Timestamp" ;
-	rdfs:description "The departure time stamp in the status update ." .
+	rdfs:description "The departure time stamp of the airwaybill ." .
 
 <arrivaltimestamp> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range xsd:datetime ;
 	rdfs:label "Arrival Timestamp" ;
-	rdfs:description "A time stamp for the notification of the status update ." .
+	rdfs:description "A time stamp for the arrival of the airwaybill ." .
+
+<deliveredtimestamp> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Delivered Timestamp" ;
+	rdfs:description "A time stamp for the delivery of the airwaybill ." .
 	
 <statusby> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
