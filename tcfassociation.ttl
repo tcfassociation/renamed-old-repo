@@ -437,8 +437,8 @@
 	
 <statusby> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Who has submitted the status update, person or organization" ;
+	rdfs:range schema:Organization ;
+	rdfs:label "Which organization has submitted the status update" ;
 	rdfs:description "A time stamp for the status update ." .
 	
 <status> a owl:ObjectProperty ;
