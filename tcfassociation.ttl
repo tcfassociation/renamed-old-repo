@@ -350,9 +350,9 @@
 	rdfs:label "Battery Percentage" ;
 	rdfs:description "A device battery reading in Percentage submitted as a track update." .
 
-<Accelerometer> a owl:ObjectProperty ;
+<accelerometer> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:float ;
+	rdfs:range <Accelerometer> ;
 	rdfs:label "Accelerometer" ;
 	rdfs:description "A device accelerometer reading submitted as a track update." .
 
