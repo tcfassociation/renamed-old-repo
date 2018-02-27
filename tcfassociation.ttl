@@ -260,6 +260,11 @@
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
+<Location> a owl:Class ;
+	rdfs:label "Location" ;
+	rdfs:comment "An update on a logistics object of temperature." ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+	
 <Temperature> a owl:Class ;
 	rdfs:label "Temperature" ;
 	rdfs:comment "An update on a logistics object of temperature." ;
@@ -314,6 +319,24 @@
 	rdfs:label "Track Update Timestamp" ;
 	rdfs:description "A time stamp for the track update ." .
 
+<location> a owl:ObjectProperty ;
+	rdfs:domain <TrackUpdate> ;
+	rdfs:range schema:GeoCoordinates ;
+	rdfs:label "Location" ;
+	rdfs:description "The location of track update." .
+
+<latitude> a owl:ObjectProperty ;
+	rdfs:domain <location> ;
+	rdfs:range schema:GeoCoordinates ;
+	rdfs:label "Latitude" ;
+	rdfs:description "The latitude of a location. For example 37.42242 (WGS 84)." .
+
+<longitude> a owl:ObjectProperty ;
+	rdfs:domain <location> ;
+	rdfs:range schema:GeoCoordinates ;
+	rdfs:label "Longitude" ;
+	rdfs:description "The longitude of a location. For example 37.42242 (WGS 84)." .
+	
 <temperature> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:decimal ;
