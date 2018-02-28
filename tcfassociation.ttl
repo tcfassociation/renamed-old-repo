@@ -199,4 +199,4 @@
 <http://localhost:8080/schema/testObject19thFeb> <http://purl.org/dc/terms/modified> "2018-02-19T14:09:18.772Z"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://localhost:8080/schema/testObject19thFeb> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
 <http://localhost:8080/schema/testObject19thFeb> <http://www.w3.org/2000/01/rdf-schema#label> "Test Object 19th Feb" .
-<http://localhost:8080/schema/testObject19thFeb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> "http://localhost:8080/schema/LogisticsObject" .
+<http://localhost:8080/schema/testObject19thFeb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://localhost:8080/schema/LogisticsObject> .
