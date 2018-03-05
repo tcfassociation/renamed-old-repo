@@ -457,6 +457,8 @@
 	rdfs:range xsd:float ;
 	rdfs:label "Light measured in Lux" ;
 	rdfs:description "A device light reading in lux submitted as a track update." .
+	
+schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 
 # Start of StatusUpdate pouch
 <StatusUpdate> a owl:Class ;
