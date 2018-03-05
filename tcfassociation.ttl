@@ -581,7 +581,7 @@ schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 	rdfs:label "Rejection Reason" ;
 	rdfs:description "This is why the MAWB was rejected ." .	
 	
-<discrepancyDescription> a owl:ObjectProperty ;
+<discrepancydescriptionescription> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range xsd:string;
 	rdfs:label "Discrepancy Description" ;
