@@ -467,7 +467,6 @@
 schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 
 # Start of StatusUpdate pouch
-# Start of StatusUpdate pouch
 <StatusUpdate> a owl:Class ;
 	rdfs:label "StatusUpdate" ;
 	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
@@ -476,7 +475,7 @@ schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 
 <Status> a owl:Class ;
 	rdfs:label "StatusUpdate" ;
-	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
+	rdfs:comment "A status on a logistics object of different states such as departed, arrived, deviation, etc." ;
 	rdfs:subClassOf <StatusUpdate> ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 
