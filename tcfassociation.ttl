@@ -522,6 +522,12 @@ schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 	rdfs:label "Status By" ;
 	rdfs:description "Which organization has submitted the status update ." .
 
+<status> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "Status" ;
+	rdfs:description "An abbreviation for the status submitted ." .
+	
 #Specific Air status properties
 <notifiedtimestamp> a owl:ObjectProperty ;
 	rdfs:domain <Airstatusupdate> ;
