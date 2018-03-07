@@ -443,7 +443,7 @@ tcf:temperatureKelvin a owl:ObjectProperty;
     rdfs:domain tcf:Temperature;
     rdfs:label "Temperature in Kelvin";
     rdfs:range xsd:decimal.
-tcf:TestWithPouch dc:modified "2018-03-07T21:51:31.036Z"^^xsd:date;
+tcf:TestWithPouch dc:modified "2018-03-07T21:57:34.564Z"^^xsd:date;
     rdfs:comment "";
     rdfs:label "Test with Pouch";
     rdfs:subClassOf tcf:LogisticsObject.
