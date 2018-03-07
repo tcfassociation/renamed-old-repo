@@ -253,6 +253,15 @@
 <iolIdentifier> a owl:ObjectProperty ;
 	rdfs:range <IOLIdentifier> .
 
+# Start of TrackUpdate pouch
+@base <http://tcftest.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix tcf-pouch: <http://tcftest.org/pouch/> .
+
 # Start of TrackUpdate pouch V0.2
 <TrackUpdate> a owl:Class ;
 	rdfs:label "TrackUpdate" ;
@@ -296,6 +305,12 @@
 	rdfs:label "Logistics Object Reference" ;
 	rdfs:description "A URI reference to the Logistics Object." .
 
+<trackupdateby> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range schema:Organization ;
+	rdfs:label "Track Update " ;
+	rdfs:description "Which organization has submitted the track update ." .
+	
 <deviceidentifier> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
