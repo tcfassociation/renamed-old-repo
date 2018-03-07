@@ -299,31 +299,31 @@
 	rdfs:comment "An update on a logistics object of light status." ;
 	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 	
-<logisticobjectreference> a owl:ObjectProperty ;
+<logisticObjectReference> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Logistics Object Reference" ;
 	rdfs:description "A URI reference to the Logistics Object." .
 
-<trackupdateby> a owl:ObjectProperty ;
+<trackUpdateBy> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range schema:Organization ;
 	rdfs:label "Track Update " ;
 	rdfs:description "Which organization has submitted the track update ." .
 	
-<deviceidentifier> a owl:ObjectProperty ;
+<deviceIdentifier> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Device Identifier" ;
 	rdfs:description "An identifier for the device submitting the track update." .
 
-<devicename> a owl:ObjectProperty ;
+<deviceName> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:double ;
 	rdfs:label "Device Name" ;
 	rdfs:description "A name for the device submitting the track update." .
 	
-<trackupdatetimestamp> a owl:ObjectProperty ;
+<trackUpdateTimestamp> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
 	rdfs:range xsd:datetime ;
 	rdfs:label "Track Update Timestamp" ;
@@ -335,19 +335,19 @@
 	rdfs:label "Temperature" ;
 	rdfs:description "A temperature reading submitted as a track update from a device." .
 
-<temperaturecelsius> a owl:ObjectProperty ;
+<temperatureCelsius> a owl:ObjectProperty ;
 	rdfs:domain <Temperature> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Temperature in Celsius" ;
 	rdfs:description "A temperature reading in Celsius submitted as a track update from a device." .
 
-<temperaturefahrenheit> a owl:ObjectProperty ;
+<temperatureFahrenheit> a owl:ObjectProperty ;
 	rdfs:domain <Temperature> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Temperature in Fahrenheit" ;
 	rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device." .
 	
-<temperaturekelvin> a owl:ObjectProperty ;
+<temperatureKelvin> a owl:ObjectProperty ;
 	rdfs:domain <Temperature> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Temperature in Kelvin" ;
@@ -359,13 +359,13 @@
 	rdfs:label "Battery" ;
 	rdfs:description "A device battery reading submitted as a track update." .
 	
-<batteryvoltage> a owl:ObjectProperty ;
+<batteryVoltage> a owl:ObjectProperty ;
 	rdfs:domain <Battery> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Battery Voltage" ;
 	rdfs:description "A device battery reading in Voltage submitted as a track update." .
 
-<batterypercentage> a owl:ObjectProperty ;
+<batteryPercentage> a owl:ObjectProperty ;
 	rdfs:domain <Battery> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Battery Percentage" ;
@@ -401,37 +401,37 @@
 	rdfs:label "Pressure" ;
 	rdfs:description "A device pressure reading submitted as a track update." .
 	
-<pressurepsi> a owl:ObjectProperty ;
+<pressurePsi> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in PSI" ;
 	rdfs:description "A device pressure reading in PSI submitted as a track update." .
 	
-<pressurepmb> a owl:ObjectProperty ;
+<pressurePmb> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in in millibar" ;
 	rdfs:description "A device pressure reading in  millibar submitted as a track update." .
 	
-<pressurehpascal> a owl:ObjectProperty ;
+<pressureHPascal> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in Hecto Pascal" ;
 	rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update." .
 	
-<pressurekpascal> a owl:ObjectProperty ;
+<pressureKPascal> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Pressure in Kilo Pascal" ;
 	rdfs:description "A device pressure reading in Kilo Pascal submitted as a track update." .	
 	
-<pressurealtfeet> a owl:ObjectProperty ;
+<pressureAltFeet> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Altitude in Feet" ;
 	rdfs:description "A device altitude reading in feet submitted as a track update." .
 
-<pressurealtmeter> a owl:ObjectProperty ;
+<pressureAltMeter> a owl:ObjectProperty ;
 	rdfs:domain <Pressure> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Altitude in Meter" ;
@@ -443,7 +443,7 @@
 	rdfs:label "Humidity" ;
 	rdfs:description "A device humidity reading submitted as a track update." .
 	
-<humiditypercent> a owl:ObjectProperty ;
+<humidityPercent> a owl:ObjectProperty ;
 	rdfs:domain <Humidity> ;
 	rdfs:range xsd:decimal ;
 	rdfs:label "Humidity in Percentage" ;
@@ -461,13 +461,13 @@
 	rdfs:label "Infrared Light" ;
 	rdfs:description "A device infrared reading submitted as a track update." .
 	
-<visiblelight> a owl:ObjectProperty ;
+<visibleLight> a owl:ObjectProperty ;
 	rdfs:domain <Light> ;
 	rdfs:range xsd:float ;
 	rdfs:label "Visible Light" ;
 	rdfs:description "A visible light reading ubmitted as a track update." .
 	
-<footcandles> a owl:ObjectProperty ;
+<footCandles> a owl:ObjectProperty ;
 	rdfs:domain <Light> ;
 	rdfs:range xsd:float ;
 	rdfs:label "Footcandles" ;
