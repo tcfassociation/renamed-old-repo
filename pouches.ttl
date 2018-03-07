@@ -43,7 +43,7 @@ tcf-pouch:RailPouch dc:modified "2017-11-16"^^xsd:date;
 tcf-pouch:ShippersPouch dc:modified "2017-11-16"^^xsd:date;
     a tcf-pouch:Pouch;
     rdfs:label "Shippers Pouch";
-    hydra:member tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction.
+    hydra:member tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction, tcf:TestWithPouch.
 tcf-pouch:StatusUpdatePouch dc:modified "2018-02-13"^^xsd:date;
     a tcf-pouch:Pouch;
     rdfs:label "Status Update Pouch";
