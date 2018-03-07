@@ -306,7 +306,7 @@
 	rdfs:description "A URI reference to the Logistics Object." .
 
 <trackupdateby> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
+	rdfs:domain <TrackUpdate> ;
 	rdfs:range schema:Organization ;
 	rdfs:label "Track Update " ;
 	rdfs:description "Which organization has submitted the track update ." .
@@ -524,13 +524,13 @@ schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 	rdfs:label "Logistics Object Reference" ;
 	rdfs:description "A URI reference to the Logistics Object." .
 
-<statusUpdatetimestamp> a owl:ObjectProperty ;
+<statusupdatetimestamp> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range xsd:datetime ;
 	rdfs:label "Status Update Timestamp" ;
 	rdfs:description "A time stamp for the status update ." .
 
-<statusBy> a owl:ObjectProperty ;
+<statusby> a owl:ObjectProperty ;
 	rdfs:domain <StatusUpdate> ;
 	rdfs:range schema:Organization ;
 	rdfs:label "Status By" ;
