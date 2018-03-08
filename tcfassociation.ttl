@@ -1,202 +1,502 @@
-<http://tcftest.org/schema/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://tcftest.org/schema/> <http://purl.org/dc/terms/description> "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
-<http://tcftest.org/schema/> <http://purl.org/dc/terms/title> "The TCF Logistics open ontology" .
-<http://tcftest.org/schema/Buyer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
-<http://tcftest.org/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#description> "The buyer party for this consignment." .
-<http://tcftest.org/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#label> "Buyer" .
-<http://tcftest.org/schema/Buyer> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/CommercialInvoice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/CommercialInvoice> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/CommercialInvoice> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders." .
-<http://tcftest.org/schema/CommercialInvoice> <http://www.w3.org/2000/01/rdf-schema#label> "Commercial Invoice" .
-<http://tcftest.org/schema/CommercialInvoice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/Consignee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
-<http://tcftest.org/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#description> "The consignee party for this consignment." .
-<http://tcftest.org/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#label> "Consignee" .
-<http://tcftest.org/schema/Consignee> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/Consignment> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#comment> "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#description> "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#label> "Consignment" .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#literal> .
-<http://tcftest.org/schema/Consignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/Consignor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
-<http://tcftest.org/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#description> "The consignor party for this consignment." .
-<http://tcftest.org/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#label> "Consignor" .
-<http://tcftest.org/schema/Consignor> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/DangerousGoodsDeclaration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/DangerousGoodsDeclaration> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/DangerousGoodsDeclaration> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." .
-<http://tcftest.org/schema/DangerousGoodsDeclaration> <http://www.w3.org/2000/01/rdf-schema#label> "Dangerous Goods Declaration" .
-<http://tcftest.org/schema/DangerousGoodsDeclaration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/FlightManifest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/FlightManifest> <http://purl.org/dc/terms/modified> "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/FlightManifest> <http://www.w3.org/2000/01/rdf-schema#comment> "TBD" .
-<http://tcftest.org/schema/FlightManifest> <http://www.w3.org/2000/01/rdf-schema#label> "Flight Manifest" .
-<http://tcftest.org/schema/FlightManifest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/GrossWeigth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
-<http://tcftest.org/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
-<http://tcftest.org/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#label> "GrossWeigth" .
-<http://tcftest.org/schema/GrossWeigth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://tcftest.org/schema/HAWB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/HAWB> <http://purl.org/dc/terms/modified> "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/HAWB> <http://www.w3.org/2000/01/rdf-schema#comment> "TBD" .
-<http://tcftest.org/schema/HAWB> <http://www.w3.org/2000/01/rdf-schema#label> "House AirWayBill" .
-<http://tcftest.org/schema/HAWB> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/Height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/Height> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the height of this trade line item." .
-<http://tcftest.org/schema/Height> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/Height> <http://www.w3.org/2000/01/rdf-schema#label> "Height" .
-<http://tcftest.org/schema/Height> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://tcftest.org/schema/IOLIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/IOLIdentifier> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/IOLIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The Internet of Logistics Identifier for a connected company." .
-<http://tcftest.org/schema/IOLIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "IOL Identifier" .
-<http://tcftest.org/schema/Incoterm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#description> "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
-<http://tcftest.org/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#label> "Incoterm" .
-<http://tcftest.org/schema/Incoterm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/IncotermsLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#description> "A location relevant for these delivery terms." .
-<http://tcftest.org/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#label> "IncotermsLocation" .
-<http://tcftest.org/schema/IncotermsLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/Length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/Length> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the length of this trade line item." .
-<http://tcftest.org/schema/Length> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/Length> <http://www.w3.org/2000/01/rdf-schema#label> "Length" .
-<http://tcftest.org/schema/Length> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://tcftest.org/schema/LogisticsObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/LogisticsObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
-<http://tcftest.org/schema/LogisticsObject> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Object" .
-<http://tcftest.org/schema/LogisticsTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/LogisticsTest> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/LogisticsTest> <http://www.w3.org/2000/01/rdf-schema#comment> "Test test2" .
-<http://tcftest.org/schema/LogisticsTest> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Test2" .
-<http://tcftest.org/schema/LogisticsTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/LogisticsVehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/LogisticsVehicle> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/LogisticsVehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." .
-<http://tcftest.org/schema/LogisticsVehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Vehicle" .
-<http://tcftest.org/schema/LogisticsVehicle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/MAWB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/MAWB> <http://purl.org/dc/terms/modified> "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/MAWB> <http://www.w3.org/2000/01/rdf-schema#comment> "TBD" .
-<http://tcftest.org/schema/MAWB> <http://www.w3.org/2000/01/rdf-schema#label> "Master AirWayBill" .
-<http://tcftest.org/schema/MAWB> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/Package> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/Package> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/Package> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/Package> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical package for this trade line item." .
-<http://tcftest.org/schema/Package> <http://www.w3.org/2000/01/rdf-schema#description> "A physical package for this trade line item." .
-<http://tcftest.org/schema/Package> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Package> <http://www.w3.org/2000/01/rdf-schema#label> "Package" .
-<http://tcftest.org/schema/Package> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/Package> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/PackageReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#description> "A packaging identifier, expressed as text, for this trade line item" .
-<http://tcftest.org/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#label> "PackageReference" .
-<http://tcftest.org/schema/PackageReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/PackageType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#description> "A packaging type, expressed as text, for this trade line item" .
-<http://tcftest.org/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#label> "PackageType" .
-<http://tcftest.org/schema/PackageType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/RequestedDeliveryDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#description> "Ultimate Ship To Delivery Date Time." .
-<http://tcftest.org/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#label> "RequestedDeliveryDate" .
-<http://tcftest.org/schema/RequestedDeliveryDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/RequestedPickupDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#description> "A date, time, date time, or other date time value when this trade delivery is available for pick-up." .
-<http://tcftest.org/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#label> "RequestedPickupDate" .
-<http://tcftest.org/schema/RequestedPickupDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/Seller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#objectproperty> .
-<http://tcftest.org/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#description> "The Seller party for this consignment." .
-<http://tcftest.org/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#label> "Buyer" .
-<http://tcftest.org/schema/Seller> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/ShippersInstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://tcftest.org/schema/ShippersInstruction> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://tcftest.org/schema/ShippersInstruction> <http://www.w3.org/2000/01/rdf-schema#comment> "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." .
-<http://tcftest.org/schema/ShippersInstruction> <http://www.w3.org/2000/01/rdf-schema#label> "Shippers Instruction" .
-<http://tcftest.org/schema/ShippersInstruction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://tcftest.org/schema/LogisticsObject> .
-<http://tcftest.org/schema/TransportAgreementLaneID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#description> "TBD." .
-<http://tcftest.org/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#label> "TransportAgreementLaneID" .
-<http://tcftest.org/schema/TransportAgreementLaneID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/Width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/Width> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the width of this trade line item." .
-<http://tcftest.org/schema/Width> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/Width> <http://www.w3.org/2000/01/rdf-schema#label> "Width" .
-<http://tcftest.org/schema/Width> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://tcftest.org/schema/attentionTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/attentionTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/buyer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/buyer> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/consignee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/consignee> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/consignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#description> "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-<http://tcftest.org/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
-<http://tcftest.org/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#label> "Consignment" .
-<http://tcftest.org/schema/consignment> <http://www.w3.org/2000/01/rdf-schema#range> <http://tcftest.org/schema/Consignment> .
-<http://tcftest.org/schema/consignor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/consignor> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/deliverTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/deliverTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/forwarder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#description> "The party undertaking the freight forwarding of these consignments." .
-<http://tcftest.org/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
-<http://tcftest.org/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#label> "forwarder" .
-<http://tcftest.org/schema/forwarder> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/grossWeigth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment." .
-<http://tcftest.org/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#label> "grossWeigth" .
-<http://tcftest.org/schema/grossWeigth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://tcftest.org/schema/handoverTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/handoverTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/iolIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/iolIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://tcftest.org/schema/IOLIdentifier> .
-<http://tcftest.org/schema/netWeigth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the net weight (mass) of this trade line item which excludes all packaging.." .
-<http://tcftest.org/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#label> "netWeigth" .
-<http://tcftest.org/schema/netWeigth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://tcftest.org/schema/pickupFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/pickupFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/quantityOfPackages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#description> "The number of packages in the complete shippers instruction" .
-<http://tcftest.org/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
-<http://tcftest.org/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#label> "Quantity of packages" .
-<http://tcftest.org/schema/quantityOfPackages> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
-<http://tcftest.org/schema/seller> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/seller> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
-<http://tcftest.org/schema/shippersInstructionShippersReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#description> "The reference for the shippers instruction in the shippers system" .
-<http://tcftest.org/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
-<http://tcftest.org/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#label> "Reference" .
-<http://tcftest.org/schema/shippersInstructionShippersReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://tcftest.org/schema/volume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://tcftest.org/schema/volume> <http://www.w3.org/2000/01/rdf-schema#description> "The volume related to the shippers instruction" .
-<http://tcftest.org/schema/volume> <http://www.w3.org/2000/01/rdf-schema#description> "A measure of the gross volume of this trade line item." .
-<http://tcftest.org/schema/volume> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
-<http://tcftest.org/schema/volume> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Package> .
-<http://tcftest.org/schema/volume> <http://www.w3.org/2000/01/rdf-schema#label> "Volume" .
-<http://tcftest.org/schema/volume> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<http://localhost:8080/schema/testObject> <http://purl.org/dc/terms/modified> "2018-02-18T23:20:42.045Z"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://localhost:8080/schema/testObject> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
-<http://localhost:8080/schema/testObject> <http://www.w3.org/2000/01/rdf-schema#label> "Test Object" .
-<http://localhost:8080/schema/testObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> "http://localhost:8080/schema/LogisticsObject" .
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix hydra: <http://www.w3.org/ns/hydra/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix tcf: <http://tcftest.org/schema/>.
+@prefix tcf-pouch: <http://tcftest.org/pouch/>.
+@prefix tcf-pouch-org: <http://tcftest.org/pouch/org/>.
+@prefix tcf-pouch-wg: <http://tcftest.org/pouch/wg/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
+<http://tcftest.org/schema/> dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry.";
+    dc:title "The TCF Logistics open ontology";
+    a owl:Ontology.
+tcf:Accelerometer dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:accelerometer a owl:ObjectProperty.
+tcf:Accelerometer rdfs:comment "An update on a logistics object of accelerometer.".
+tcf:accelerometer rdfs:description "A device accelerometer reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Accelerometer".
+tcf:Accelerometer rdfs:label "Accelerometer".
+tcf:accelerometer rdfs:range tcf:Accelerometer.
+tcf:airport a owl:ObjectProperty;
+    rdfs:description "Airport  IATA 3-letter Code .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Airport";
+    rdfs:range xsd:string.
+tcf:AirStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class, owl:ObjectProperty;
+    rdfs:comment "A status update on a logistics object in the transport mode of air.";
+    rdfs:description "A status update on a logistics object in the transport mode of air.";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Air Status Update";
+    rdfs:range tcf:AirStatusUpdate;
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:arrivalTimestamp a owl:ObjectProperty;
+    rdfs:description "A timestamp for the arrival of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Arrival Timestamp";
+    rdfs:range xsd:datetime.
+tcf:attentionTo a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:awbManifestedPieces a owl:ObjectProperty;
+    rdfs:description "The number of pieces manifested on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Manifested Pieces";
+    rdfs:range xsd:integer.
+tcf:awbManifestedWeight a owl:ObjectProperty;
+    rdfs:description "The weight of pieces manifested on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Manifested Weight";
+    rdfs:range xsd:decimal.
+tcf:awbTotalPieces a owl:ObjectProperty;
+    rdfs:description "The total number of pieces on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Total Pieces";
+    rdfs:range xsd:integer.
+tcf:awbTotalWeight a owl:ObjectProperty;
+    rdfs:description "The total weight of pieces on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Total Weight";
+    rdfs:range xsd:decimal.
+tcf:awbTotalWeightUom a owl:ObjectProperty;
+    rdfs:description "The unit of measure for the total weight of pieces on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Total Weight UoM";
+    rdfs:range xsd:string.
+tcf:Battery dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:battery a owl:ObjectProperty.
+tcf:Battery rdfs:comment "An update on a logistics object of battery status.".
+tcf:battery rdfs:description "A device battery reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Battery".
+tcf:Battery rdfs:label "Battery".
+tcf:battery rdfs:range tcf:Battery.
+tcf:batteryPercentage a owl:ObjectProperty;
+    rdfs:description "A device battery reading in Percentage submitted as a track update.";
+    rdfs:domain tcf:Battery;
+    rdfs:label "Battery Percentage";
+    rdfs:range xsd:decimal.
+tcf:batteryVoltage a owl:ObjectProperty;
+    rdfs:description "A device battery reading in Voltage submitted as a track update.";
+    rdfs:domain tcf:Battery;
+    rdfs:label "Battery Voltage";
+    rdfs:range xsd:decimal.
+tcf:Blub dc:modified "2018-03-08T14:35:31.881Z"^^xsd:date;
+    rdfs:comment "";
+    rdfs:label "Blub";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:buyer a owl:ObjectProperty.
+tcf:Buyer a owl:objectproperty;
+    rdfs:description "The buyer party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Buyer".
+tcf:buyer rdfs:range schema:Organization.
+tcf:Buyer rdfs:range schema:Organization.
+tcf:CommercialInvoice dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders.";
+    rdfs:label "Commercial Invoice";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:consignee a owl:ObjectProperty.
+tcf:Consignee a owl:objectproperty;
+    rdfs:description "The consignee party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Consignee".
+tcf:consignee rdfs:range schema:Organization.
+tcf:Consignee rdfs:range schema:Organization.
+tcf:Consignment dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class.
+tcf:consignment a owl:ObjectProperty.
+tcf:Consignment a owl:ObjectProperty;
+    rdfs:comment "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.".
+tcf:consignment rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.".
+tcf:Consignment rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.";
+    rdfs:domain tcf:Consignment.
+tcf:consignment rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Consignment".
+tcf:Consignment rdfs:label "Consignment".
+tcf:consignment rdfs:range tcf:Consignment.
+tcf:Consignment rdfs:range rdfs:literal;
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:consignor a owl:ObjectProperty.
+tcf:Consignor a owl:objectproperty;
+    rdfs:description "The consignor party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Consignor".
+tcf:consignor rdfs:range schema:Organization.
+tcf:Consignor rdfs:range schema:Organization.
+tcf:DangerousGoodsDeclaration dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations.";
+    rdfs:label "Dangerous Goods Declaration";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:deliveredTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the delivery of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Delivered Timestamp";
+    rdfs:range xsd:datetime.
+tcf:deliverTo a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:departureTimestamp a owl:ObjectProperty;
+    rdfs:description "The departure time stamp of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Departure Timestamp";
+    rdfs:range xsd:datetime.
+tcf:destination a owl:ObjectProperty;
+    rdfs:description "An abbreviation for the destination of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Destination";
+    rdfs:range xsd:string.
+tcf:deviceIdentifier a owl:ObjectProperty;
+    rdfs:description "An identifier for the device submitting the track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Device Identifier";
+    rdfs:range xsd:string.
+tcf:deviceName a owl:ObjectProperty;
+    rdfs:description "A name for the device submitting the track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Device Name";
+    rdfs:range xsd:string.
+tcf:discrepancyDescription a owl:ObjectProperty;
+    rdfs:description "This is the discrepancy description.";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Discrepancy Description";
+    rdfs:range xsd:string.
+tcf:FlightManifest dc:modified "2018-02-13"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "TBD";
+    rdfs:label "Flight Manifest";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:footCandles a owl:ObjectProperty;
+    rdfs:description "A footcandle reading in submitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Footcandles";
+    rdfs:range xsd:float.
+tcf:forwarder a owl:ObjectProperty;
+    rdfs:description "The party undertaking the freight forwarding of these consignments.";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "forwarder";
+    rdfs:range schema:Organization.
+tcf:grossWeigth a owl:ObjectProperty.
+tcf:GrossWeigth a owl:ObjectProperty;
+    rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment.".
+tcf:grossWeigth rdfs:description "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment.";
+    rdfs:domain tcf:Package.
+tcf:GrossWeigth rdfs:domain tcf:ShippersInstruction.
+tcf:grossWeigth rdfs:label "grossWeigth".
+tcf:GrossWeigth rdfs:label "GrossWeigth".
+tcf:grossWeigth rdfs:range xsd:double.
+tcf:GrossWeigth rdfs:range xsd:double.
+tcf:handoverTo a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:HAWB dc:modified "2018-02-13"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "TBD";
+    rdfs:label "House AirWayBill";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:Height a owl:ObjectProperty;
+    rdfs:description "A measure of the height of this trade line item.";
+    rdfs:domain tcf:Package;
+    rdfs:label "Height";
+    rdfs:range xsd:double.
+tcf:Humidity dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:humidity a owl:ObjectProperty.
+tcf:Humidity rdfs:comment "An update on a logistics object of humidity.".
+tcf:humidity rdfs:description "A device humidity reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Humidity".
+tcf:Humidity rdfs:label "Humidity".
+tcf:humidity rdfs:range tcf:Humidity.
+tcf:humidityPercent a owl:ObjectProperty;
+    rdfs:description "A device humidity reading in percentage submitted as a track update.";
+    rdfs:domain tcf:Humidity;
+    rdfs:label "Humidity in Percentage";
+    rdfs:range xsd:decimal.
+tcf:Incoterm a owl:ObjectProperty;
+    rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Incoterm";
+    rdfs:range rdfs:Literal.
+tcf:IncotermsLocation a owl:ObjectProperty;
+    rdfs:description "A location relevant for these delivery terms.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "IncotermsLocation";
+    rdfs:range rdfs:Literal.
+tcf:infrared a owl:ObjectProperty;
+    rdfs:description "A device infrared reading submitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Infrared Light";
+    rdfs:range xsd:float.
+tcf:IOLIdentifier dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class.
+tcf:iolIdentifier a owl:ObjectProperty.
+tcf:IOLIdentifier rdfs:comment "The Internet of Logistics Identifier for a connected company.";
+    rdfs:label "IOL Identifier".
+tcf:iolIdentifier rdfs:range tcf:IOLIdentifier.
+tcf:Length a owl:ObjectProperty;
+    rdfs:description "A measure of the length of this trade line item.";
+    rdfs:domain tcf:Package;
+    rdfs:label "Length";
+    rdfs:range xsd:double.
+tcf:Light dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:light a owl:ObjectProperty.
+tcf:Light rdfs:comment "An update on a logistics object of light status.".
+tcf:light rdfs:description "A device light reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Light".
+tcf:Light rdfs:label "Light".
+tcf:light rdfs:range tcf:Light.
+tcf:logisticObjectReference a owl:ObjectProperty;
+    rdfs:description "A URI reference to the Logistics Object.";
+    rdfs:domain tcf:StatusUpdate, tcf:TrackUpdate;
+    rdfs:label "Logistics Object Reference";
+    rdfs:range xsd:anyURI, xsd:double.
+tcf:LogisticsObject a owl:Class;
+    rdfs:comment "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment.";
+    rdfs:label "Logistics Object".
+tcf:LogisticsVehicle dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations.";
+    rdfs:label "Logistics Vehicle";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:lux a owl:ObjectProperty;
+    rdfs:description "A device light reading in lux submitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Light measured in Lux";
+    rdfs:range xsd:float.
+tcf:MAWB dc:modified "2018-02-13"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "TBD";
+    rdfs:label "Master AirWayBill";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:netWeigth a owl:ObjectProperty;
+    rdfs:description "A measure of the net weight (mass) of this trade line item which excludes all packaging..";
+    rdfs:domain tcf:Package;
+    rdfs:label "netWeigth";
+    rdfs:range xsd:double.
+tcf:notifiedTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the notification of the status update .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Notified Timestamp";
+    rdfs:range xsd:datetime.
+tcf:origin a owl:ObjectProperty;
+    rdfs:description "An abbreviation for the origin of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Origin";
+    rdfs:range xsd:string.
+tcf:Package dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class, owl:ObjectProperty;
+    rdfs:comment "A physical package for this trade line item.";
+    rdfs:description "A physical package for this trade line item.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Package";
+    rdfs:range rdfs:Literal;
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:PackageReference a owl:ObjectProperty;
+    rdfs:description "A packaging identifier, expressed as text, for this trade line item";
+    rdfs:domain tcf:Package;
+    rdfs:label "PackageReference";
+    rdfs:range rdfs:Literal.
+tcf:PackageType a owl:ObjectProperty;
+    rdfs:description "A packaging type, expressed as text, for this trade line item";
+    rdfs:domain tcf:Package;
+    rdfs:label "PackageType";
+    rdfs:range rdfs:Literal.
+tcf:pickupFrom a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:Pressure dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:pressure a owl:ObjectProperty.
+tcf:Pressure rdfs:comment "An update on a logistics object of pressure.".
+tcf:pressure rdfs:description "A device pressure reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Pressure".
+tcf:Pressure rdfs:label "Pressure".
+tcf:pressure rdfs:range tcf:Pressure.
+tcf:pressureAltFeet a owl:ObjectProperty;
+    rdfs:description "A device altitude reading in feet submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Altitude in Feet";
+    rdfs:range xsd:decimal.
+tcf:pressureAltMeter a owl:ObjectProperty;
+    rdfs:description "A device altitude reading in meters submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Altitude in Meter";
+    rdfs:range xsd:decimal.
+tcf:pressureHPascal a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in Hecto Pascal";
+    rdfs:range xsd:decimal.
+tcf:pressureKPascal a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in Kilo Pascal submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in Kilo Pascal";
+    rdfs:range xsd:decimal.
+tcf:pressurePmb a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in  millibar submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in in millibar";
+    rdfs:range xsd:decimal.
+tcf:pressurePsi a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in PSI submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in PSI";
+    rdfs:range xsd:decimal.
+tcf:quantityOfPackages a owl:ObjectProperty;
+    rdfs:description "The number of packages in the complete shippers instruction";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Quantity of packages";
+    rdfs:range xsd:int.
+tcf:RailStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object in the transport mode of rail.";
+    rdfs:label "Rail Status Update";
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:rejectionReason a owl:ObjectProperty;
+    rdfs:description "This is why the MAWB was rejected .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Rejection Reason";
+    rdfs:range xsd:string.
+tcf:RequestedDeliveryDate a owl:ObjectProperty;
+    rdfs:description "Ultimate Ship To Delivery Date Time.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "RequestedDeliveryDate";
+    rdfs:range xsd:date.
+tcf:RequestedPickupDate a owl:ObjectProperty;
+    rdfs:description "A date, time, date time, or other date time value when this trade delivery is available for pick-up.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "RequestedPickupDate";
+    rdfs:range xsd:date.
+tcf:RoadStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object in the transport mode of road.";
+    rdfs:label "Road Status Update";
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:SeaStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object in the transport mode of sea.";
+    rdfs:label "Sea Status Update";
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:seller a owl:ObjectProperty.
+tcf:Seller a owl:objectproperty;
+    rdfs:description "The Seller party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Buyer".
+tcf:seller rdfs:range schema:Organization.
+tcf:Seller rdfs:range schema:Organization.
+tcf:ShippersInstruction dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder.";
+    rdfs:label "Shippers Instruction";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:shippersInstructionShippersReference a owl:ObjectProperty;
+    rdfs:description "The reference for the shippers instruction in the shippers system";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Reference";
+    rdfs:range rdfs:Literal.
+tcf:Status dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:status a owl:ObjectProperty.
+tcf:Status rdfs:comment "A status on a logistics object of different states such as departed, arrived, deviation, etc.".
+tcf:status rdfs:description "An abbreviation for the status submitted .";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Status".
+tcf:Status rdfs:label "StatusUpdate".
+tcf:status rdfs:range xsd:string.
+tcf:Status rdfs:subClassOf tcf:StatusUpdate.
+tcf:statusBy a owl:ObjectProperty;
+    rdfs:description "Which organization has submitted the status update .";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Status By";
+    rdfs:range schema:Organization.
+tcf:StatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc.";
+    rdfs:label "Status Update".
+tcf:statusUpdateTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the status update .";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Status Update Timestamp";
+    rdfs:range xsd:datetime.
+tcf:Temperature dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:temperature a owl:ObjectProperty.
+tcf:Temperature rdfs:comment "An update on a logistics object of temperature.".
+tcf:temperature rdfs:description "A temperature reading submitted as a track update from a device.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Temperature".
+tcf:Temperature rdfs:label "Temperature".
+tcf:temperature rdfs:range tcf:Temperature.
+tcf:temperatureCelsius a owl:ObjectProperty;
+    rdfs:description "A temperature reading in Celsius submitted as a track update from a device.";
+    rdfs:domain tcf:Temperature;
+    rdfs:label "Temperature in Celsius";
+    rdfs:range xsd:decimal.
+tcf:temperatureFahrenheit a owl:ObjectProperty;
+    rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device.";
+    rdfs:domain tcf:Temperature;
+    rdfs:label "Temperature in Fahrenheit";
+    rdfs:range xsd:decimal.
+tcf:temperatureKelvin a owl:ObjectProperty;
+    rdfs:description "A temperature reading in Kelvin submitted as a track update from a device.";
+    rdfs:domain tcf:Temperature;
+    rdfs:label "Temperature in Kelvin";
+    rdfs:range xsd:decimal.
+tcf:TrackUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure.";
+    rdfs:label "TrackUpdate";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:trackUpdateBy a owl:ObjectProperty;
+    rdfs:description "Which organization has submitted the track update .";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Track Update ";
+    rdfs:range schema:Organization.
+tcf:trackUpdateTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the track update .";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Track Update Timestamp";
+    rdfs:range xsd:datetime.
+tcf:TransportAgreementLaneID a owl:ObjectProperty;
+    rdfs:description "TBD.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "TransportAgreementLaneID";
+    rdfs:range rdfs:Literal.
+tcf:visibleLight a owl:ObjectProperty;
+    rdfs:description "A visible light reading ubmitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Visible Light";
+    rdfs:range xsd:float.
+tcf:volume a owl:ObjectProperty;
+    rdfs:description "A measure of the gross volume of this trade line item.", "The volume related to the shippers instruction";
+    rdfs:domain tcf:Package, tcf:ShippersInstruction;
+    rdfs:label "Volume";
+    rdfs:range xsd:double.
+tcf:Width a owl:ObjectProperty;
+    rdfs:description "A measure of the width of this trade line item.";
+    rdfs:domain tcf:Package;
+    rdfs:label "Width";
+    rdfs:range xsd:double.
+tcf:x_gvt a owl:ObjectProperty;
+    rdfs:description "A device accelerometer x-axis reading submitted as a track update.";
+    rdfs:domain tcf:Accelerometer;
+    rdfs:label "X-axis acceleration";
+    rdfs:range xsd:float.
+tcf:y_gvt a owl:ObjectProperty;
+    rdfs:description "A device accelerometer y-axis reading submitted as a track update.";
+    rdfs:domain tcf:Accelerometer;
+    rdfs:label "Y-axis acceleration";
+    rdfs:range xsd:float.
+tcf:z_gvt a owl:ObjectProperty;
+    rdfs:description "A device accelerometer z-axis reading submitted as a track update.";
+    rdfs:domain tcf:Accelerometer;
+    rdfs:label "Z-axis acceleration";
+    rdfs:range xsd:float.
