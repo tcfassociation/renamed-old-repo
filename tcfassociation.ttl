@@ -534,6 +534,12 @@ schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 	rdfs:description "An abbreviation for the status submitted ." .
 	
 #Specific Air status properties
+<AirStatusUpdate> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range <AirStatusUpdate>;
+	rdfs:label "Air Status Update" ;
+	rdfs:description "A status update on a logistics object in the transport mode of air." .
+	
 <notifiedTimestamp> a owl:ObjectProperty ;
 	rdfs:domain <AirStatusUpdate> ;
 	rdfs:range xsd:datetime ;
