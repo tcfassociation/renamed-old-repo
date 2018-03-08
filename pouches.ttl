@@ -1,86 +1,78 @@
-@base <http://tcftest.org/pouch/> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix tcf: <http://tcftest.org/schema/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix hydra: <http://www.w3.org/ns/hydra/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix schema: <http://schema.org/>.
+@prefix tcf: <http://tcftest.org/schema/>.
+@prefix tcf-pouch: <http://tcftest.org/pouch/>.
+@prefix tcf-pouch-org: <http://tcftest.org/pouch/org/>.
+@prefix tcf-pouch-wg: <http://tcftest.org/pouch/wg/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-<> a hydra:Collection ;
-  hydra:member
-    <ForwarderPouch> ,
-    <ShippersPouch> ,
-    <CarriersPouch> ,
-    <CustomsPouch> ,
-    <CargoHandlersPouch> ,
-    <TruckersPouch> ,
-    <MaritimePouch> ,
-    <RailPouch> .
-
-<ForwarderPouch> a <Pouch> ;
-  rdfs:label "Forwarder Pouch" ;
-  hydra:member
-    tcf:ShippersInstruction ,
-    tcf:Consignment ,
-    tcf:LogisticsVehicle ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<ShippersPouch> a <Pouch> ;
-  rdfs:label "Shippers Pouch" ;
-  hydra:member
-    tcf:ShippersInstruction ,
-    tcf:DangerousGoodsDeclaration ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<CarriersPouch> a <Pouch> ;
-  rdfs:label "Carriers Pouch" ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<CustomsPouch> a <Pouch> ;
-  rdfs:label "Customs Pouch" ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<CargoHandlersPouch> a <Pouch> ;
-  rdfs:label "Cargo Handlers Pouch" ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<TruckersPouch> a <Pouch> ;
-  rdfs:label "Truckers Pouch" ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<MaritimePouch> a <Pouch> ;
-  rdfs:label "Maritime Pouch" ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<RailPouch> a <Pouch> ;
-  rdfs:label "Rail Pouch" ;
-  dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<org/EricssonAB> a schema:Corporation;
-    rdfs:label "Ericsson AB";
-    schema:url <http://www.ericsson.com/> .
-
-<org/PanalpinaAB> a schema:Corporation;
-    rdfs:label "Panalpina AB";
-    schema:url <http://www.panalpina.com/> .
-
-<org/FinnairAbp> a schema:Corporation;
-    rdfs:label "Finnair Abp";
-    schema:url <http://www.finnair.com/> .
-
-<wg/ShippersInstruction> a <WorkingGroup> ;
-    schema:about tcf:ShippersInstruction ;
-    dcterms:creator <org/EricssonAB> ;
-    dcterms:creator <org/PanalpinaAB> .
-
-<wg/DangerousGoodsDeclaration> a <WorkingGroup> ;
-    schema:about tcf:DangerousGoodsDeclaration ;
-    dcterms:creator <org/PanalpinaAB> .
-
-<wg/Invoice> a <WorkingGroup> ;
-    schema:about tcf:Invoice ;
-    dcterms:creator <org/FinnairAbp> .
-
-<wg/CountryOfOriginCertificate> a <WorkingGroup> ;
-    schema:about tcf:CountryOfOriginCertificate ;
-    dcterms:creator <org/PanalpinaAB> .
+<http://tcftest.org/pouch/> a hydra:Collection;
+    hydra:member tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch, tcf-pouch:StatusUpdatePouch, tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch.
+tcf-pouch:CargoHandlersPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Cargo Handlers Pouch".
+tcf-pouch:CarriersPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Carriers Pouch";
+    hydra:member tcf:FlightManifest.
+tcf-pouch:CustomsPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Customs Pouch".
+tcf-pouch:ForwarderPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Forwarder Pouch";
+    hydra:member tcf:HAWB, tcf:MAWB.
+tcf-pouch:MaritimePouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Maritime Pouch".
+tcf-pouch-org:EricssonAB schema:url <http://www.ericsson.com/>;
+    a schema:Corporation;
+    rdfs:label "Ericsson AB".
+tcf-pouch-org:FinnairAbp schema:url <http://www.finnair.com/>;
+    a schema:Corporation;
+    rdfs:label "Finnair Abp".
+tcf-pouch-org:PanalpinaAB schema:url <http://www.panalpina.com/>;
+    a schema:Corporation;
+    rdfs:label "Panalpina AB".
+tcf-pouch:RailPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Rail Pouch".
+tcf-pouch:ShippersPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Shippers Pouch";
+    hydra:member tcf:Blub, tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction.
+tcf-pouch:StatusUpdatePouch dc:modified "2018-02-13"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Status Update Pouch";
+    hydra:member tcf:StatusUpdate.
+tcf-pouch:TrackUpdatePouch dc:modified "2018-02-23"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Track Update Pouch";
+    hydra:member tcf:TrackUpdate.
+tcf-pouch:TruckersPouch dc:modified "2017-11-16"^^xsd:date;
+    a tcf-pouch:Pouch;
+    rdfs:label "Truckers Pouch".
+tcf-pouch-wg:CountryOfOriginCertificate dc:creator tcf-pouch-org:PanalpinaAB;
+    schema:about tcf:CountryOfOriginCertificate;
+    a tcf-pouch:WorkingGroup.
+tcf-pouch-wg:DangerousGoodsDeclaration dc:creator tcf-pouch-org:PanalpinaAB;
+    schema:about tcf:DangerousGoodsDeclaration;
+    a tcf-pouch:WorkingGroup.
+tcf-pouch-wg:Invoice dc:creator tcf-pouch-org:FinnairAbp;
+    schema:about tcf:Invoice;
+    a tcf-pouch:WorkingGroup.
+tcf-pouch-wg:Package dc:creator tcf-pouch-org:EricssonAB;
+    schema:about tcf:Package;
+    a tcf-pouch:WorkingGroup.
+tcf-pouch-wg:ShippersInstruction dc:creator tcf-pouch-org:EricssonAB, tcf-pouch-org:PanalpinaAB;
+    schema:about tcf:ShippersInstruction;
+    a tcf-pouch:WorkingGroup.
+tcf-pouch-wg:StatusUpdate dc:creator tcf-pouch-org:EricssonAB;
+    schema:about tcf:CountryOfOriginCertificate;
+    a tcf-pouch:WorkingGroup.
+tcf-pouch-wg:TrackUpdate dc:creator tcf-pouch-org:EricssonAB;
+    schema:about tcf:CountryOfOriginCertificate;
+    a tcf-pouch:WorkingGroup.
