@@ -322,7 +322,7 @@
 
 <temperature> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:decimal ;
+	rdfs:range <Temperature> ;
 	rdfs:label "Temperature" ;
 	rdfs:description "A temperature reading submitted as a track update from a device." .
 
@@ -346,7 +346,7 @@
 
 <battery> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:decimal ;
+	rdfs:range <battery> ;
 	rdfs:label "Battery" ;
 	rdfs:description "A device battery reading submitted as a track update." .
 	
@@ -388,7 +388,7 @@
 	
 <pressure> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:decimal ;
+	rdfs:range <Pressure> ;
 	rdfs:label "Pressure" ;
 	rdfs:description "A device pressure reading submitted as a track update." .
 	
@@ -430,7 +430,7 @@
 
 <humidity> a owl:ObjectProperty ;
 	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:decimal ;
+	rdfs:range <Humidity> ;
 	rdfs:label "Humidity" ;
 	rdfs:description "A device humidity reading submitted as a track update." .
 	
