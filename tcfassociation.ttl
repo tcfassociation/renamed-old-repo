@@ -680,4 +680,207 @@ schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
 	rdfs:domain <AirStatusUpdate> ;
 	rdfs:range xsd:string;
 	rdfs:label "Discrepancy Description" ;
+	rdfs:description "This is the discrepancy description." .
+
+@base <http://tcftest.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix tcf-pouch: <http://tcftest.org/pouch/> .
+
+# Start of StatusUpdate pouch V0.1
+<StatusUpdate> a owl:Class ;
+	rdfs:label "Status Update" ;
+	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<Status> a owl:Class ;
+	rdfs:label "StatusUpdate" ;
+	rdfs:comment "A status on a logistics object of different states such as departed, arrived, deviation, etc." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<RoadStatusUpdate> a owl:Class ;
+	rdfs:label "Road Status Update" ;
+	rdfs:comment "A status update on a logistics object in the transport mode of road." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<RailStatusUpdate> a owl:Class ;
+	rdfs:label "Rail Status Update" ;
+	rdfs:comment "A status update on a logistics object in the transport mode of rail." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+	
+<SeaStatusUpdate> a owl:Class ;
+	rdfs:label "Sea Status Update" ;
+	rdfs:comment "A status update on a logistics object in the transport mode of sea." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+	
+<AirStatusUpdate> a owl:Class ;
+	rdfs:label "Air Status Update" ;
+	rdfs:comment "A status update on a logistics object in the transport mode of air." ;
+	rdfs:subClassOf <StatusUpdate> ;
+	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+# Generic Status Update properties
+<logisticObjectReference> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:double ;
+	rdfs:label "Logistics Object Reference" ;
+	rdfs:description "A URI reference to the Logistics Object." .
+
+<statusUpdateTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Status Update Timestamp" ;
+	rdfs:description "A time stamp for the status update ." .
+
+<statusBy> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range schema:Organization ;
+	rdfs:label "Status By" ;
+	rdfs:description "Which organization has submitted the status update ." .
+
+<status> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "Status" ;
+	rdfs:description "An abbreviation for the status submitted ." .
+	
+#Specific Air status properties
+<AirStatusUpdate> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range <AirStatusUpdate>;
+	rdfs:label "Air Status Update" ;
+	rdfs:description "A status update on a logistics object in the transport mode of air." .
+	
+<notifiedTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Notified Timestamp" ;
+	rdfs:description "A time stamp for the notification of the status update ." .
+
+<departureTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Departure Timestamp" ;
+	rdfs:description "The departure time stamp of the airwaybill ." .
+
+<arrivalTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Arrival Timestamp" ;
+	rdfs:description "A timestamp for the arrival of the airwaybill ." .
+
+<deliveredTimestamp> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:datetime ;
+	rdfs:label "Delivered Timestamp" ;
+	rdfs:description "A time stamp for the delivery of the airwaybill ." .
+	
+<origin> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "Origin" ;
+	rdfs:description "An abbreviation for the origin of the airwaybill ." .
+	
+<destination> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:string ;
+	rdfs:label "Destination" ;
+	rdfs:description "An abbreviation for the destination of the airwaybill ." .
+	
+<awbManifestedPieces> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:integer ;
+	rdfs:label "AWB Manifested Pieces" ;
+	rdfs:description "The number of pieces manifested on the AWB ." .
+	
+<awbTotalPieces> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:integer ;
+	rdfs:label "AWB Total Pieces" ;
+	rdfs:description "The total number of pieces on the AWB ." .	
+
+<awbManifestedWeight> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:decimal ;
+	rdfs:label "AWB Manifested Weight" ;
+	rdfs:description "The weight of pieces manifested on the AWB ." .	
+	
+<awbTotalWeight> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:decimal ;
+	rdfs:label "AWB Total Weight" ;
+	rdfs:description "The total weight of pieces on the AWB ." .		
+	
+<awbTotalWeightUom> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:string;
+	rdfs:label "AWB Total Weight UoM" ;
+	rdfs:description "The unit of measure for the total weight of pieces on the AWB ." .	
+
+<airport> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:string;
+	rdfs:label "Airport" ;
+	rdfs:description "Airport  IATA 3-letter Code ." .	
+	
+<rejectionReason> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:string;
+	rdfs:label "Rejection Reason" ;
+	rdfs:description "This is why the MAWB was rejected ." .	
+	
+<discrepancyDescription> a owl:ObjectProperty ;
+	rdfs:domain <AirStatusUpdate> ;
+	rdfs:range xsd:string;
+	rdfs:label "Discrepancy Description" ;
 	rdfs:description "This is the discrepancy description." .	
+
+#Specific Sea status properties
+<seaStatusUpdate> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range <SeaStatusUpdate>;
+	rdfs:label "Sea Status Update" ;
+	rdfs:description "A status update on a logistics object in the transport mode of Sea." .
+
+<eta-Location> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime;
+	rdfs:label "ETA-Location" ;
+	rdfs:description "The Date/Time when a vessel estimates it will arrive at a specified location, as per port section standards." .
+	
+<ata-Location> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime;
+	rdfs:label "ATA-Location" ;
+	rdfs:description "The Date/Time when a vessel arrives at a specified location, as per port section standards." .
+	
+<etd-Location> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime;
+	rdfs:label "ETD-Location" ;
+	rdfs:description "The Date/Time when a vessel estimates it will depart from a specified location, as per port section standards." .
+	
+<atd-Location> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime;
+	rdfs:label "ATD-Location" ;
+	rdfs:description "The Date/Time when a vessel departs from a specified location, as per port section standards." .
+
+<pta-Location> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime;
+	rdfs:label "PTA-Location" ;
+	rdfs:description "The Date/Time when a vessel is planned to arrive at a specified location, as per port section standards." .
+	
+<ptd-Location> a owl:ObjectProperty ;
+	rdfs:domain <StatusUpdate> ;
+	rdfs:range xsd:datetime;
+	rdfs:label "PTD-Location" ;
+	rdfs:description "The Date/Time when a vessel is planned to depart from a specified location, as per port section standards." .
