@@ -252,13 +252,6 @@
 
 <iolIdentifier> a owl:ObjectProperty ;
 	rdfs:range <IOLIdentifier> .
-@base <http://tcftest.org/schema/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix tcf-pouch: <http://tcftest.org/pouch/> .
 
 #Start of Maritime Pouch
 	#Classes
@@ -295,19 +288,19 @@
 	
 <vessel> a owl:ObjectProperty ;
 	rdfs:domain <Vessel> ;
-	rdfs:range <Vessel> ;
+	rdfs:range rdfs:literal ;
 	rdfs:label "Vessel" ;
 	rdfs:description "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water." .	
 	
 <imoNumber> a owl:ObjectProperty ;
 	rdfs:domain <Vessel> ;
-	rdfs:range <Vessel> ;
+	rdfs:range rdfs:literal ;
 	rdfs:label "IMO Number" ;
 	rdfs:description "A number assigned to sea-going merchant vessels under the International Convention for the Safety of Life at Sea (SOLAS). These are assigned by IHS Fairplay to individual vessels. Format: The characters “IMO” followed by a unique seven-digit number, e.g. “IMO 9227338”." .		
 
 <vesselType> a owl:ObjectProperty ;
 	rdfs:domain <Vessel> ;
-	rdfs:range <Vessel> ;
+	rdfs:range rdfs:literal ;
 	rdfs:label "Vessel Type" ;
 	rdfs:description "The purpose of the vessel. A comprehensive list of unique vessel types exists in the IHS Fairplay’s comprehensive “statcode”." .	
 
