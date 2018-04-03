@@ -506,7 +506,7 @@ tcf:temperatureKelvin a owl:ObjectProperty;
     rdfs:domain tcf:Temperature;
     rdfs:label "Temperature in Kelvin";
     rdfs:range xsd:decimal.
-tcf:TestClass dc:modified "2018-04-03T18:38:53.759Z"^^xsd:date;
+tcf:TestClass dc:modified "2018-04-03T19:48:29.441Z"^^xsd:date;
     a owl:Class;
     rdfs:comment "";
     rdfs:label "Test Class";
