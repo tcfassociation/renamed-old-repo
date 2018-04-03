@@ -322,11 +322,6 @@ tcf:origin a owl:ObjectProperty;
     rdfs:domain tcf:AirStatusUpdate;
     rdfs:label "Origin";
     rdfs:range xsd:string.
-tcf:OtherTestClass dc:modified "2018-04-03T19:52:47.107Z"^^xsd:date;
-    a owl:Class;
-    rdfs:comment "";
-    rdfs:label "Other Test Class";
-    rdfs:subClassOf tcf:LogisticsObject.
 tcf:Package dc:modified "2017-11-16"^^xsd:date;
     a owl:Class, owl:ObjectProperty;
     rdfs:comment "A physical package for this trade line item.";
@@ -511,6 +506,11 @@ tcf:temperatureKelvin a owl:ObjectProperty;
     rdfs:domain tcf:Temperature;
     rdfs:label "Temperature in Kelvin";
     rdfs:range xsd:decimal.
+tcf:TestClass dc:modified "2018-04-03T21:22:46.027Z"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "";
+    rdfs:label "Test Class";
+    rdfs:subClassOf tcf:LogisticsObject.
 tcf:TrackUpdate dc:modified "2018-02-23"^^xsd:date;
     a owl:Class;
     rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure.";
