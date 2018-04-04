@@ -1,719 +1,578 @@
-@base <http://tcftest.org/schema/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix hydra: <http://www.w3.org/ns/hydra/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix tcf: <http://tcftest.org/schema/>.
+@prefix tcf-pouch: <http://tcftest.org/pouch/>.
+@prefix tcf-pouch-org: <http://tcftest.org/pouch/org/>.
+@prefix tcf-pouch-wg: <http://tcftest.org/pouch/wg/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix tcf-pouch: <http://tcftest.org/pouch/> .
 
-<> a owl:Ontology ;
-	dc:title "The TCF Logistics open ontology" ;
-	dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
-
-<LogisticsObject> a owl:Class ;
-	rdfs:label "Logistics Object" ;
-	rdfs:comment "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
-	
-<ShippersInstruction> a owl:Class ;
-	rdfs:label "Shippers Instruction" ;
-	rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<Consignment> a owl:Class ;
-	rdfs:label "Consignment" ;
-	rdfs:comment "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Package> a owl:Class ;
-	rdfs:label "Package" ;
-	rdfs:comment "A physical package for this trade line item." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<CommercialInvoice> a owl:Class ;
-	rdfs:label "Commercial Invoice" ;
-	rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<DangerousGoodsDeclaration> a owl:Class ;
-	rdfs:label "Dangerous Goods Declaration" ;
-	rdfs:comment "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<LogisticsVehicle> a owl:Class ;
-	rdfs:label "Logistics Vehicle" ;
-	rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<HAWB> a owl:Class ;
-	rdfs:label "House AirWayBill" ;
-	rdfs:comment "TBD" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<MAWB> a owl:Class ;
-	rdfs:label "Master AirWayBill" ;
-	rdfs:comment "TBD" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<FlightManifest> a owl:Class ;
-	rdfs:label "Flight Manifest" ;
-	rdfs:comment "TBD" ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<IOLIdentifier> a owl:Class ;
-	rdfs:label "IOL Identifier" ;
-	rdfs:comment "The Internet of Logistics Identifier for a connected company." ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<forwarder> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range schema:Organization ;
-	rdfs:label "forwarder" ;
-	rdfs:description "The party undertaking the freight forwarding of these consignments." .
-
-<consignment> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range <Consignment> ;
-	rdfs:label "Consignment" ;
-	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-
-<shippersInstructionShippersReference> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Reference" ;
-	rdfs:description "The reference for the shippers instruction in the shippers system" .
-
-<quantityOfPackages> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range xsd:int ;
-	rdfs:label "Quantity of packages" ;
-	rdfs:description "The number of packages in the complete shippers instruction" .
-
-<volume> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Volume" ;
-	rdfs:description "The volume related to the shippers instruction" .
-
-<GrossWeigth> a owl:ObjectProperty ;
-	rdfs:domain <ShippersInstruction> ;
-	rdfs:range xsd:double ;
-	rdfs:label "GrossWeigth" ;
-	rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
-
-# Start of consignment
-<Consignment> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "Consignment" ;
-	rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract." .
-
-<Consignor> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Consignor";
-	rdfs:description "The consignor party for this consignment.".
-
-<Consignee> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Consignee";
-	rdfs:description "The consignee party for this consignment.".
-
-<Buyer> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Buyer";
-	rdfs:description "The buyer party for this consignment.".
-
-<Seller> a owl:objectproperty;
-	rdfs:domain <Consignment>;
-	rdfs:range schema:Organization;
-	rdfs:label "Buyer";
-	rdfs:description "The Seller party for this consignment.".
-
-<Package> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Package" ;
-	rdfs:description "A physical package for this trade line item." .
-
-<Incoterm> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "Incoterm" ;
-	rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery." .
-
-<IncotermsLocation> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "IncotermsLocation" ;
-	rdfs:description "A location relevant for these delivery terms." .
-
-<RequestedDeliveryDate> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range xsd:date ;
-	rdfs:label "RequestedDeliveryDate" ;
-	rdfs:description "Ultimate Ship To Delivery Date Time." .
-
-<TransportAgreementLaneID> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "TransportAgreementLaneID" ;
-	rdfs:description "TBD." .
-
-<RequestedPickupDate> a owl:ObjectProperty ;
-	rdfs:domain <Consignment> ;
-	rdfs:range xsd:date ;
-	rdfs:label "RequestedPickupDate" ;
-	rdfs:description "A date, time, date time, or other date time value when this trade delivery is available for pick-up." .
-
-
-# Start of Package
-<PackageReference> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "PackageReference" ;
-	rdfs:description "A packaging identifier, expressed as text, for this trade line item" .
-
-<PackageType> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:label "PackageType" ;
-	rdfs:description "A packaging type, expressed as text, for this trade line item" .
-
-<volume> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Volume" ;
-	rdfs:description "A measure of the gross volume of this trade line item." .
-
-<Length> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Length" ;
-	rdfs:description "A measure of the length of this trade line item." .
-
-<Width> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Width" ;
-	rdfs:description "A measure of the width of this trade line item." .
-
-<Height> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Height" ;
-	rdfs:description "A measure of the height of this trade line item." .
-
-<grossWeigth> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "grossWeigth" ;
-	rdfs:description "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment." .
-
-<netWeigth> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "netWeigth" ;
-	rdfs:description "A measure of the net weight (mass) of this trade line item which excludes all packaging.." .
-
-<pickupFrom> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<consignee> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<consignor> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<buyer> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<seller> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<deliverTo> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<handoverTo> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-	
-<attentionTo> a owl:ObjectProperty ;
-	rdfs:range schema:Organization .
-
-<iolIdentifier> a owl:ObjectProperty ;
-	rdfs:range <IOLIdentifier> .
-
-#Start of Maritime Pouch
-	#Classes
-<Port> a owl:Class ;
-	rdfs:label "Port" ;
-	rdfs:comment "Any port, terminal, offshore terminal, ship and repair yard or roadstead which is normally used for the loading, unloading, repair and anchoring of ships, or any other place at which a ship can call. The word also embraces, geographically, the city or borough which serves shipping interests." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Vessel> a owl:Class ;
-	rdfs:label "Vessel" ;
-	rdfs:comment "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-	#ObjectProperty
-<portName> a owl:ObjectProperty ;
-	rdfs:domain <Port> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "Port Name" ;
-	rdfs:description "Any port, terminal, offshore terminal, ship and repair yard or roadstead which is normally used for the loading, unloading, repair and anchoring of ships, or any other place at which a ship can call. The word also embraces, geographically, the city or borough which serves shipping interests." .
-
-<cargoType> a owl:ObjectProperty ;
-	rdfs:domain <Port> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "Cargo Type" ;
-	rdfs:description "Types of cargo handled by the port." .	
-
-<cargoVolume> a owl:ObjectProperty ;
-	rdfs:domain <Port> ;
-	rdfs:range <Port> ;
-	rdfs:label "Cargo Weight" ;
-	rdfs:description "Weight of Goods or number of containers per calendar year in tonnes." .
-	
-<vessel> a owl:ObjectProperty ;
-	rdfs:domain <Vessel> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "Vessel" ;
-	rdfs:description "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water." .	
-	
-<imoNumber> a owl:ObjectProperty ;
-	rdfs:domain <Vessel> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "IMO Number" ;
-	rdfs:description "A number assigned to sea-going merchant vessels under the International Convention for the Safety of Life at Sea (SOLAS). These are assigned by IHS Fairplay to individual vessels. Format: The characters “IMO” followed by a unique seven-digit number, e.g. “IMO 9227338”." .		
-
-<vesselType> a owl:ObjectProperty ;
-	rdfs:domain <Vessel> ;
-	rdfs:range rdfs:literal ;
-	rdfs:label "Vessel Type" ;
-	rdfs:description "The purpose of the vessel. A comprehensive list of unique vessel types exists in the IHS Fairplay’s comprehensive “statcode”." .	
-
-# Start of TrackUpdate pouch V0.2
-<TrackUpdate> a owl:Class ;
-	rdfs:label "TrackUpdate" ;
-	rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure." ;
-	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Temperature> a owl:Class ;
-	rdfs:label "Temperature" ;
-	rdfs:comment "An update on a logistics object of temperature." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Humidity> a owl:Class ;
-	rdfs:label "Humidity" ;
-	rdfs:comment "An update on a logistics object of humidity." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Accelerometer> a owl:Class ;
-	rdfs:label "Accelerometer" ;
-	rdfs:comment "An update on a logistics object of accelerometer." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Pressure> a owl:Class ;
-	rdfs:label "Pressure" ;
-	rdfs:comment "An update on a logistics object of pressure." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Battery> a owl:Class ;
-	rdfs:label "Battery" ;
-	rdfs:comment "An update on a logistics object of battery status." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Light> a owl:Class ;
-	rdfs:label "Light" ;
-	rdfs:comment "An update on a logistics object of light status." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<logisticObjectReference> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:anyURI ;
-	rdfs:label "Logistics Object Reference" ;
-	rdfs:description "A URI reference to the Logistics Object." .
-
-<trackUpdateBy> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range schema:Organization ;
-	rdfs:label "Track Update " ;
-	rdfs:description "Which organization has submitted the track update ." .
-	
-<deviceIdentifier> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:string ;
-	rdfs:label "Device Identifier" ;
-	rdfs:description "An identifier for the device submitting the track update." .
-
-<deviceName> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:string ;
-	rdfs:label "Device Name" ;
-	rdfs:description "A name for the device submitting the track update." .
-	
-<trackUpdateTimestamp> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Track Update Timestamp" ;
-	rdfs:description "A time stamp for the track update ." .
-
-<temperature> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range <Temperature> ;
-	rdfs:label "Temperature" ;
-	rdfs:description "A temperature reading submitted as a track update from a device." .
-
-<temperatureCelsius> a owl:ObjectProperty ;
-	rdfs:domain <Temperature> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Temperature in Celsius" ;
-	rdfs:description "A temperature reading in Celsius submitted as a track update from a device." .
-
-<temperatureFahrenheit> a owl:ObjectProperty ;
-	rdfs:domain <Temperature> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Temperature in Fahrenheit" ;
-	rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device." .
-	
-<temperatureKelvin> a owl:ObjectProperty ;
-	rdfs:domain <Temperature> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Temperature in Kelvin" ;
-	rdfs:description "A temperature reading in Kelvin submitted as a track update from a device." .
-
-<battery> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range <Battery> ;
-	rdfs:label "Battery" ;
-	rdfs:description "A device battery reading submitted as a track update." .
-	
-<batteryVoltage> a owl:ObjectProperty ;
-	rdfs:domain <Battery> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Battery Voltage" ;
-	rdfs:description "A device battery reading in Voltage submitted as a track update." .
-
-<batteryPercentage> a owl:ObjectProperty ;
-	rdfs:domain <Battery> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Battery Percentage" ;
-	rdfs:description "A device battery reading in Percentage submitted as a track update." .
-
-<accelerometer> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range <Accelerometer> ;
-	rdfs:label "Accelerometer" ;
-	rdfs:description "A device accelerometer reading submitted as a track update." .
-
-<x_gvt> a owl:ObjectProperty ;
-	rdfs:domain <Accelerometer> ;
-	rdfs:range xsd:float ;
-	rdfs:label "X-axis acceleration" ;
-	rdfs:description "A device accelerometer x-axis reading submitted as a track update." .
-	
-<y_gvt> a owl:ObjectProperty ;
-	rdfs:domain <Accelerometer> ;
-	rdfs:range xsd:float ;
-	rdfs:label "Y-axis acceleration" ;
-	rdfs:description "A device accelerometer y-axis reading submitted as a track update." .
-	
-<z_gvt> a owl:ObjectProperty ;
-	rdfs:domain <Accelerometer> ;
-	rdfs:range xsd:float ;
-	rdfs:label "Z-axis acceleration" ;
-	rdfs:description "A device accelerometer z-axis reading submitted as a track update." .
-	
-<pressure> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range <Pressure> ;
-	rdfs:label "Pressure" ;
-	rdfs:description "A device pressure reading submitted as a track update." .
-	
-<pressurePsi> a owl:ObjectProperty ;
-	rdfs:domain <Pressure> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Pressure in PSI" ;
-	rdfs:description "A device pressure reading in PSI submitted as a track update." .
-	
-<pressurePmb> a owl:ObjectProperty ;
-	rdfs:domain <Pressure> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Pressure in in millibar" ;
-	rdfs:description "A device pressure reading in  millibar submitted as a track update." .
-	
-<pressureHPascal> a owl:ObjectProperty ;
-	rdfs:domain <Pressure> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Pressure in Hecto Pascal" ;
-	rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update." .
-	
-<pressureKPascal> a owl:ObjectProperty ;
-	rdfs:domain <Pressure> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Pressure in Kilo Pascal" ;
-	rdfs:description "A device pressure reading in Kilo Pascal submitted as a track update." .	
-	
-<pressureAltFeet> a owl:ObjectProperty ;
-	rdfs:domain <Pressure> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Altitude in Feet" ;
-	rdfs:description "A device altitude reading in feet submitted as a track update." .
-
-<pressureAltMeter> a owl:ObjectProperty ;
-	rdfs:domain <Pressure> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Altitude in Meter" ;
-	rdfs:description "A device altitude reading in meters submitted as a track update." .
-
-<humidity> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range <Humidity> ;
-	rdfs:label "Humidity" ;
-	rdfs:description "A device humidity reading submitted as a track update." .
-	
-<humidityPercent> a owl:ObjectProperty ;
-	rdfs:domain <Humidity> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "Humidity in Percentage" ;
-	rdfs:description "A device humidity reading in percentage submitted as a track update." .
-	
-<light> a owl:ObjectProperty ;
-	rdfs:domain <TrackUpdate> ;
-	rdfs:range <Light> ;
-	rdfs:label "Light" ;
-	rdfs:description "A device light reading submitted as a track update." .
-	
-<infrared> a owl:ObjectProperty ;
-	rdfs:domain <Light> ;
-	rdfs:range xsd:float ;
-	rdfs:label "Infrared Light" ;
-	rdfs:description "A device infrared reading submitted as a track update." .
-	
-<visibleLight> a owl:ObjectProperty ;
-	rdfs:domain <Light> ;
-	rdfs:range xsd:float ;
-	rdfs:label "Visible Light" ;
-	rdfs:description "A visible light reading ubmitted as a track update." .
-	
-<footCandles> a owl:ObjectProperty ;
-	rdfs:domain <Light> ;
-	rdfs:range xsd:float ;
-	rdfs:label "Footcandles" ;
-	rdfs:description "A footcandle reading in submitted as a track update." .
-	
-<lux> a owl:ObjectProperty ;
-	rdfs:domain <Light> ;
-	rdfs:range xsd:float ;
-	rdfs:label "Light measured in Lux" ;
-	rdfs:description "A device light reading in lux submitted as a track update." .
-	
 schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
-
-# Start of StatusUpdate pouch V0.1
-<StatusUpdate> a owl:Class ;
-	rdfs:label "Status Update" ;
-	rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc." ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<Status> a owl:Class ;
-	rdfs:label "StatusUpdate" ;
-	rdfs:comment "A status on a logistics object of different states such as departed, arrived, deviation, etc." ;
-	rdfs:subClassOf <StatusUpdate> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<RoadStatusUpdate> a owl:Class ;
-	rdfs:label "Road Status Update" ;
-	rdfs:comment "A status update on a logistics object in the transport mode of road." ;
-	rdfs:subClassOf <StatusUpdate> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-<RailStatusUpdate> a owl:Class ;
-	rdfs:label "Rail Status Update" ;
-	rdfs:comment "A status update on a logistics object in the transport mode of rail." ;
-	rdfs:subClassOf <StatusUpdate> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<SeaStatusUpdate> a owl:Class ;
-	rdfs:label "Sea Status Update" ;
-	rdfs:comment "A status update on a logistics object in the transport mode of sea." ;
-	rdfs:subClassOf <StatusUpdate> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-	
-<AirStatusUpdate> a owl:Class ;
-	rdfs:label "Air Status Update" ;
-	rdfs:comment "A status update on a logistics object in the transport mode of air." ;
-	rdfs:subClassOf <StatusUpdate> ;
-	dc:modified "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-
-# Generic Status Update properties
-<logisticObjectReference> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
-	rdfs:range xsd:double ;
-	rdfs:label "Logistics Object Reference" ;
-	rdfs:description "A URI reference to the Logistics Object." .
-
-<statusUpdateTimestamp> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Status Update Timestamp" ;
-	rdfs:description "A time stamp for the status update ." .
-
-<statusBy> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
-	rdfs:range schema:Organization ;
-	rdfs:label "Status By" ;
-	rdfs:description "Which organization has submitted the status update ." .
-
-<status> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
-	rdfs:range xsd:string ;
-	rdfs:label "Status" ;
-	rdfs:description "An abbreviation for the status submitted ." .
-	
-#Specific Air status properties
-<AirStatusUpdate> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
-	rdfs:range <AirStatusUpdate>;
-	rdfs:label "Air Status Update" ;
-	rdfs:description "A status update on a logistics object in the transport mode of air." .
-	
-<notifiedTimestamp> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Notified Timestamp" ;
-	rdfs:description "A time stamp for the notification of the status update ." .
-
-<departureTimestamp> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Departure Timestamp" ;
-	rdfs:description "The departure time stamp of the airwaybill ." .
-
-<arrivalTimestamp> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Arrival Timestamp" ;
-	rdfs:description "A timestamp for the arrival of the airwaybill ." .
-
-<deliveredTimestamp> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:datetime ;
-	rdfs:label "Delivered Timestamp" ;
-	rdfs:description "A time stamp for the delivery of the airwaybill ." .
-	
-<origin> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:string ;
-	rdfs:label "Origin" ;
-	rdfs:description "An abbreviation for the origin of the airwaybill ." .
-	
-<destination> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:string ;
-	rdfs:label "Destination" ;
-	rdfs:description "An abbreviation for the destination of the airwaybill ." .
-	
-<awbManifestedPieces> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:integer ;
-	rdfs:label "AWB Manifested Pieces" ;
-	rdfs:description "The number of pieces manifested on the AWB ." .
-	
-<awbTotalPieces> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:integer ;
-	rdfs:label "AWB Total Pieces" ;
-	rdfs:description "The total number of pieces on the AWB ." .	
-
-<awbManifestedWeight> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "AWB Manifested Weight" ;
-	rdfs:description "The weight of pieces manifested on the AWB ." .	
-	
-<awbTotalWeight> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:decimal ;
-	rdfs:label "AWB Total Weight" ;
-	rdfs:description "The total weight of pieces on the AWB ." .		
-	
-<awbTotalWeightUom> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:string;
-	rdfs:label "AWB Total Weight UoM" ;
-	rdfs:description "The unit of measure for the total weight of pieces on the AWB ." .	
-
-<airport> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:string;
-	rdfs:label "Airport" ;
-	rdfs:description "Airport  IATA 3-letter Code ." .	
-	
-<rejectionReason> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:string;
-	rdfs:label "Rejection Reason" ;
-	rdfs:description "This is why the MAWB was rejected ." .	
-	
-<discrepancyDescription> a owl:ObjectProperty ;
-	rdfs:domain <AirStatusUpdate> ;
-	rdfs:range xsd:string;
-	rdfs:label "Discrepancy Description" ;
-	rdfs:description "This is the discrepancy description." .	
-
-#Specific Sea status properties
-<seaStatusUpdate> a owl:ObjectProperty ;
-	rdfs:domain <StatusUpdate> ;
-	rdfs:range <SeaStatusUpdate>;
-	rdfs:label "Sea Status Update" ;
-	rdfs:description "A status update on a logistics object in the transport mode of Sea." .
-
-<eta-Location> a owl:ObjectProperty ;
-	rdfs:domain <SeaStatusUpdate> ;
-	rdfs:range xsd:datetime;
-	rdfs:label "ETA-Location" ;
-	rdfs:description "The Date/Time when a vessel estimates it will arrive at a specified location, as per port section standards." .
-	
-<ata-Location> a owl:ObjectProperty ;
-	rdfs:domain <SeaStatusUpdate> ;
-	rdfs:range xsd:datetime;
-	rdfs:label "ATA-Location" ;
-	rdfs:description "The Date/Time when a vessel arrives at a specified location, as per port section standards." .
-	
-<etd-Location> a owl:ObjectProperty ;
-	rdfs:domain <SeaStatusUpdate> ;
-	rdfs:range xsd:datetime;
-	rdfs:label "ETD-Location" ;
-	rdfs:description "The Date/Time when a vessel estimates it will depart from a specified location, as per port section standards." .
-	
-<atd-Location> a owl:ObjectProperty ;
-	rdfs:domain <SeaStatusUpdate> ;
-	rdfs:range xsd:datetime;
-	rdfs:label "ATD-Location" ;
-	rdfs:description "The Date/Time when a vessel departs from a specified location, as per port section standards." .
-
-<pta-Location> a owl:ObjectProperty ;
-	rdfs:domain <SeaStatusUpdate> ;
-	rdfs:range xsd:datetime;
-	rdfs:label "PTA-Location" ;
-	rdfs:description "The Date/Time when a vessel is planned to arrive at a specified location, as per port section standards." .
-	
-<ptd-Location> a owl:ObjectProperty ;
-	rdfs:domain <SeaStatusUpdate> ;
-	rdfs:range xsd:datetime;
-	rdfs:label "PTD-Location" ;
-	rdfs:description "The Date/Time when a vessel is planned to depart from a specified location, as per port section standards." .
+<http://tcftest.org/schema/> dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry.";
+    dc:title "The TCF Logistics open ontology";
+    a owl:Ontology.
+tcf:Accelerometer dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:accelerometer a owl:ObjectProperty.
+tcf:Accelerometer rdfs:comment "An update on a logistics object of accelerometer.".
+tcf:accelerometer rdfs:description "A device accelerometer reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Accelerometer".
+tcf:Accelerometer rdfs:label "Accelerometer".
+tcf:accelerometer rdfs:range tcf:Accelerometer.
+tcf:airport a owl:ObjectProperty;
+    rdfs:description "Airport  IATA 3-letter Code .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Airport";
+    rdfs:range xsd:string.
+tcf:AirStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class, owl:ObjectProperty;
+    rdfs:comment "A status update on a logistics object in the transport mode of air.";
+    rdfs:description "A status update on a logistics object in the transport mode of air.";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Air Status Update";
+    rdfs:range tcf:AirStatusUpdate;
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:arrivalTimestamp a owl:ObjectProperty;
+    rdfs:description "A timestamp for the arrival of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Arrival Timestamp";
+    rdfs:range xsd:datetime.
+tcf:ata-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel arrives at a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ATA-Location";
+    rdfs:range xsd:datetime.
+tcf:atd-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel departs from a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ATD-Location";
+    rdfs:range xsd:datetime.
+tcf:attentionTo a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:awbManifestedPieces a owl:ObjectProperty;
+    rdfs:description "The number of pieces manifested on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Manifested Pieces";
+    rdfs:range xsd:integer.
+tcf:awbManifestedWeight a owl:ObjectProperty;
+    rdfs:description "The weight of pieces manifested on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Manifested Weight";
+    rdfs:range xsd:decimal.
+tcf:awbTotalPieces a owl:ObjectProperty;
+    rdfs:description "The total number of pieces on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Total Pieces";
+    rdfs:range xsd:integer.
+tcf:awbTotalWeight a owl:ObjectProperty;
+    rdfs:description "The total weight of pieces on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Total Weight";
+    rdfs:range xsd:decimal.
+tcf:awbTotalWeightUom a owl:ObjectProperty;
+    rdfs:description "The unit of measure for the total weight of pieces on the AWB .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "AWB Total Weight UoM";
+    rdfs:range xsd:string.
+tcf:Battery dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:battery a owl:ObjectProperty.
+tcf:Battery rdfs:comment "An update on a logistics object of battery status.".
+tcf:battery rdfs:description "A device battery reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Battery".
+tcf:Battery rdfs:label "Battery".
+tcf:battery rdfs:range tcf:Battery.
+tcf:batteryPercentage a owl:ObjectProperty;
+    rdfs:description "A device battery reading in Percentage submitted as a track update.";
+    rdfs:domain tcf:Battery;
+    rdfs:label "Battery Percentage";
+    rdfs:range xsd:decimal.
+tcf:batteryVoltage a owl:ObjectProperty;
+    rdfs:description "A device battery reading in Voltage submitted as a track update.";
+    rdfs:domain tcf:Battery;
+    rdfs:label "Battery Voltage";
+    rdfs:range xsd:decimal.
+tcf:buyer a owl:ObjectProperty.
+tcf:Buyer a owl:objectproperty;
+    rdfs:description "The buyer party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Buyer".
+tcf:buyer rdfs:range schema:Organization.
+tcf:Buyer rdfs:range schema:Organization.
+tcf:cargoType a owl:ObjectProperty;
+    rdfs:description "Types of cargo handled by the port.";
+    rdfs:domain tcf:Port;
+    rdfs:label "Cargo Type";
+    rdfs:range rdfs:literal.
+tcf:cargoVolume a owl:ObjectProperty;
+    rdfs:description "Weight of Goods or number of containers per calendar year in tonnes.";
+    rdfs:domain tcf:Port;
+    rdfs:label "Cargo Weight";
+    rdfs:range tcf:Port.
+tcf:CommercialInvoice dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders.";
+    rdfs:label "Commercial Invoice";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:consignee a owl:ObjectProperty.
+tcf:Consignee a owl:objectproperty;
+    rdfs:description "The consignee party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Consignee".
+tcf:consignee rdfs:range schema:Organization.
+tcf:Consignee rdfs:range schema:Organization.
+tcf:Consignment dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class.
+tcf:consignment a owl:ObjectProperty.
+tcf:Consignment a owl:ObjectProperty;
+    rdfs:comment "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.".
+tcf:consignment rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.".
+tcf:Consignment rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.";
+    rdfs:domain tcf:Consignment.
+tcf:consignment rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Consignment".
+tcf:Consignment rdfs:label "Consignment".
+tcf:consignment rdfs:range tcf:Consignment.
+tcf:Consignment rdfs:range rdfs:literal;
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:consignor a owl:ObjectProperty.
+tcf:Consignor a owl:objectproperty;
+    rdfs:description "The consignor party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Consignor".
+tcf:consignor rdfs:range schema:Organization.
+tcf:Consignor rdfs:range schema:Organization.
+tcf:DangerousGoodsDeclaration dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations.";
+    rdfs:label "Dangerous Goods Declaration";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:deliveredTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the delivery of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Delivered Timestamp";
+    rdfs:range xsd:datetime.
+tcf:deliverTo a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:departureTimestamp a owl:ObjectProperty;
+    rdfs:description "The departure time stamp of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Departure Timestamp";
+    rdfs:range xsd:datetime.
+tcf:destination a owl:ObjectProperty;
+    rdfs:description "An abbreviation for the destination of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Destination";
+    rdfs:range xsd:string.
+tcf:deviceIdentifier a owl:ObjectProperty;
+    rdfs:description "An identifier for the device submitting the track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Device Identifier";
+    rdfs:range xsd:string.
+tcf:deviceName a owl:ObjectProperty;
+    rdfs:description "A name for the device submitting the track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Device Name";
+    rdfs:range xsd:string.
+tcf:discrepancyDescription a owl:ObjectProperty;
+    rdfs:description "This is the discrepancy description.";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Discrepancy Description";
+    rdfs:range xsd:string.
+tcf:eta-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel estimates it will arrive at a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ETA-Location";
+    rdfs:range xsd:datetime.
+tcf:etd-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel estimates it will depart from a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ETD-Location";
+    rdfs:range xsd:datetime.
+tcf:FlightManifest dc:modified "2018-02-13"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "TBD";
+    rdfs:label "Flight Manifest";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:footCandles a owl:ObjectProperty;
+    rdfs:description "A footcandle reading in submitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Footcandles";
+    rdfs:range xsd:float.
+tcf:forwarder a owl:ObjectProperty;
+    rdfs:description "The party undertaking the freight forwarding of these consignments.";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "forwarder";
+    rdfs:range schema:Organization.
+tcf:grossWeigth a owl:ObjectProperty.
+tcf:GrossWeigth a owl:ObjectProperty;
+    rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment.".
+tcf:grossWeigth rdfs:description "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment.";
+    rdfs:domain tcf:Package.
+tcf:GrossWeigth rdfs:domain tcf:ShippersInstruction.
+tcf:grossWeigth rdfs:label "grossWeigth".
+tcf:GrossWeigth rdfs:label "GrossWeigth".
+tcf:grossWeigth rdfs:range xsd:double.
+tcf:GrossWeigth rdfs:range xsd:double.
+tcf:handoverTo a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:HAWB dc:modified "2018-02-13"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "TBD";
+    rdfs:label "House AirWayBill";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:Height a owl:ObjectProperty;
+    rdfs:description "A measure of the height of this trade line item.";
+    rdfs:domain tcf:Package;
+    rdfs:label "Height";
+    rdfs:range xsd:double.
+tcf:Humidity dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:humidity a owl:ObjectProperty.
+tcf:Humidity rdfs:comment "An update on a logistics object of humidity.".
+tcf:humidity rdfs:description "A device humidity reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Humidity".
+tcf:Humidity rdfs:label "Humidity".
+tcf:humidity rdfs:range tcf:Humidity.
+tcf:humidityPercent a owl:ObjectProperty;
+    rdfs:description "A device humidity reading in percentage submitted as a track update.";
+    rdfs:domain tcf:Humidity;
+    rdfs:label "Humidity in Percentage";
+    rdfs:range xsd:decimal.
+tcf:imoNumber a owl:ObjectProperty;
+    rdfs:description "A number assigned to sea-going merchant vessels under the International Convention for the Safety of Life at Sea (SOLAS). These are assigned by IHS Fairplay to individual vessels. Format: The characters “IMO” followed by a unique seven-digit number, e.g. “IMO 9227338”.";
+    rdfs:domain tcf:Vessel;
+    rdfs:label "IMO Number";
+    rdfs:range rdfs:literal.
+tcf:Incoterm a owl:ObjectProperty;
+    rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Incoterm";
+    rdfs:range rdfs:Literal.
+tcf:IncotermsLocation a owl:ObjectProperty;
+    rdfs:description "A location relevant for these delivery terms.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "IncotermsLocation";
+    rdfs:range rdfs:Literal.
+tcf:infrared a owl:ObjectProperty;
+    rdfs:description "A device infrared reading submitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Infrared Light";
+    rdfs:range xsd:float.
+tcf:IOLIdentifier dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class.
+tcf:iolIdentifier a owl:ObjectProperty.
+tcf:IOLIdentifier rdfs:comment "The Internet of Logistics Identifier for a connected company.";
+    rdfs:label "IOL Identifier".
+tcf:iolIdentifier rdfs:range tcf:IOLIdentifier.
+tcf:Length a owl:ObjectProperty;
+    rdfs:description "A measure of the length of this trade line item.";
+    rdfs:domain tcf:Package;
+    rdfs:label "Length";
+    rdfs:range xsd:double.
+tcf:Light dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:light a owl:ObjectProperty.
+tcf:Light rdfs:comment "An update on a logistics object of light status.".
+tcf:light rdfs:description "A device light reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Light".
+tcf:Light rdfs:label "Light".
+tcf:light rdfs:range tcf:Light.
+tcf:logisticObjectReference a owl:ObjectProperty;
+    rdfs:description "A URI reference to the Logistics Object.";
+    rdfs:domain tcf:StatusUpdate, tcf:TrackUpdate;
+    rdfs:label "Logistics Object Reference";
+    rdfs:range xsd:anyURI, xsd:double.
+tcf:LogisticsObject a owl:Class;
+    rdfs:comment "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment.";
+    rdfs:label "Logistics Object".
+tcf:LogisticsVehicle dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion of a logistics vehicle. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations.";
+    rdfs:label "Logistics Vehicle";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:lux a owl:ObjectProperty;
+    rdfs:description "A device light reading in lux submitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Light measured in Lux";
+    rdfs:range xsd:float.
+tcf:MAWB dc:modified "2018-02-13"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "TBD";
+    rdfs:label "Master AirWayBill";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:netWeigth a owl:ObjectProperty;
+    rdfs:description "A measure of the net weight (mass) of this trade line item which excludes all packaging..";
+    rdfs:domain tcf:Package;
+    rdfs:label "netWeigth";
+    rdfs:range xsd:double.
+tcf:notifiedTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the notification of the status update .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Notified Timestamp";
+    rdfs:range xsd:datetime.
+tcf:origin a owl:ObjectProperty;
+    rdfs:description "An abbreviation for the origin of the airwaybill .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Origin";
+    rdfs:range xsd:string.
+tcf:Package dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class, owl:ObjectProperty;
+    rdfs:comment "A physical package for this trade line item.";
+    rdfs:description "A physical package for this trade line item.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Package";
+    rdfs:range rdfs:Literal;
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:PackageReference a owl:ObjectProperty;
+    rdfs:description "A packaging identifier, expressed as text, for this trade line item";
+    rdfs:domain tcf:Package;
+    rdfs:label "PackageReference";
+    rdfs:range rdfs:Literal.
+tcf:PackageType a owl:ObjectProperty;
+    rdfs:description "A packaging type, expressed as text, for this trade line item";
+    rdfs:domain tcf:Package;
+    rdfs:label "PackageType";
+    rdfs:range rdfs:Literal.
+tcf:pickupFrom a owl:ObjectProperty;
+    rdfs:range schema:Organization.
+tcf:Port dc:modified "2018-03-18"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Any port, terminal, offshore terminal, ship and repair yard or roadstead which is normally used for the loading, unloading, repair and anchoring of ships, or any other place at which a ship can call. The word also embraces, geographically, the city or borough which serves shipping interests.";
+    rdfs:label "Port";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:portName a owl:ObjectProperty;
+    rdfs:description "Any port, terminal, offshore terminal, ship and repair yard or roadstead which is normally used for the loading, unloading, repair and anchoring of ships, or any other place at which a ship can call. The word also embraces, geographically, the city or borough which serves shipping interests.";
+    rdfs:domain tcf:Port;
+    rdfs:label "Port Name";
+    rdfs:range rdfs:literal.
+tcf:Pressure dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:pressure a owl:ObjectProperty.
+tcf:Pressure rdfs:comment "An update on a logistics object of pressure.".
+tcf:pressure rdfs:description "A device pressure reading submitted as a track update.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Pressure".
+tcf:Pressure rdfs:label "Pressure".
+tcf:pressure rdfs:range tcf:Pressure.
+tcf:pressureAltFeet a owl:ObjectProperty;
+    rdfs:description "A device altitude reading in feet submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Altitude in Feet";
+    rdfs:range xsd:decimal.
+tcf:pressureAltMeter a owl:ObjectProperty;
+    rdfs:description "A device altitude reading in meters submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Altitude in Meter";
+    rdfs:range xsd:decimal.
+tcf:pressureHPascal a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in Hecto Pascal submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in Hecto Pascal";
+    rdfs:range xsd:decimal.
+tcf:pressureKPascal a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in Kilo Pascal submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in Kilo Pascal";
+    rdfs:range xsd:decimal.
+tcf:pressurePmb a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in  millibar submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in in millibar";
+    rdfs:range xsd:decimal.
+tcf:pressurePsi a owl:ObjectProperty;
+    rdfs:description "A device pressure reading in PSI submitted as a track update.";
+    rdfs:domain tcf:Pressure;
+    rdfs:label "Pressure in PSI";
+    rdfs:range xsd:decimal.
+tcf:pta-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel is planned to arrive at a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "PTA-Location";
+    rdfs:range xsd:datetime.
+tcf:ptd-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel is planned to depart from a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "PTD-Location";
+    rdfs:range xsd:datetime.
+tcf:quantityOfPackages a owl:ObjectProperty;
+    rdfs:description "The number of packages in the complete shippers instruction";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Quantity of packages";
+    rdfs:range xsd:int.
+tcf:RailStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object in the transport mode of rail.";
+    rdfs:label "Rail Status Update";
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:rejectionReason a owl:ObjectProperty;
+    rdfs:description "This is why the MAWB was rejected .";
+    rdfs:domain tcf:AirStatusUpdate;
+    rdfs:label "Rejection Reason";
+    rdfs:range xsd:string.
+tcf:RequestedDeliveryDate a owl:ObjectProperty;
+    rdfs:description "Ultimate Ship To Delivery Date Time.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "RequestedDeliveryDate";
+    rdfs:range xsd:date.
+tcf:RequestedPickupDate a owl:ObjectProperty;
+    rdfs:description "A date, time, date time, or other date time value when this trade delivery is available for pick-up.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "RequestedPickupDate";
+    rdfs:range xsd:date.
+tcf:RoadStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object in the transport mode of road.";
+    rdfs:label "Road Status Update";
+    rdfs:subClassOf tcf:StatusUpdate.
+tcf:SeaStatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:seaStatusUpdate a owl:ObjectProperty.
+tcf:SeaStatusUpdate rdfs:comment "A status update on a logistics object in the transport mode of sea.".
+tcf:seaStatusUpdate rdfs:description "A status update on a logistics object in the transport mode of Sea.";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Sea Status Update".
+tcf:SeaStatusUpdate rdfs:label "Sea Status Update".
+tcf:seaStatusUpdate rdfs:range tcf:SeaStatusUpdate.
+tcf:SeaStatusUpdate rdfs:subClassOf tcf:StatusUpdate.
+tcf:seller a owl:ObjectProperty.
+tcf:Seller a owl:objectproperty;
+    rdfs:description "The Seller party for this consignment.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "Buyer".
+tcf:seller rdfs:range schema:Organization.
+tcf:Seller rdfs:range schema:Organization.
+tcf:ShippersInstruction dc:modified "2017-11-16"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder.";
+    rdfs:label "Shippers Instruction";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:shippersInstructionShippersReference a owl:ObjectProperty;
+    rdfs:description "The reference for the shippers instruction in the shippers system";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Reference";
+    rdfs:range rdfs:Literal.
+tcf:Status dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:status a owl:ObjectProperty.
+tcf:Status rdfs:comment "A status on a logistics object of different states such as departed, arrived, deviation, etc.".
+tcf:status rdfs:description "An abbreviation for the status submitted .";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Status".
+tcf:Status rdfs:label "StatusUpdate".
+tcf:status rdfs:range xsd:string.
+tcf:Status rdfs:subClassOf tcf:StatusUpdate.
+tcf:statusBy a owl:ObjectProperty;
+    rdfs:description "Which organization has submitted the status update .";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Status By";
+    rdfs:range schema:Organization.
+tcf:StatusUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "A status update on a logistics object of different events such as departed, arrived, deviation, etc.";
+    rdfs:label "Status Update".
+tcf:statusUpdateTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the status update .";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Status Update Timestamp";
+    rdfs:range xsd:datetime.
+tcf:Temperature dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class.
+tcf:temperature a owl:ObjectProperty.
+tcf:Temperature rdfs:comment "An update on a logistics object of temperature.".
+tcf:temperature rdfs:description "A temperature reading submitted as a track update from a device.";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Temperature".
+tcf:Temperature rdfs:label "Temperature".
+tcf:temperature rdfs:range tcf:Temperature.
+tcf:temperatureCelsius a owl:ObjectProperty;
+    rdfs:description "A temperature reading in Celsius submitted as a track update from a device.";
+    rdfs:domain tcf:Temperature;
+    rdfs:label "Temperature in Celsius";
+    rdfs:range xsd:decimal.
+tcf:temperatureFahrenheit a owl:ObjectProperty;
+    rdfs:description "A temperature reading in Fahrenheit submitted as a track update from a device.";
+    rdfs:domain tcf:Temperature;
+    rdfs:label "Temperature in Fahrenheit";
+    rdfs:range xsd:decimal.
+tcf:temperatureKelvin a owl:ObjectProperty;
+    rdfs:description "A temperature reading in Kelvin submitted as a track update from a device.";
+    rdfs:domain tcf:Temperature;
+    rdfs:label "Temperature in Kelvin";
+    rdfs:range xsd:decimal.
+tcf:TestClass dc:modified "2018-04-04T21:26:19.028Z"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "";
+    rdfs:label "Test Class";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:TrackUpdate dc:modified "2018-02-23"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "An update on a logistics object of different sensoring data such as location, temperature, humidity, accelerometer, or pressure.";
+    rdfs:label "TrackUpdate";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:trackUpdateBy a owl:ObjectProperty;
+    rdfs:description "Which organization has submitted the track update .";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Track Update ";
+    rdfs:range schema:Organization.
+tcf:trackUpdateTimestamp a owl:ObjectProperty;
+    rdfs:description "A time stamp for the track update .";
+    rdfs:domain tcf:TrackUpdate;
+    rdfs:label "Track Update Timestamp";
+    rdfs:range xsd:datetime.
+tcf:TransportAgreementLaneID a owl:ObjectProperty;
+    rdfs:description "TBD.";
+    rdfs:domain tcf:Consignment;
+    rdfs:label "TransportAgreementLaneID";
+    rdfs:range rdfs:Literal.
+tcf:Vessel dc:modified "2018-03-18"^^xsd:date;
+    a owl:Class.
+tcf:vessel a owl:ObjectProperty.
+tcf:Vessel rdfs:comment "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water.".
+tcf:vessel rdfs:description "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water.";
+    rdfs:domain tcf:Vessel;
+    rdfs:label "Vessel".
+tcf:Vessel rdfs:label "Vessel".
+tcf:vessel rdfs:range rdfs:literal.
+tcf:Vessel rdfs:subClassOf tcf:LogisticsObject.
+tcf:vesselType a owl:ObjectProperty;
+    rdfs:description "The purpose of the vessel. A comprehensive list of unique vessel types exists in the IHS Fairplay’s comprehensive “statcode”.";
+    rdfs:domain tcf:Vessel;
+    rdfs:label "Vessel Type";
+    rdfs:range rdfs:literal.
+tcf:visibleLight a owl:ObjectProperty;
+    rdfs:description "A visible light reading ubmitted as a track update.";
+    rdfs:domain tcf:Light;
+    rdfs:label "Visible Light";
+    rdfs:range xsd:float.
+tcf:volume a owl:ObjectProperty;
+    rdfs:description "A measure of the gross volume of this trade line item.", "The volume related to the shippers instruction";
+    rdfs:domain tcf:Package, tcf:ShippersInstruction;
+    rdfs:label "Volume";
+    rdfs:range xsd:double.
+tcf:Width a owl:ObjectProperty;
+    rdfs:description "A measure of the width of this trade line item.";
+    rdfs:domain tcf:Package;
+    rdfs:label "Width";
+    rdfs:range xsd:double.
+tcf:x_gvt a owl:ObjectProperty;
+    rdfs:description "A device accelerometer x-axis reading submitted as a track update.";
+    rdfs:domain tcf:Accelerometer;
+    rdfs:label "X-axis acceleration";
+    rdfs:range xsd:float.
+tcf:y_gvt a owl:ObjectProperty;
+    rdfs:description "A device accelerometer y-axis reading submitted as a track update.";
+    rdfs:domain tcf:Accelerometer;
+    rdfs:label "Y-axis acceleration";
+    rdfs:range xsd:float.
+tcf:z_gvt a owl:ObjectProperty;
+    rdfs:description "A device accelerometer z-axis reading submitted as a track update.";
+    rdfs:domain tcf:Accelerometer;
+    rdfs:label "Z-axis acceleration";
+    rdfs:range xsd:float.
