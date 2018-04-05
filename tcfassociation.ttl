@@ -11,15 +11,19 @@
 	dc:title "The TCF Logistics open ontology" ;
 	dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
 
+tcf:Draft
+    rdfs:label: "Draft" .
+
 <LogisticsObject> a owl:Class ;
 	rdfs:label "Logistics Object" ;
 	rdfs:comment "Hasse changed again, Need a good defintion. Here is a place holder - A general classifcation of all objects that are used in the logistics process.  A logistics object might be a plane, a truck. It might also be a document, or a package or a consignment." .
-	
+
 <ShippersInstruction> a owl:Class ;
 	rdfs:label "Shippers Instruction" ;
 	rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." ;
 	rdfs:subClassOf <LogisticsObject> ;
 	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	tcf:classStatus tcf:Draft ;
     tcf:example """# A shippers instruction in real life
 
 ```
