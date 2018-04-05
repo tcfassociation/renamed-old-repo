@@ -27,7 +27,8 @@ tcf-pouch:ForwarderPouch dc:modified "2017-11-16"^^xsd:date;
     hydra:member tcf:HAWB, tcf:MAWB.
 tcf-pouch:MaritimePouch dc:modified "2017-11-16"^^xsd:date;
     a tcf-pouch:Pouch;
-    rdfs:label "Maritime Pouch".
+    rdfs:label "Maritime Pouch";
+    hydra:member tcf:Port, tcf:Vessel.
 tcf-pouch-org:EricssonAB schema:url <http://www.ericsson.com/>;
     a schema:Corporation;
     rdfs:label "Ericsson AB".
@@ -43,7 +44,7 @@ tcf-pouch:RailPouch dc:modified "2017-11-16"^^xsd:date;
 tcf-pouch:ShippersPouch dc:modified "2017-11-16"^^xsd:date;
     a tcf-pouch:Pouch;
     rdfs:label "Shippers Pouch";
-    hydra:member tcf:Blub, tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction.
+    hydra:member tcf:AndEvenAnotherTestclass, tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction.
 tcf-pouch:StatusUpdatePouch dc:modified "2018-02-13"^^xsd:date;
     a tcf-pouch:Pouch;
     rdfs:label "Status Update Pouch";
