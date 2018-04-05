@@ -3,7 +3,8 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tcf: <http://tcftest.org/schema/> .
 @prefix tcf-pouch: <http://tcftest.org/pouch/> .
 
 <> a owl:Ontology ;
@@ -18,7 +19,17 @@
 	rdfs:label "Shippers Instruction" ;
 	rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder." ;
 	rdfs:subClassOf <LogisticsObject> ;
-	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    tcf:example """# A shippers instruction in real life
+
+       ```
+       @prefix tcf <http://tcftest.org/schema/> .
+       @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+       <instruction> a tcf:ShippersInstruction ;
+         rdfs:label "This is a shippers instruction" .
+       ```
+    """ .
 	
 <Consignment> a owl:Class ;
 	rdfs:label "Consignment" ;
