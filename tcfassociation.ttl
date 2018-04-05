@@ -22,14 +22,14 @@
 	dc:modified "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
     tcf:example """# A shippers instruction in real life
 
-       ```
-       @prefix tcf <http://tcftest.org/schema/> .
-       @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+```
+@prefix tcf <http://tcftest.org/schema/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-       <instruction> a tcf:ShippersInstruction ;
-         rdfs:label "This is a shippers instruction" .
-       ```
-    """ .
+<instruction> a tcf:ShippersInstruction ;
+  rdfs:label "This is a shippers instruction" .
+```
+""" .
 	
 <Consignment> a owl:Class ;
 	rdfs:label "Consignment" ;
