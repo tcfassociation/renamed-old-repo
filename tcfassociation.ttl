@@ -12,7 +12,7 @@
 	dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry." .
 
 tcf:Draft
-    rdfs:label: "Draft" .
+    rdfs:label "Draft" .
 
 <LogisticsObject> a owl:Class ;
 	rdfs:label "Logistics Object" ;
