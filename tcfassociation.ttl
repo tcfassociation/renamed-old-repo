@@ -40,6 +40,16 @@ tcf:arrivalTimestamp a owl:ObjectProperty;
     rdfs:domain tcf:AirStatusUpdate;
     rdfs:label "Arrival Timestamp";
     rdfs:range xsd:datetime.
+tcf:ata-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel arrives at a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ATA-Location";
+    rdfs:range xsd:datetime.
+tcf:atd-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel departs from a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ATD-Location";
+    rdfs:range xsd:datetime.
 tcf:attentionTo a owl:ObjectProperty;
     rdfs:range schema:Organization.
 tcf:awbManifestedPieces a owl:ObjectProperty;
@@ -86,10 +96,6 @@ tcf:batteryVoltage a owl:ObjectProperty;
     rdfs:domain tcf:Battery;
     rdfs:label "Battery Voltage";
     rdfs:range xsd:decimal.
-tcf:Blub dc:modified "2018-03-08T14:35:31.881Z"^^xsd:date;
-    rdfs:comment "";
-    rdfs:label "Blub";
-    rdfs:subClassOf tcf:LogisticsObject.
 tcf:buyer a owl:ObjectProperty.
 tcf:Buyer a owl:objectproperty;
     rdfs:description "The buyer party for this consignment.";
@@ -97,6 +103,16 @@ tcf:Buyer a owl:objectproperty;
     rdfs:label "Buyer".
 tcf:buyer rdfs:range schema:Organization.
 tcf:Buyer rdfs:range schema:Organization.
+tcf:cargoType a owl:ObjectProperty;
+    rdfs:description "Types of cargo handled by the port.";
+    rdfs:domain tcf:Port;
+    rdfs:label "Cargo Type";
+    rdfs:range rdfs:literal.
+tcf:cargoVolume a owl:ObjectProperty;
+    rdfs:description "Weight of Goods or number of containers per calendar year in tonnes.";
+    rdfs:domain tcf:Port;
+    rdfs:label "Cargo Weight";
+    rdfs:range tcf:Port.
 tcf:CommercialInvoice dc:modified "2017-11-16"^^xsd:date;
     a owl:Class;
     rdfs:comment "Need a good defintion of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders.";
@@ -167,6 +183,17 @@ tcf:discrepancyDescription a owl:ObjectProperty;
     rdfs:domain tcf:AirStatusUpdate;
     rdfs:label "Discrepancy Description";
     rdfs:range xsd:string.
+tcf:Draft rdfs:label "Draft".
+tcf:eta-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel estimates it will arrive at a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ETA-Location";
+    rdfs:range xsd:datetime.
+tcf:etd-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel estimates it will depart from a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "ETD-Location";
+    rdfs:range xsd:datetime.
 tcf:FlightManifest dc:modified "2018-02-13"^^xsd:date;
     a owl:Class;
     rdfs:comment "TBD";
@@ -218,6 +245,11 @@ tcf:humidityPercent a owl:ObjectProperty;
     rdfs:domain tcf:Humidity;
     rdfs:label "Humidity in Percentage";
     rdfs:range xsd:decimal.
+tcf:imoNumber a owl:ObjectProperty;
+    rdfs:description "A number assigned to sea-going merchant vessels under the International Convention for the Safety of Life at Sea (SOLAS). These are assigned by IHS Fairplay to individual vessels. Format: The characters “IMO” followed by a unique seven-digit number, e.g. “IMO 9227338”.";
+    rdfs:domain tcf:Vessel;
+    rdfs:label "IMO Number";
+    rdfs:range rdfs:literal.
 tcf:Incoterm a owl:ObjectProperty;
     rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery.";
     rdfs:domain tcf:Consignment;
@@ -253,6 +285,12 @@ tcf:light rdfs:description "A device light reading submitted as a track update."
     rdfs:label "Light".
 tcf:Light rdfs:label "Light".
 tcf:light rdfs:range tcf:Light.
+tcf:lobbyTest dc:modified "2018-04-06T07:01:01.026Z"^^xsd:date;
+    a owl:ObjectProperty;
+    rdfs:description "Lobby test";
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "Lobby test";
+    rdfs:range rdfs:Literal.
 tcf:logisticObjectReference a owl:ObjectProperty;
     rdfs:description "A URI reference to the Logistics Object.";
     rdfs:domain tcf:StatusUpdate, tcf:TrackUpdate;
@@ -311,6 +349,16 @@ tcf:PackageType a owl:ObjectProperty;
     rdfs:range rdfs:Literal.
 tcf:pickupFrom a owl:ObjectProperty;
     rdfs:range schema:Organization.
+tcf:Port dc:modified "2018-03-18"^^xsd:date;
+    a owl:Class;
+    rdfs:comment "Any port, terminal, offshore terminal, ship and repair yard or roadstead which is normally used for the loading, unloading, repair and anchoring of ships, or any other place at which a ship can call. The word also embraces, geographically, the city or borough which serves shipping interests.";
+    rdfs:label "Port";
+    rdfs:subClassOf tcf:LogisticsObject.
+tcf:portName a owl:ObjectProperty;
+    rdfs:description "Any port, terminal, offshore terminal, ship and repair yard or roadstead which is normally used for the loading, unloading, repair and anchoring of ships, or any other place at which a ship can call. The word also embraces, geographically, the city or borough which serves shipping interests.";
+    rdfs:domain tcf:Port;
+    rdfs:label "Port Name";
+    rdfs:range rdfs:literal.
 tcf:Pressure dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
 tcf:pressure a owl:ObjectProperty.
@@ -350,6 +398,16 @@ tcf:pressurePsi a owl:ObjectProperty;
     rdfs:domain tcf:Pressure;
     rdfs:label "Pressure in PSI";
     rdfs:range xsd:decimal.
+tcf:pta-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel is planned to arrive at a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "PTA-Location";
+    rdfs:range xsd:datetime.
+tcf:ptd-Location a owl:ObjectProperty;
+    rdfs:description "The Date/Time when a vessel is planned to depart from a specified location, as per port section standards.";
+    rdfs:domain tcf:SeaStatusUpdate;
+    rdfs:label "PTD-Location";
+    rdfs:range xsd:datetime.
 tcf:quantityOfPackages a owl:ObjectProperty;
     rdfs:description "The number of packages in the complete shippers instruction";
     rdfs:domain tcf:ShippersInstruction;
@@ -381,10 +439,15 @@ tcf:RoadStatusUpdate dc:modified "2018-02-23"^^xsd:date;
     rdfs:label "Road Status Update";
     rdfs:subClassOf tcf:StatusUpdate.
 tcf:SeaStatusUpdate dc:modified "2018-02-23"^^xsd:date;
-    a owl:Class;
-    rdfs:comment "A status update on a logistics object in the transport mode of sea.";
-    rdfs:label "Sea Status Update";
-    rdfs:subClassOf tcf:StatusUpdate.
+    a owl:Class.
+tcf:seaStatusUpdate a owl:ObjectProperty.
+tcf:SeaStatusUpdate rdfs:comment "A status update on a logistics object in the transport mode of sea.".
+tcf:seaStatusUpdate rdfs:description "A status update on a logistics object in the transport mode of Sea.";
+    rdfs:domain tcf:StatusUpdate;
+    rdfs:label "Sea Status Update".
+tcf:SeaStatusUpdate rdfs:label "Sea Status Update".
+tcf:seaStatusUpdate rdfs:range tcf:SeaStatusUpdate.
+tcf:SeaStatusUpdate rdfs:subClassOf tcf:StatusUpdate.
 tcf:seller a owl:ObjectProperty.
 tcf:Seller a owl:objectproperty;
     rdfs:description "The Seller party for this consignment.";
@@ -393,6 +456,8 @@ tcf:Seller a owl:objectproperty;
 tcf:seller rdfs:range schema:Organization.
 tcf:Seller rdfs:range schema:Organization.
 tcf:ShippersInstruction dc:modified "2017-11-16"^^xsd:date;
+    tcf:classStatus tcf:Draft;
+    tcf:example "# A shippers instruction in real life\n\n```\n@prefix tcf <http://tcftest.org/schema/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n<instruction> a tcf:ShippersInstruction ;\n  rdfs:label \"This is a shippers instruction\" .\n```\n";
     a owl:Class;
     rdfs:comment "Need a good defintion. Here is one from shippingsolutions.com - The Shipper's Letter of Instruction helps to convey specific instructions from the exporter to his agent, usually an international freight forwarder.";
     rdfs:label "Shippers Instruction";
@@ -470,6 +535,21 @@ tcf:TransportAgreementLaneID a owl:ObjectProperty;
     rdfs:domain tcf:Consignment;
     rdfs:label "TransportAgreementLaneID";
     rdfs:range rdfs:Literal.
+tcf:Vessel dc:modified "2018-03-18"^^xsd:date;
+    a owl:Class.
+tcf:vessel a owl:ObjectProperty.
+tcf:Vessel rdfs:comment "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water.".
+tcf:vessel rdfs:description "Vessel is defined as watercraft or other artificial contrivance used, or capable of being used, as a means of transportation on water.";
+    rdfs:domain tcf:Vessel;
+    rdfs:label "Vessel".
+tcf:Vessel rdfs:label "Vessel".
+tcf:vessel rdfs:range rdfs:literal.
+tcf:Vessel rdfs:subClassOf tcf:LogisticsObject.
+tcf:vesselType a owl:ObjectProperty;
+    rdfs:description "The purpose of the vessel. A comprehensive list of unique vessel types exists in the IHS Fairplay’s comprehensive “statcode”.";
+    rdfs:domain tcf:Vessel;
+    rdfs:label "Vessel Type";
+    rdfs:range rdfs:literal.
 tcf:visibleLight a owl:ObjectProperty;
     rdfs:description "A visible light reading ubmitted as a track update.";
     rdfs:domain tcf:Light;
