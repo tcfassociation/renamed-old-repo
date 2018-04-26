@@ -118,10 +118,11 @@ tcf:Draft
 	rdfs:label "Volume" ;
 	rdfs:description "The volume related to the shippers instruction" .
 
-<GrossWeigth> a owl:ObjectProperty ;
+<grossWeigth> a owl:ObjectProperty ;
 	rdfs:domain <ShippersInstruction> ;
+	rdfs:domain <Package> ;
 	rdfs:range xsd:double ;
-	rdfs:label "GrossWeigth" ;
+	rdfs:label "grossWeigth" ;
 	rdfs:description "A measure of the gross weight (mass) of these consignments which includes the weight of packaging but which excludes the weight of any transport equipment." .
 
 # Start of consignment
@@ -228,12 +229,6 @@ tcf:Draft
 	rdfs:range xsd:double ;
 	rdfs:label "Height" ;
 	rdfs:description "A measure of the height of this trade line item." .
-
-<grossWeigth> a owl:ObjectProperty ;
-	rdfs:domain <Package> ;
-	rdfs:range xsd:double ;
-	rdfs:label "grossWeigth" ;
-	rdfs:description "A measure of the gross weight (mass) of this trade line item which includes packaging but which excludes any associated transport equipment." .
 
 <netWeigth> a owl:ObjectProperty ;
 	rdfs:domain <Package> ;
