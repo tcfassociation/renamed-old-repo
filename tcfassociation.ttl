@@ -1,5 +1,4 @@
 @prefix dc: <http://purl.org/dc/terms/>.
-@prefix hydra: <http://www.w3.org/ns/hydra/core#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix schema: <http://schema.org/>.

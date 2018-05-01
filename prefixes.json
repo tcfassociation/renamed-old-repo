@@ -1,0 +1,11 @@
+{
+  "dc": "http://purl.org/dc/terms/",
+  "owl": "http://www.w3.org/2002/07/owl#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "schema": "http://schema.org/",
+  "tcf": "http://tcftest.org/schema/",
+  "tcf-pouch": "http://tcftest.org/pouch/",
+  "tcf-pouch-org": "http://tcftest.org/pouch/org/",
+  "tcf-pouch-wg": "http://tcftest.org/pouch/wg/",
+  "xsd": "http://www.w3.org/2001/XMLSchema#"
+}
