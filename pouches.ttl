@@ -45,7 +45,7 @@ tcf-pouch:RailPouch dc:modified "2017-11-16"^^xsd:date;
     rdfs:label "Rail Pouch".
 tcf-pouch:ShippersPouch dc:modified "2017-11-16"^^xsd:date;
     schema:contributor tcf-pouch-org:PanalpinaAB;
-    schema:hasPart tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction;
+    schema:hasPart tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:NewClass5, tcf:Package, tcf:ShippersInstruction;
     a schema:CreativeWork;
     rdfs:label "Shippers Pouch".
 tcf-pouch:StatusUpdatePouch dc:modified "2018-02-13"^^xsd:date;
