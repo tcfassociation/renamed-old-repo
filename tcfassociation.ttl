@@ -1,5 +1,4 @@
 @prefix dc: <http://purl.org/dc/terms/>.
-@prefix hydra: <http://www.w3.org/ns/hydra/core#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix schema: <http://schema.org/>.
@@ -10,9 +9,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
-<http://tcftest.org/schema/> dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry.";
-    dc:title "The TCF Logistics open ontology";
-    a owl:Ontology.
 tcf:Accelerometer dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
 tcf:accelerometer a owl:ObjectProperty.
@@ -308,6 +304,16 @@ tcf:netWeight a owl:ObjectProperty;
     rdfs:domain tcf:Package;
     rdfs:label "netWeight";
     rdfs:range xsd:double.
+tcf:NewClass2 dc:modified "2018-05-01T14:27:51.925Z"^^xsd:date;
+    rdfs:description "";
+    rdfs:label "New Class 2".
+tcf:NewClass4 dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry.";
+    dc:modified "2018-05-01T22:46:37.811Z"^^xsd:date;
+    dc:title "The TCF Logistics open ontology";
+    a owl:Class;
+    rdfs:comment "comment 4";
+    rdfs:description "description 4";
+    rdfs:label "New Class 4".
 tcf:notifiedTimestamp a owl:ObjectProperty;
     rdfs:description "A time stamp for the notification of the status update .";
     rdfs:domain tcf:AirStatusUpdate;
