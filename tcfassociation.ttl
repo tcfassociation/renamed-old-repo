@@ -308,6 +308,9 @@ tcf:netWeight a owl:ObjectProperty;
     rdfs:domain tcf:Package;
     rdfs:label "netWeight";
     rdfs:range xsd:double.
+tcf:NewClass2 dc:modified "2018-05-01T14:27:51.925Z"^^xsd:date;
+    rdfs:description "";
+    rdfs:label "New Class 2".
 tcf:notifiedTimestamp a owl:ObjectProperty;
     rdfs:description "A time stamp for the notification of the status update .";
     rdfs:domain tcf:AirStatusUpdate;
