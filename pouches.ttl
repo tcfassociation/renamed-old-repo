@@ -8,6 +8,8 @@
 @prefix tcf-pouch-wg: <http://tcftest.org/pouch/wg/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
+<http://tcftest.org/groups/> schema:hasPart <http://tcftest.org/pouch/>;
+    a schema:CreativeWork.
 <http://tcftest.org/pouch/> schema:hasPart tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch, tcf-pouch:StatusUpdatePouch, tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch;
     a schema:CreativeWork;
     rdfs:label "Pouches".
