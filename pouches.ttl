@@ -10,9 +10,12 @@
 
 <http://tcftest.org/groups/> schema:hasPart <http://tcftest.org/pouch/>;
     a schema:CreativeWork.
-<http://tcftest.org/pouch/> schema:hasPart tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch, tcf-pouch:StatusUpdatePouch, tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch;
+<http://tcftest.org/pouch/> schema:hasPart tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch, tcf-pouch:StatusUpdatePouch;
     a schema:CreativeWork;
     rdfs:label "Pouches".
+<http://tcftest.org/trackupdates/> schema:hasPart tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch;
+    a schema:CreativeWork;
+    rdfs:label "Track Updates".
 tcf-pouch:CargoHandlersPouch dc:modified "2017-11-16"^^xsd:date;
     a schema:CreativeWork;
     rdfs:label "Cargo Handlers Pouch".
