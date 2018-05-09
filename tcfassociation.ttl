@@ -114,6 +114,8 @@ tcf:CommercialInvoice dc:modified "2017-11-16"^^xsd:date;
     rdfs:comment "Need a good definition of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders.";
     rdfs:label "Commercial Invoice";
     rdfs:subClassOf tcf:LogisticsObject.
+tcf:Cons dc:modified "2018-05-09T14:03:53.932Z"^^xsd:date;
+    rdfs:label "cons".
 tcf:consignee a owl:ObjectProperty.
 tcf:Consignee a owl:objectproperty;
     rdfs:description "The consignee party for this consignment.";
@@ -212,6 +214,12 @@ tcf:grossWeight a owl:ObjectProperty;
     rdfs:range xsd:double.
 tcf:handoverTo a owl:ObjectProperty;
     rdfs:range schema:Organization.
+tcf:hassesProperty1 dc:modified "2018-05-09T14:03:53.932Z"^^xsd:date;
+    a owl:ObjectProperty;
+    rdfs:comment "long desc hasses property1";
+    rdfs:description "desc hasses property1";
+    rdfs:domain tcf:Cons, tcf:Consignment;
+    rdfs:label "hasses property1".
 tcf:HAWB dc:modified "2018-02-13"^^xsd:date;
     a owl:Class;
     rdfs:comment "TBD";
