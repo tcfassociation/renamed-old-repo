@@ -8,9 +8,9 @@
 @prefix tcf-pouch-wg: <http://tcftest.org/pouch/wg/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-<http://tcftest.org/groups/> schema:hasPart <http://tcftest.org/pouch/>;
+<http://tcftest.org/groups/> schema:hasPart <http://tcftest.org/pouch/>, <http://tcftest.org/updates/>;
     a schema:CreativeWork.
-<http://tcftest.org/pouch/> schema:hasPart tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch, tcf-pouch:StatusUpdatePouch, tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch;
+<http://tcftest.org/pouch/> schema:hasPart tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch;
     a schema:CreativeWork;
     rdfs:label "Pouches".
 tcf-pouch:CargoHandlersPouch dc:modified "2017-11-16"^^xsd:date;
@@ -45,7 +45,7 @@ tcf-pouch:RailPouch dc:modified "2017-11-16"^^xsd:date;
     rdfs:label "Rail Pouch".
 tcf-pouch:ShippersPouch dc:modified "2017-11-16"^^xsd:date;
     schema:contributor tcf-pouch-org:PanalpinaAB;
-    schema:hasPart tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:Package, tcf:ShippersInstruction;
+    schema:hasPart <http://tcftest.org/schema/>, tcf:Consignment, tcf:DangerousGoodsDeclaration, tcf:NewClass5, tcf:Package, tcf:ShippersInstruction;
     a schema:CreativeWork;
     rdfs:label "Shippers Pouch".
 tcf-pouch:StatusUpdatePouch dc:modified "2018-02-13"^^xsd:date;
@@ -59,3 +59,6 @@ tcf-pouch:TrackUpdatePouch dc:modified "2018-02-23"^^xsd:date;
 tcf-pouch:TruckersPouch dc:modified "2017-11-16"^^xsd:date;
     a schema:CreativeWork;
     rdfs:label "Truckers Pouch".
+<http://tcftest.org/updates/> schema:hasPart tcf-pouch:StatusUpdatePouch, tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch;
+    a schema:CreativeWork;
+    rdfs:label "Updates".
