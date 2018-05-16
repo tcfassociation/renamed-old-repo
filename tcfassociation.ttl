@@ -9,9 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
-<http://tcftest.org/schema/> dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry.";
-    dc:title "The TCF Logistics open ontology";
-    a owl:Ontology.
+<http://tcftest.org/schema/> dc:modified "2018-05-16T20:38:04.311Z"^^xsd:date.
 tcf:Accelerometer dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
 tcf:accelerometer a owl:ObjectProperty.
@@ -307,9 +305,18 @@ tcf:netWeight a owl:ObjectProperty;
     rdfs:domain tcf:Package;
     rdfs:label "netWeight";
     rdfs:range xsd:double.
+tcf:NewClass11 a owl:Class;
+    rdfs:label "New Class 11".
 tcf:NewClass2 dc:modified "2018-05-01T14:27:51.925Z"^^xsd:date;
     rdfs:description "";
     rdfs:label "New Class 2".
+tcf:NewClass5 dc:description "The TCF Logistics Open Ontology is a OWL ontology designed to support the logistics industry.";
+    dc:modified "2018-05-01T22:48:38.849Z"^^xsd:date;
+    dc:title "The TCF Logistics open ontology";
+    a owl:Class;
+    rdfs:comment "comment 5";
+    rdfs:description "description 5";
+    rdfs:label "New Class 5".
 tcf:notifiedTimestamp a owl:ObjectProperty;
     rdfs:description "A time stamp for the notification of the status update .";
     rdfs:domain tcf:AirStatusUpdate;
