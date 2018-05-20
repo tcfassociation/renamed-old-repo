@@ -24,12 +24,10 @@ tcf:airport a owl:ObjectProperty;
     rdfs:label "Airport";
     rdfs:range xsd:string.
 tcf:AirStatusUpdate dc:modified "2018-02-23"^^xsd:date;
-    a owl:Class, owl:ObjectProperty;
+    a owl:Class;
     rdfs:comment "A status update on a logistics object in the transport mode of air.";
     rdfs:description "A status update on a logistics object in the transport mode of air.";
-    rdfs:domain tcf:StatusUpdate;
     rdfs:label "Air Status Update";
-    rdfs:range tcf:AirStatusUpdate;
     rdfs:subClassOf tcf:StatusUpdate.
 tcf:arrivalTimestamp a owl:ObjectProperty;
     rdfs:description "A timestamp for the arrival of the airwaybill .";
@@ -92,13 +90,11 @@ tcf:batteryVoltage a owl:ObjectProperty;
     rdfs:domain tcf:Battery;
     rdfs:label "Battery Voltage";
     rdfs:range xsd:decimal.
-tcf:buyer a owl:ObjectProperty.
-tcf:Buyer a owl:objectproperty;
+tcf:buyer a owl:ObjectProperty;
     rdfs:description "The buyer party for this consignment.";
     rdfs:domain tcf:Consignment;
-    rdfs:label "Buyer".
-tcf:buyer rdfs:range schema:Organization.
-tcf:Buyer rdfs:range schema:Organization.
+    rdfs:label "Buyer";
+    rdfs:range schema:Organization.
 tcf:cargoType a owl:ObjectProperty;
     rdfs:description "Types of cargo handled by the port.";
     rdfs:domain tcf:Port;
@@ -114,34 +110,22 @@ tcf:CommercialInvoice dc:modified "2017-11-16"^^xsd:date;
     rdfs:comment "Need a good definition of a package. Here is one from wikipedia.org - When used in foreign trade, a commercial invoice is a customs document. It is used as a customs declaration provided by the person or corporation that is exporting an item across international borders.";
     rdfs:label "Commercial Invoice";
     rdfs:subClassOf tcf:LogisticsObject.
-tcf:consignee a owl:ObjectProperty.
-tcf:Consignee a owl:objectproperty;
+tcf:consignee a owl:ObjectProperty;
     rdfs:description "The consignee party for this consignment.";
     rdfs:domain tcf:Consignment;
-    rdfs:label "Consignee".
-tcf:consignee rdfs:range schema:Organization.
-tcf:Consignee rdfs:range schema:Organization.
+    rdfs:label "Consignee";
+    rdfs:range schema:Organization.
 tcf:Consignment dc:modified "2017-11-16"^^xsd:date;
-    a owl:Class.
-tcf:consignment a owl:ObjectProperty.
-tcf:Consignment a owl:ObjectProperty;
-    rdfs:comment "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.".
-tcf:consignment rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.".
-tcf:Consignment rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.";
-    rdfs:domain tcf:Consignment.
-tcf:consignment rdfs:domain tcf:ShippersInstruction;
-    rdfs:label "Consignment".
-tcf:Consignment rdfs:label "Consignment".
-tcf:consignment rdfs:range tcf:Consignment.
-tcf:Consignment rdfs:range rdfs:literal;
+    a owl:Class;
+    rdfs:comment "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.";
+    rdfs:description "A separately identifiable collection of goods items to be transported or available to be transported from one consignor to one consignee via one or more modes of transport where each consignment is the subject of one single transport contract.";
+    rdfs:label "Consignment";
     rdfs:subClassOf tcf:LogisticsObject.
-tcf:consignor a owl:ObjectProperty.
-tcf:Consignor a owl:objectproperty;
+tcf:consignor a owl:ObjectProperty;
     rdfs:description "The consignor party for this consignment.";
     rdfs:domain tcf:Consignment;
-    rdfs:label "Consignor".
-tcf:consignor rdfs:range schema:Organization.
-tcf:Consignor rdfs:range schema:Organization.
+    rdfs:label "Consignor";
+    rdfs:range schema:Organization.
 tcf:DangerousGoodsDeclaration dc:modified "2017-11-16"^^xsd:date;
     a owl:Class;
     rdfs:comment "Need a good definition of a package. Here is one from businessdictionary.com - Document(s) prepared by a consignor or shipper to certify that the dangerous goods being transported have been packaged, labeled, and declared in accordance with the standard international shipping regulations.";
@@ -217,20 +201,18 @@ tcf:HAWB dc:modified "2018-02-13"^^xsd:date;
     rdfs:comment "TBD";
     rdfs:label "House AirWayBill";
     rdfs:subClassOf tcf:LogisticsObject.
-tcf:Height a owl:ObjectProperty;
+tcf:height a owl:ObjectProperty;
     rdfs:description "A measure of the height of this trade line item.";
     rdfs:domain tcf:Package;
     rdfs:label "Height";
     rdfs:range xsd:double.
 tcf:Humidity dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
-tcf:humidity a owl:ObjectProperty.
-tcf:Humidity rdfs:comment "An update on a logistics object of humidity.".
-tcf:humidity rdfs:description "A device humidity reading submitted as a track update.";
+tcf:humidity a owl:ObjectProperty;
+    rdfs:comment "An update on a logistics object of humidity.";
+    rdfs:description "A device humidity reading submitted as a track update.";
     rdfs:domain tcf:TrackUpdate;
     rdfs:label "Humidity".
-tcf:Humidity rdfs:label "Humidity".
-tcf:humidity rdfs:range tcf:Humidity.
 tcf:humidityPercent a owl:ObjectProperty;
     rdfs:description "A device humidity reading in percentage submitted as a track update.";
     rdfs:domain tcf:Humidity;
@@ -241,12 +223,12 @@ tcf:imoNumber a owl:ObjectProperty;
     rdfs:domain tcf:Vessel;
     rdfs:label "IMO Number";
     rdfs:range rdfs:literal.
-tcf:Incoterm a owl:ObjectProperty;
+tcf:incoterm a owl:ObjectProperty;
     rdfs:description "A code specifying a type of delivery for these delivery terms such as the INCOTERMS Terms of Delivery.";
     rdfs:domain tcf:Consignment;
     rdfs:label "Incoterm";
     rdfs:range rdfs:Literal.
-tcf:IncotermsLocation a owl:ObjectProperty;
+tcf:incotermsLocation a owl:ObjectProperty;
     rdfs:description "A location relevant for these delivery terms.";
     rdfs:domain tcf:Consignment;
     rdfs:label "IncotermsLocation";
@@ -258,11 +240,11 @@ tcf:infrared a owl:ObjectProperty;
     rdfs:range xsd:float.
 tcf:IOLIdentifier dc:modified "2017-11-16"^^xsd:date;
     a owl:Class.
-tcf:iolIdentifier a owl:ObjectProperty.
-tcf:IOLIdentifier rdfs:comment "The Internet of Logistics Identifier for a connected company.";
-    rdfs:label "IOL Identifier".
-tcf:iolIdentifier rdfs:range tcf:IOLIdentifier.
-tcf:Length a owl:ObjectProperty;
+tcf:iolIdentifier a owl:ObjectProperty;
+    rdfs:comment "The Internet of Logistics Identifier for a connected company.";
+    rdfs:label "IOL Identifier";
+    rdfs:range tcf:IOLIdentifier.
+tcf:length a owl:ObjectProperty;
     rdfs:description "A measure of the length of this trade line item.";
     rdfs:domain tcf:Package;
     rdfs:label "Length";
@@ -325,19 +307,17 @@ tcf:origin a owl:ObjectProperty;
     rdfs:label "Origin";
     rdfs:range xsd:string.
 tcf:Package dc:modified "2017-11-16"^^xsd:date;
-    a owl:Class, owl:ObjectProperty;
+    a owl:Class;
     rdfs:comment "A physical package for this trade line item.";
     rdfs:description "A physical package for this trade line item.";
-    rdfs:domain tcf:Consignment;
     rdfs:label "Package";
-    rdfs:range rdfs:Literal;
     rdfs:subClassOf tcf:LogisticsObject.
-tcf:PackageReference a owl:ObjectProperty;
+tcf:packageReference a owl:ObjectProperty;
     rdfs:description "A packaging identifier, expressed as text, for this trade line item";
     rdfs:domain tcf:Package;
     rdfs:label "PackageReference";
     rdfs:range rdfs:Literal.
-tcf:PackageType a owl:ObjectProperty;
+tcf:packageType a owl:ObjectProperty;
     rdfs:description "A packaging type, expressed as text, for this trade line item";
     rdfs:domain tcf:Package;
     rdfs:label "PackageType";
@@ -356,13 +336,12 @@ tcf:portName a owl:ObjectProperty;
     rdfs:range rdfs:literal.
 tcf:Pressure dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
-tcf:pressure a owl:ObjectProperty.
-tcf:Pressure rdfs:comment "An update on a logistics object of pressure.".
-tcf:pressure rdfs:description "A device pressure reading submitted as a track update.";
+tcf:pressure a owl:ObjectProperty;
+    rdfs:comment "An update on a logistics object of pressure.";
+    rdfs:description "A device pressure reading submitted as a track update.";
     rdfs:domain tcf:TrackUpdate;
-    rdfs:label "Pressure".
-tcf:Pressure rdfs:label "Pressure".
-tcf:pressure rdfs:range tcf:Pressure.
+    rdfs:label "Pressure";
+    rdfs:range tcf:Pressure.
 tcf:pressureAltFeet a owl:ObjectProperty;
     rdfs:description "A device altitude reading in feet submitted as a track update.";
     rdfs:domain tcf:Pressure;
@@ -418,12 +397,12 @@ tcf:rejectionReason a owl:ObjectProperty;
     rdfs:domain tcf:AirStatusUpdate;
     rdfs:label "Rejection Reason";
     rdfs:range xsd:string.
-tcf:RequestedDeliveryDate a owl:ObjectProperty;
+tcf:requestedDeliveryDate a owl:ObjectProperty;
     rdfs:description "Ultimate Ship To Delivery Date Time.";
     rdfs:domain tcf:Consignment;
     rdfs:label "RequestedDeliveryDate";
     rdfs:range xsd:date.
-tcf:RequestedPickupDate a owl:ObjectProperty;
+tcf:requestedPickupDate a owl:ObjectProperty;
     rdfs:description "A date, time, date time, or other date time value when this trade delivery is available for pick-up.";
     rdfs:domain tcf:Consignment;
     rdfs:label "RequestedPickupDate";
@@ -435,21 +414,17 @@ tcf:RoadStatusUpdate dc:modified "2018-02-23"^^xsd:date;
     rdfs:subClassOf tcf:StatusUpdate.
 tcf:SeaStatusUpdate dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
-tcf:seaStatusUpdate a owl:ObjectProperty.
-tcf:SeaStatusUpdate rdfs:comment "A status update on a logistics object in the transport mode of sea.".
-tcf:seaStatusUpdate rdfs:description "A status update on a logistics object in the transport mode of Sea.";
+tcf:seaStatusUpdate a owl:ObjectProperty;
+    rdfs:comment "A status update on a logistics object in the transport mode of sea.";
+    rdfs:description "A status update on a logistics object in the transport mode of Sea.";
     rdfs:domain tcf:StatusUpdate;
-    rdfs:label "Sea Status Update".
-tcf:SeaStatusUpdate rdfs:label "Sea Status Update".
-tcf:seaStatusUpdate rdfs:range tcf:SeaStatusUpdate.
-tcf:SeaStatusUpdate rdfs:subClassOf tcf:StatusUpdate.
-tcf:seller a owl:ObjectProperty.
-tcf:Seller a owl:objectproperty;
+    rdfs:label "Sea Status Update";
+    rdfs:range tcf:SeaStatusUpdate.
+tcf:seller a owl:ObjectProperty;
     rdfs:description "The Seller party for this consignment.";
     rdfs:domain tcf:Consignment;
-    rdfs:label "Buyer".
-tcf:seller rdfs:range schema:Organization.
-tcf:Seller rdfs:range schema:Organization.
+    rdfs:label "Buyer";
+    rdfs:range schema:Organization.
 tcf:ShippersInstruction dc:modified "2017-11-16"^^xsd:date;
     tcf:classStatus tcf:Draft;
     tcf:example "# A shippers instruction in real life\n\n```\n@prefix tcf <http://localhost:8080/schema/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n<instruction> a tcf:ShippersInstruction ;\n  rdfs:label \"This is a shippers instruction\" .\n```\n";
@@ -527,7 +502,7 @@ tcf:trackUpdateTimestamp a owl:ObjectProperty;
     rdfs:domain tcf:TrackUpdate;
     rdfs:label "Track Update Timestamp";
     rdfs:range xsd:datetime.
-tcf:TransportAgreementLaneID a owl:ObjectProperty;
+tcf:transportAgreementLaneID a owl:ObjectProperty;
     rdfs:description "TBD.";
     rdfs:domain tcf:Consignment;
     rdfs:label "TransportAgreementLaneID";
@@ -557,7 +532,7 @@ tcf:volume a owl:ObjectProperty;
     rdfs:domain tcf:Package, tcf:ShippersInstruction;
     rdfs:label "Volume";
     rdfs:range xsd:double.
-tcf:Width a owl:ObjectProperty;
+tcf:width a owl:ObjectProperty;
     rdfs:description "A measure of the width of this trade line item.";
     rdfs:domain tcf:Package;
     rdfs:label "Width";
