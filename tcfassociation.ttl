@@ -9,6 +9,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
+<http://tcftest.org/schema/> dc:modified "2018-05-24T14:32:24.044Z"^^xsd:date;
+    a owl:ObjectProperty;
+    rdfs:domain tcf:ShippersInstruction.
 tcf:Accelerometer dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
 tcf:accelerometer a owl:ObjectProperty.
