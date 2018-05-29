@@ -297,9 +297,11 @@ tcf:NewClass5 dc:description "The TCF Logistics Open Ontology is a OWL ontology 
     rdfs:comment "comment 5";
     rdfs:description "description 5";
     rdfs:label "New Class 5".
-tcf:newProperty123 a owl:ObjectProperty;
+tcf:newProperty123 dc:modified "2018-05-29T21:44:07.590Z"^^xsd:date;
+    a owl:ObjectProperty;
     rdfs:domain tcf:ShippersInstruction;
-    rdfs:label "New Property 123".
+    rdfs:label "New Property 123";
+    rdfs:range tcf:Temperature.
 tcf:notifiedTimestamp a owl:ObjectProperty;
     rdfs:description "A time stamp for the notification of the status update .";
     rdfs:domain tcf:AirStatusUpdate;
