@@ -9,6 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 schema:geo schema:domainIncludes tcf-pouch:TrackUpdate.
+<http://tcftest.org/schema/> dc:modified "2018-05-29T21:16:07.909Z"^^xsd:date.
 tcf:Accelerometer dc:modified "2018-02-23"^^xsd:date;
     a owl:Class.
 tcf:accelerometer a owl:ObjectProperty.
@@ -296,6 +297,9 @@ tcf:NewClass5 dc:description "The TCF Logistics Open Ontology is a OWL ontology 
     rdfs:comment "comment 5";
     rdfs:description "description 5";
     rdfs:label "New Class 5".
+tcf:newProperty123 a owl:ObjectProperty;
+    rdfs:domain tcf:ShippersInstruction;
+    rdfs:label "New Property 123".
 tcf:notifiedTimestamp a owl:ObjectProperty;
     rdfs:description "A time stamp for the notification of the status update .";
     rdfs:domain tcf:AirStatusUpdate;
