@@ -13,9 +13,6 @@
 <http://tcftest.org/pouch/> schema:hasPart tcf-pouch:CargoHandlersPouch, tcf-pouch:CarriersPouch, tcf-pouch:CustomsPouch, tcf-pouch:ForwarderPouch, tcf-pouch:MaritimePouch, tcf-pouch:RailPouch, tcf-pouch:ShippersPouch;
     a schema:CreativeWork;
     rdfs:label "Pouches".
-<http://tcftest.org/updates/> schema:hasPart tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch, tcf-pouch:StatusUpdatePouch;
-    a schema:CreativeWork;
-    rdfs:label "Updates".
 tcf-pouch:CargoHandlersPouch dc:modified "2017-11-16"^^xsd:date;
     a schema:CreativeWork;
     rdfs:label "Cargo Handlers Pouch".
@@ -62,3 +59,6 @@ tcf-pouch:TrackUpdatePouch dc:modified "2018-02-23"^^xsd:date;
 tcf-pouch:TruckersPouch dc:modified "2017-11-16"^^xsd:date;
     a schema:CreativeWork;
     rdfs:label "Truckers Pouch".
+<http://tcftest.org/updates/> schema:hasPart tcf-pouch:StatusUpdatePouch, tcf-pouch:TrackUpdatePouch, tcf-pouch:TruckersPouch;
+    a schema:CreativeWork;
+    rdfs:label "Updates".
