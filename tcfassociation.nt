@@ -1,4 +1,5 @@
 <http://schema.org/geo> <http://schema.org/domainIncludes> <http://tcftest.org/pouch/TrackUpdate> .
+<http://tcftest.org/schema/> <http://purl.org/dc/terms/modified> "2018-06-04T10:29:50.875Z"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://tcftest.org/schema/Accelerometer> <http://purl.org/dc/terms/modified> "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://tcftest.org/schema/Accelerometer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://tcftest.org/schema/accelerometer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -478,6 +479,10 @@
 <http://tcftest.org/schema/temperatureKelvin> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/Temperature> .
 <http://tcftest.org/schema/temperatureKelvin> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature in Kelvin" .
 <http://tcftest.org/schema/temperatureKelvin> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://tcftest.org/schema/test1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://tcftest.org/schema/test1234> <http://www.w3.org/2000/01/rdf-schema#domain> <http://tcftest.org/schema/ShippersInstruction> .
+<http://tcftest.org/schema/test1234> <http://www.w3.org/2000/01/rdf-schema#label> "test 1234" .
+<http://tcftest.org/schema/test1234> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <http://tcftest.org/schema/TestClass1> <http://purl.org/dc/terms/modified> "2018-05-01T14:09:16.543Z"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://tcftest.org/schema/TestClass1> <http://www.w3.org/2000/01/rdf-schema#label> "Test Class 1" .
 <http://tcftest.org/schema/TrackUpdate> <http://purl.org/dc/terms/modified> "2018-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
